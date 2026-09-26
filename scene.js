@@ -375,7 +375,7 @@ core.add(coreHit);
 hitTargets.push(coreHit);
 const coreAura = sprite(GLOW, COL.core, 2.2);
 core.add(coreAura);
-const coreLabel = makeLabel(DATA.name, "core-label");
+const coreLabel = makeLabel(DATA.mapName || DATA.name, "core-label");
 coreLabel.obj.center.set(0.5, 1);
 coreLabel.obj.position.set(0, 1.25, 0);
 core.add(coreLabel.obj);
@@ -401,7 +401,7 @@ const coreHalo = new THREE.Mesh(
 coreBill.add(coreHalo);
 
 const coreNode = {
-  id: "core", label: DATA.name, ring: null, ri: -1, order: 0,
+  id: "core", label: DATA.mapName || DATA.name, ring: null, ri: -1, order: 0,
   mesh: core, mat: coreMat, aura: coreAura, octa: null, bill: coreBill, halo: coreHalo, badge: null, trailMat: null,
   el: coreLabel.el, level: 0, lit: 0, appear: 0, swept: 0,
 };

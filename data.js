@@ -14,6 +14,8 @@
 
 window.PORTFOLIO = {
   name: "Jonathan Cercenina Ramirez",
+  // the shorter name at the centre of the map
+  mapName: "Jonathan",
 
   // Commits per week on the thesis repository (Monday to Sunday), from git log.
   // Milestones are dated commits, reworded.

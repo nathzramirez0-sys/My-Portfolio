@@ -569,14 +569,6 @@ html:not(.motion) .cursor { animation: none; }
   .node-label:not([data-ring="work"]):not(.is-hot) { visibility: hidden; }
   .node-label[data-ring="work"] { font-size: 0.6875rem; padding-left: 11px; }
   .ring-label { display: none; }
-  .core-label {
-    width: 16em;
-    white-space: normal;
-    text-align: center;
-    font-size: 0.625rem;
-    line-height: 1.35;
-    letter-spacing: 0.1em;
-  }
 }
 
 /* ─────────────────────────────────────────────
