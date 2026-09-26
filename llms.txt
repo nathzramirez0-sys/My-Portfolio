@@ -29,7 +29,7 @@ Notable engineering:
 
 ## More projects
 
-All as programmer. Solo: built alone. Team: a group project.
+Solo: built alone, as full-stack developer. Team: a group project, as programmer.
 
 - Arts & Design Showcase (solo, web, 2026): gallery of artworks and artist profiles with search, messaging and an admin area. PHP, MySQL.
 - Auction Market (solo, web, 2026): sellers list items, buyers bid, the current bid updates without reloading, admin analytics. PHP, MySQL, JavaScript.

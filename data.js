@@ -90,11 +90,11 @@ window.PORTFOLIO = {
 
     // Projects
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
-      text: "Solo project. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
+      text: "Solo project, as full-stack developer. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
     { id: "p-auction", ring: "projects", label: "Auction Market", keys: ["auction", "auctions", "bidding", "bid", "bids"], section: "#projects",
-      text: "Solo project. An online auction: sellers list items, buyers bid, the current bid updates without reloading the page, and an admin sees the analytics." },
+      text: "Solo project, as full-stack developer. An online auction: sellers list items, buyers bid, the current bid updates without reloading the page, and an admin sees the analytics." },
     { id: "p-court", ring: "projects", label: "St. Francis Court", keys: ["court", "courts", "booking", "bookings", "st francis", "reservation"], section: "#projects",
-      text: "Solo project. Court booking: players book and edit their slots, and the admin sees court usage, monthly bookings and revenue trends." },
+      text: "Solo project, as full-stack developer. Court booking: players book and edit their slots, and the admin sees court usage, monthly bookings and revenue trends." },
     { id: "p-pucu", ring: "projects", label: "PUCU Event Calendar", keys: ["pucu", "event calendar", "calendar", "events", "pec"], section: "#projects",
       text: "Team project, where I was a programmer. A school event calendar: organisations get their own dashboard, admins manage users, and events show as upcoming, pending or recently finished." },
     { id: "p-campus", ring: "projects", label: "ITE 393 Campus App", keys: ["campus", "ite 393", "ite393", "floor", "floors"], section: "#projects",
@@ -167,7 +167,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["what else", "other projects", "projects", "portfolio", "built", "solo", "team", "teams", "group", "groupmates"],
-      text: "Besides Cable Manager, three solo web projects: Arts & Design Showcase, Auction Market and St. Francis Court. And three team projects where I was a programmer: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
+      text: "Besides Cable Manager, three web projects I built solo as a full-stack developer: Arts & Design Showcase, Auction Market and St. Francis Court. And three team projects where I was a programmer: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
       nodes: ["p-arts", "p-auction", "p-court", "p-pucu", "p-campus", "p-ucwd"],
       sources: [["#projects", "Projects"]],
     },
