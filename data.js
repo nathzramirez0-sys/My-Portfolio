@@ -233,7 +233,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
-      text: "I'm Jonathan Cercenina Ramirez, a Computer Science student at the University of Pangasinan – PHINMA. I build web and mobile software that keeps working when conditions aren't ideal. The About section has a little more.",
+      text: "I'm Jonathan Cercenina Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and six other projects. I'm available now for freelance and full-time work.",
       nodes: ["core"],
       sources: [["#about", "About"]],
     },
