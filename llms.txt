@@ -1,0 +1,35 @@
+# Your Name
+
+> Full-stack developer. I build software that runs where the work happens: office systems that install on one computer, customer portals, and native Android apps. Open to full-time roles and freelance projects.
+
+Contact: you@example.com
+GitHub: https://github.com/Nathan-281000
+
+## Selected work
+
+### Cable Manager (thesis project, 2026)
+
+Billing and subscriber management for a local cable and internet provider. One set of records, reached three ways:
+
+- Office system: a single Windows installer (Inno Setup) that bundles Apache 2.4, MariaDB 10.4 and PHP 8.2. Runs on one office computer with no internet connection and nothing else installed.
+- Subscriber portal: an installable web app where subscribers see bills, report payments and follow their requests to the office.
+- Android app: native Kotlin with Jetpack Compose. Reminders, QR payment, PDF receipts, connection tests. Keeps the last answer it was given, so it still shows a balance when the office computer is off.
+- Remote access: Tailscale Funnel gives the portal and app a permanent HTTPS address with no router configuration.
+
+Notable engineering:
+
+- Atomic restore: takes a safety copy, refills tables inside one transaction, and refuses wrong, truncated or newer backups before touching anything. Automatic backup on every start, thirty kept.
+- Sign-in throttling per account and per address on all three entry points, with doubling lockouts up to 30 minutes and an audit trail.
+- Four roles (administrator, bookkeeper, staff, subscriber) enforced server-side. Prepared statements, CSRF tokens, bcrypt, hashed and expiring app tokens.
+- 11 automated test files with no dependencies; each run rebuilds a throwaway database.
+
+## Services
+
+- Business systems: billing, inventory, records and reports with role-based access
+- Customer portals installable on a phone
+- Native Android apps
+- Deployment: one-file installers, automatic backups, remote access
+
+## Stack
+
+PHP 8, MariaDB/MySQL, JavaScript, HTML and CSS, progressive web apps, Kotlin, Jetpack Compose, Apache, PowerShell, Inno Setup, Tailscale, Git.

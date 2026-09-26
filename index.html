@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Your Name · Developer</title>
+  <meta name="description" content="Full-stack developer. I build software that runs where the work happens: office systems, customer portals and Android apps.">
+  <meta name="theme-color" content="#111418">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="Plain-text version for AI agents">
+
+  <meta property="og:title" content="Your Name · Developer">
+  <meta property="og:description" content="I build software that runs where the work happens.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script>
+    // motion is on unless the visitor has switched it off on this site
+    (function () {
+      var root = document.documentElement, choice = null;
+      root.classList.add("js");
+      try { choice = localStorage.getItem("motion"); } catch (e) {}
+      if (choice !== "off") root.classList.add("motion");
+    })();
+  </script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="#top" aria-label="Back to top">
+        <span class="mark-glyph" aria-hidden="true"></span>
+        <span class="mark-name">Your Name</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#stack">Stack</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Open to roles &amp; projects</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ───────────── Hero: the introduction beside the map ───────────── -->
+    <section class="hero" id="top" aria-label="Introduction and a map of my work">
+      <div class="hero-side">
+        <div class="intro">
+          <p class="eyebrow">Full-stack developer</p>
+          <h1 class="display"><span class="dim">I build software that runs</span> <span class="em">where the work&nbsp;happens.</span></h1>
+          <p class="lede" id="lede">Office systems that install on one computer and need nothing else. Portals subscribers actually use. An Android app that still shows the balance when the office is offline.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="cta" href="#work">Read the case study</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="asker panel">
+          <div class="lens" role="group" aria-label="I'm visiting as">
+            <span class="lens-label" aria-hidden="true">Visiting as</span>
+            <button type="button" data-lens="recruiter" aria-pressed="false">Recruiter</button>
+            <button type="button" data-lens="client" aria-pressed="false">Client</button>
+            <button type="button" data-lens="faculty" aria-pressed="false">Faculty</button>
+          </div>
+          <form class="ask" id="ask-form" autocomplete="off">
+            <label class="sr-only" for="ask-input">Ask a question about my work</label>
+            <span class="ask-caret" aria-hidden="true">&gt;</span>
+            <input id="ask-input" name="q" type="text" placeholder="Ask about my work" maxlength="160">
+            <kbd class="ask-kbd" aria-hidden="true">/</kbd>
+            <button class="ask-go" type="submit" aria-label="Ask">
+              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+          <div class="chips" id="chips" aria-label="Suggested questions"></div>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <p class="stage-note mono" id="stage-note">Loading the map…</p>
+        <div class="stage-ui">
+          <div class="stage-tools">
+            <button type="button" class="tool explore" id="explore" aria-pressed="false">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 6V2h4M14 6V2h-4M2 10v4h4M14 10v4h-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span id="explore-label">Explore the map</span>
+            </button>
+            <button type="button" class="tool motion-toggle" id="motion-toggle" aria-pressed="false">
+              <span class="mt-track" aria-hidden="true"><span class="mt-knob"></span></span>
+              <span id="motion-label">Motion</span>
+            </button>
+          </div>
+          <div class="hud mono" aria-hidden="true">
+            <span id="hud-a">4 RINGS · 24 POINTS</span>
+            <span id="hud-b">AZ 020.1° · EL 21.2°</span>
+            <span id="hud-c">SCANNING</span>
+          </div>
+          <div class="legend-strip">
+            <p class="hint mono">
+              <span class="hint-mouse">Drag to turn · point at anything · or ask a question</span>
+              <span class="hint-touch">Swipe sideways to turn · tap a point</span>
+            </p>
+            <div class="ring-keys" role="group" aria-label="Rings on the map">
+              <button type="button" class="ring-key" data-ring-key="work" aria-pressed="false"><span class="rk-name">Work</span><span class="rk-note">Cable Manager's parts</span></button>
+              <button type="button" class="ring-key" data-ring-key="solved" aria-pressed="false"><span class="rk-name">Solved</span><span class="rk-note">Hard problems</span></button>
+              <button type="button" class="ring-key" data-ring-key="services" aria-pressed="false"><span class="rk-name">Services</span><span class="rk-note">What I can build</span></button>
+              <button type="button" class="ring-key" data-ring-key="tools" aria-pressed="false"><span class="rk-name">Tools</span><span class="rk-note">What I use</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="readout panel is-idle" id="readout" aria-live="polite" aria-label="Readout">
+        <div class="ro-top">
+          <span class="ro-kicker mono" id="ro-kicker"></span>
+          <button type="button" class="ro-reset" id="ro-reset">Close</button>
+        </div>
+        <h2 class="ro-title" id="ro-title"></h2>
+        <div class="ro-body" id="ro-body"></div>
+        <div class="ro-links" id="ro-links"></div>
+      </aside>
+    </section>
+
+    <!-- ───────────── Work ───────────── -->
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section-label" data-ring="work">
+        <span class="mono">Selected work</span>
+      </div>
+      <div class="section-body">
+        <article class="case">
+          <header class="case-head">
+            <p class="case-kicker mono">Thesis project · 2026</p>
+            <h2 class="case-title" id="work-title">Cable Manager</h2>
+            <p class="case-sum">Billing and subscriber management for a local cable and internet provider. It keeps one record of who is connected, what plan they're on, what they owe, what has been collected and what the office has spent.</p>
+          </header>
+
+          <dl class="spec">
+            <div><dt>Role</dt><dd>Full-stack developer</dd></div>
+            <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
+            <div><dt>Roles</dt><dd>4, enforced server-side</dd></div>
+            <div><dt>Test files</dt><dd>11, no dependencies</dd></div>
+          </dl>
+
+          <div class="brief">
+            <h3 class="h3">The brief</h3>
+            <p>It had to run on one office computer with no internet connection and nothing else installed. Subscribers still needed to see their bills and report payments from their phones, and the office had no IT staff to keep a server alive.</p>
+          </div>
+
+          <figure class="arch" aria-labelledby="arch-cap">
+            <div class="arch-row">
+              <div class="node">
+                <span class="node-tag mono">Windows installer</span>
+                <strong>Office system</strong>
+                <span class="node-meta">Apache 2.4 · MariaDB 10.4 · PHP 8.2, bundled</span>
+              </div>
+              <div class="node">
+                <span class="node-tag mono">Installable web app</span>
+                <strong>Subscriber portal</strong>
+                <span class="node-meta">Bills, payments, requests as a conversation</span>
+              </div>
+              <div class="node">
+                <span class="node-tag mono">Kotlin · Jetpack Compose</span>
+                <strong>Android app</strong>
+                <span class="node-meta">Reminders, QR payment, PDF receipts</span>
+              </div>
+            </div>
+            <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="node node-core">
+              <span class="node-tag mono">One database</span>
+              <strong>Subscribers, plans, bills, payments, expenses</strong>
+              <span class="node-meta">Reached from outside over Tailscale Funnel: permanent HTTPS, no router setup</span>
+            </div>
+            <figcaption id="arch-cap">Three ways in, one set of records. The office computer is the server.</figcaption>
+          </figure>
+
+          <div class="hard">
+            <h3 class="h3">What was hard, and what I did about it</h3>
+            <ul class="hard-list">
+              <li class="reveal">
+                <h4>A restore that can't half-happen</h4>
+                <p>Every restore takes a safety copy first, then empties and refills tables inside one transaction. It refuses a file that isn't a Cable Manager backup, is cut short, or comes from a newer version, before touching anything.</p>
+                <button type="button" class="map-link" data-node="restore">See it on the map</button>
+              </li>
+              <li class="reveal">
+                <h4>Sign-in throttling on all three doors</h4>
+                <p>Failed sign-ins are counted per account and per address across the office system, portal and app. Lockouts double up to 30 minutes, and every lock is written to the audit trail.</p>
+                <button type="button" class="map-link" data-node="throttle">See it on the map</button>
+              </li>
+              <li class="reveal">
+                <h4>An app that survives the office being off</h4>
+                <p>The Android app keeps the last answer it was given, so a subscriber still sees their balance when the office computer is shut down for the night.</p>
+                <button type="button" class="map-link" data-node="offline">See it on the map</button>
+              </li>
+              <li class="reveal">
+                <h4>Installing a whole server as one file</h4>
+                <p>A single installer ships its own web server, database and PHP. The launcher migrates the schema, takes a backup, keeps the thirty most recent, and shuts everything down cleanly on close.</p>
+                <button type="button" class="map-link" data-node="installer">See it on the map</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="build reveal">
+            <h3 class="h3">How it was built</h3>
+            <figure class="chart" id="build-chart">
+              <figcaption class="chart-head">
+                <span class="chart-title">Commits per week</span>
+                <span class="chart-sub" id="build-sub">121 commits, April to September 2026</span>
+              </figcaption>
+              <div class="chart-plot" id="build-plot"></div>
+            </figure>
+            <ol class="milestones" id="milestones"></ol>
+            <details class="table-view">
+              <summary>View the weekly numbers as a table</summary>
+              <div class="table-wrap"><table id="build-table"><thead><tr><th scope="col">Week of</th><th scope="col">Commits</th></tr></thead><tbody></tbody></table></div>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────── Services ───────────── -->
+    <section class="section wrap" id="services" aria-labelledby="services-title">
+      <div class="section-label" data-ring="services">
+        <span class="mono">Work with me</span>
+      </div>
+      <div class="section-body">
+        <h2 class="h2" id="services-title">What I can build for you</h2>
+        <div class="services">
+          <div class="service reveal">
+            <h3>Business systems</h3>
+            <p>Billing, inventory, records and reports for a small office, with roles so each person sees only their part.</p>
+            <button type="button" class="map-link" data-node="svc-business">See what it draws on</button>
+          </div>
+          <div class="service reveal">
+            <h3>Customer portals</h3>
+            <p>A website your customers sign into to see bills, pay and ask for help. Installable on a phone like an app.</p>
+            <button type="button" class="map-link" data-node="svc-portal">See what it draws on</button>
+          </div>
+          <div class="service reveal">
+            <h3>Android apps</h3>
+            <p>Native Kotlin apps that talk to your system, send reminders, and keep working on a bad connection.</p>
+            <button type="button" class="map-link" data-node="svc-android">See what it draws on</button>
+          </div>
+          <div class="service reveal">
+            <h3>Hands-off setup</h3>
+            <p>One-file installers, automatic backups and remote access, so the system runs without anyone babysitting it.</p>
+            <button type="button" class="map-link" data-node="svc-setup">See what it draws on</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Stack ───────────── -->
+    <section class="section wrap" id="stack" aria-labelledby="stack-title">
+      <div class="section-label" data-ring="tools">
+        <span class="mono">Stack</span>
+      </div>
+      <div class="section-body">
+        <h2 class="h2" id="stack-title">Tools I've shipped with</h2>
+        <p class="section-note">Tools with a mark are on the map: choose one to see what it was used for.</p>
+        <dl class="rows tags">
+          <div class="reveal"><dt class="mono">Web</dt><dd>
+            <button type="button" class="tag" data-node="php">PHP 8</button>
+            <button type="button" class="tag" data-node="mariadb">MariaDB / MySQL</button>
+            <button type="button" class="tag" data-node="js">JavaScript</button>
+            <span class="tag">HTML &amp; CSS</span>
+            <span class="tag">Progressive web apps</span>
+          </dd></div>
+          <div class="reveal"><dt class="mono">Mobile</dt><dd>
+            <button type="button" class="tag" data-node="kotlin">Kotlin</button>
+            <button type="button" class="tag" data-node="compose">Jetpack Compose</button>
+            <span class="tag">Material 3</span>
+          </dd></div>
+          <div class="reveal"><dt class="mono">Ops</dt><dd>
+            <button type="button" class="tag" data-node="apache">Apache</button>
+            <button type="button" class="tag" data-node="powershell">PowerShell</button>
+            <button type="button" class="tag" data-node="inno">Inno Setup</button>
+            <button type="button" class="tag" data-node="tailscale">Tailscale</button>
+            <button type="button" class="tag" data-node="git">Git</button>
+          </dd></div>
+          <div class="reveal"><dt class="mono">Practice</dt><dd>
+            <span class="tag">Prepared statements</span>
+            <span class="tag">CSRF tokens</span>
+            <span class="tag">bcrypt</span>
+            <button type="button" class="tag" data-node="throttle">Audit trails</button>
+            <button type="button" class="tag" data-node="tests">Automated tests</button>
+          </dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ───────────── About ───────────── -->
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <div class="section-label" data-ring="core">
+        <span class="mono">About</span>
+      </div>
+      <div class="section-body about">
+        <h2 class="h2" id="about-title">Hello, I'm Your Name.</h2>
+        <p>Write two or three sentences here in your own voice: where you study, what pulls you toward building things, and what you want to work on next.</p>
+        <dl class="rows">
+          <div><dt class="mono">Studying</dt><dd>Your program, Your university</dd></div>
+          <div><dt class="mono">Based in</dt><dd>Your city</dd></div>
+          <div><dt class="mono">Résumé</dt><dd><a href="resume.pdf">resume.pdf</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ───────────── Contact ───────────── -->
+    <section class="section wrap contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-label" data-ring="core">
+        <span class="mono">Contact</span>
+      </div>
+      <div class="section-body">
+        <h2 class="display display-sm" id="contact-title">Have something that needs to just&nbsp;work?</h2>
+        <div class="contact-row">
+          <div class="email">
+            <span class="email-text" id="email">you@example.com</span>
+            <button type="button" class="btn btn-ghost btn-sm" id="copy-email">Copy</button>
+          </div>
+          <div class="links">
+            <a href="https://github.com/Nathan-281000" rel="me noopener" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/your-handle" rel="me noopener" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© <span id="year">2026</span> Your Name</span>
+    <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
+  </footer>
+
+  <script src="data.js?v=5"></script>
+  <script src="ui.js?v=5"></script>
+  <script type="module">
+    import("./scene.js?v=5").catch(() => {
+      document.getElementById("stage").classList.add("no-gl");
+      document.getElementById("stage-note").textContent =
+        "The 3D map couldn't load here. Everything it shows is written out below.";
+    });
+  </script>
+</body>
+</html>
