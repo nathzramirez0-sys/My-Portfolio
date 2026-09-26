@@ -13,7 +13,7 @@
    ───────────────────────────────────────────── */
 
 window.PORTFOLIO = {
-  name: "Your Name",
+  name: "Nathz Ramirez",
 
   // Commits per week on the thesis repository (Monday to Sunday), from git log.
   // Milestones are dated commits, reworded.
@@ -189,7 +189,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
-      text: "I'm a full-stack developer who likes software that keeps working when conditions aren't ideal. The About section has where I study and a link to my résumé.",
+      text: "I'm Nathz Ramirez, a Computer Science student at the University of Pangasinan – PHINMA. I build web and mobile software that keeps working when conditions aren't ideal. The About section has a little more.",
       nodes: ["core"],
       sources: [["#about", "About"]],
     },
@@ -210,7 +210,7 @@ window.PORTFOLIO = {
     },
     recruiter: {
       lede: "Full-stack developer with a shipped thesis system: an office server, a subscriber portal and an Android app sharing one database, backed by automated tests.",
-      cta: ["#about", "Background & résumé"],
+      cta: ["#about", "About me"],
       chips: ["What's your stack?", "What was the hardest part?", "How do you test your code?", "Are you open to roles?"],
       rings: ["solved", "tools"],
     },

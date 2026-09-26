@@ -653,7 +653,7 @@ html:not(.motion) .cursor { animation: none; }
 
 .spec {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-block: 1px solid var(--line);
 }
 .spec > div { padding: 16px 16px 16px 0; }
@@ -661,9 +661,8 @@ html:not(.motion) .cursor { animation: none; }
 .spec dt { font-family: var(--font-mono); font-size: var(--step--2); color: var(--faint); text-transform: uppercase; letter-spacing: 0.12em; }
 .spec dd { margin-top: 6px; font-weight: 500; }
 @media (max-width: 640px) {
-  .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .spec > div:nth-child(3) { padding-left: 0; border-left: 0; }
-  .spec > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .spec { grid-template-columns: minmax(0, 1fr); }
+  .spec > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
 }
 
 .brief p { max-width: 38em; }

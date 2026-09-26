@@ -1,7 +1,9 @@
-# Your Name
+# Nathz Ramirez
 
 > Full-stack developer. I build software that runs where the work happens: office systems that install on one computer, customer portals, and native Android apps. Open to full-time roles and freelance projects.
 
+Studying: Computer Science, University of Pangasinan – PHINMA (Pangasinan, Philippines)
+Languages: English, Tagalog
 Contact: nathzramirez0@gmail.com
 GitHub: https://github.com/nathzramirez0-sys
 

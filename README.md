@@ -26,15 +26,12 @@ After changing a CSS or JS file, raise the `?v=5` number on its link in
 `index.html` (all four use the same number). Browsers otherwise keep
 showing the old copy.
 
-## Before you publish
+## Details on the page
 
-Search all files for these placeholders and replace them:
-
-- `Your Name` (in `index.html`, `data.js` and `llms.txt`)
-- `your-handle` (the LinkedIn link in `index.html`)
-- The About paragraph, `Your program, Your university` and `Your city`
-- `resume.pdf`: put your résumé in this folder under that name
-- The "Role" line in the case study, if "Full-stack developer" isn't accurate
+Name, education, location, languages and the About paragraph come from my
+CV. Left out until I have them: a LinkedIn link, a résumé download, and my
+role on the thesis (add a `<div><dt>Role</dt><dd>…</dd></div>` back to the
+case study's `.spec` list and set the grid to four columns).
 
 ## Adding a project
 
