@@ -13,7 +13,7 @@
    ───────────────────────────────────────────── */
 
 window.PORTFOLIO = {
-  name: "Nathz Ramirez",
+  name: "Jonathan Cercenina Ramirez",
 
   // Commits per week on the thesis repository (Monday to Sunday), from git log.
   // Milestones are dated commits, reworded.
@@ -195,7 +195,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
-      text: "I'm Nathz Ramirez, a Computer Science student at the University of Pangasinan – PHINMA. I build web and mobile software that keeps working when conditions aren't ideal. The About section has a little more.",
+      text: "I'm Jonathan Cercenina Ramirez, a Computer Science student at the University of Pangasinan – PHINMA. I build web and mobile software that keeps working when conditions aren't ideal. The About section has a little more.",
       nodes: ["core"],
       sources: [["#about", "About"]],
     },
