@@ -50,7 +50,11 @@ const COL = {
 /* ───────────── Renderer, bloom, camera, controls ───────────── */
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.75);
+// phones and modest machines get a lighter map: no bloom, fewer
+// particles and a lower pixel ratio. A slow start switches it on too.
+const lowPower = window.innerWidth < 1024 || (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+let lite = lowPower;
+let pixelRatio = Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 1.75);
 renderer.setPixelRatio(pixelRatio);
 renderer.domElement.className = "stage-canvas";
 
@@ -67,6 +71,7 @@ composer.setPixelRatio(pixelRatio);
 composer.addPass(new RenderPass(scene, camera));
 // strength, radius, threshold: only the brightest light blooms
 const bloom = new UnrealBloomPass(new THREE.Vector2(512, 512), 0.62, 0.45, 0.5);
+bloom.enabled = !lite;
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
 
@@ -421,7 +426,7 @@ const starUniforms = {
   uMotion: { value: calmAtLoad ? 0 : 1 },
 };
 const stars = (() => {
-  const N = 1300;
+  const N = lite ? 600 : 1300;
   const pos = new Float32Array(N * 3);
   const phase = new Float32Array(N);
   const sizes = new Float32Array(N);
@@ -571,7 +576,7 @@ feet.frustumCulled = false;
 scene.add(feet);
 
 // packets travel from the outer point of a link toward the inner one
-const PACKETS = 48;
+const PACKETS = lite ? 28 : 48;
 const packetGeo = new THREE.BufferGeometry();
 packetGeo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(PACKETS * 3), 3));
 packetGeo.setAttribute("color", new THREE.BufferAttribute(new Float32Array(PACKETS * 4), 4));
@@ -933,6 +938,15 @@ function writeSegments(buf, list, ends) {
 }
 
 let last = performance.now();
+const perf = { frames: 0, total: 0, done: lite };
+function goLite() {
+  lite = true;
+  bloom.enabled = false;
+  pixelRatio = Math.min(window.devicePixelRatio || 1, 1.25);
+  renderer.setPixelRatio(pixelRatio);
+  composer.setPixelRatio(pixelRatio);
+  fit();
+}
 let running = false;
 
 function frame(now) {
@@ -941,6 +955,15 @@ function frame(now) {
   const dt = Math.min(0.05, (now - last) / 1000);
   last = now;
   const t = (now - t0) / 1000 + (calmAtLoad ? 99 : 0);
+  // watch the first few seconds; if frames come slower than ~35 a second, lighten up
+  if (!perf.done && (now - t0) / 1000 > 2) {
+    perf.frames++;
+    perf.total += dt;
+    if (perf.frames >= 120) {
+      perf.done = true;
+      if (perf.total / perf.frames > 1 / 35) goLite();
+    }
+  }
   const k = still ? 1 : 1 - Math.pow(0.001, dt); // frame-rate independent easing
 
   // rings turn unless something has the visitor's attention

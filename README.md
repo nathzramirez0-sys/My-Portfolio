@@ -21,6 +21,8 @@ Then open `http://localhost:5510/`.
 | `ui.js` | The ask box, the readout panel, the visitor lens, the build-log chart, and the "See it on the map" links |
 | `llms.txt` | A plain-text copy of the page for AI agents and crawlers |
 | `favicon.svg` | The tab icon |
+| `og-image.png` | The picture shown when the link is shared (1200×630) |
+| `404.html` | The page GitHub shows for a mistyped address |
 
 After changing a CSS or JS file, raise the `?v=5` number on its link in
 `index.html` (all four use the same number). Browsers otherwise keep

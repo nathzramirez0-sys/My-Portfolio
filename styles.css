@@ -17,7 +17,7 @@
   --node: #c7cdd6;
   --text: #e3e6ea;
   --muted: #939ba7;
-  --faint: #646c79;
+  --faint: #828a97;
   --accent: #8fcbe0;
   --accent-hover: #a9d8ea;
   --accent-ink: #0b1a20;
@@ -205,7 +205,9 @@ button { font: inherit; }
   --slide: 0.7s cubic-bezier(0.6, 0, 0.2, 1);
 
   position: relative;
-  height: clamp(680px, 90vh, 920px);
+  display: grid;
+  grid-template-columns: var(--side) minmax(0, 1fr);
+  min-height: clamp(680px, 90vh, 920px);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -230,15 +232,31 @@ button { font: inherit; }
   text-align: center; color: var(--faint);
 }
 .stage.is-ready .stage-note { display: none; }
+.stage.no-gl .stage-note { top: auto; bottom: 18%; transform: translateX(-50%); }
+
+/* a still drawing of the map, for browsers where 3D can't run */
+.stage-fallback {
+  display: none;
+  position: absolute; left: calc(50% + var(--side) / 2); top: 46%;
+  transform: translate(-50%, -50%);
+  width: min(62%, 760px); height: auto;
+}
+.stage.no-gl .stage-fallback { display: block; }
+.stage-fallback ellipse { stroke: var(--orbit); }
+.fb-beams line { stroke: var(--accent-line); }
+.fb-points circle { fill: var(--accent); }
+.fb-quiet circle { fill: var(--node); opacity: 0.6; }
+.fb-core { fill: var(--text); }
 
 /* the introduction column, solid so nothing of the map sits behind the text */
 .hero-side {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 0; bottom: 0; left: 0;
-  width: var(--side);
+  grid-column: 1; grid-row: 1;
   display: flex; flex-direction: column; gap: 28px;
-  padding-block: clamp(32px, 4vw, 56px) clamp(20px, 2.5vw, 32px);
+  /* room at the bottom for the ask box, which sits in the dock below */
+  padding-top: clamp(32px, 4vw, 56px);
+  padding-bottom: calc(var(--dock-h, 220px) + clamp(20px, 2.5vw, 32px) + 28px);
   padding-left: var(--edge);
   padding-right: 36px;
   /* the map's grid and stars show through at the far left; the backing
@@ -575,13 +593,14 @@ html:not(.motion) .cursor { animation: none; }
 
 /* Narrow screens: intro, then the map, then the ask box and the readout */
 @media (max-width: 1023px) {
-  .hero { height: auto; overflow: visible; display: flex; flex-direction: column; }
+  .hero { min-height: 0; overflow: visible; display: flex; flex-direction: column; }
   .hero-side { display: contents; }
   .dock { display: contents; }
   .stage::before { display: none; }
   .intro { order: 1; padding: 36px var(--gutter) 4px; }
   .stage { position: relative; order: 2; height: clamp(360px, 100vw, 600px); }
-  .stage-note { left: 50%; }
+  .stage-note, .stage-fallback { left: 50%; }
+  .stage-fallback { width: 88%; }
   .explore, .hud { display: none; }
   .stage-tools { left: auto; right: var(--gutter); top: 12px; }
   .stage::after { background: radial-gradient(ellipse 80% 75% at 50% 50%, transparent 55%, rgba(6, 8, 11, 0.5) 100%); }

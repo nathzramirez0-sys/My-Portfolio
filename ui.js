@@ -116,6 +116,13 @@
   // centre in the rest (answers sit in that column, so nothing else covers it)
   const heroEl = $("top");
   const side = document.querySelector(".hero-side");
+  // the introduction column keeps clear of the ask box, however its suggestions wrap
+  const askerEl = document.querySelector(".asker");
+  const setDock = () => heroEl.style.setProperty("--dock-h", askerEl.offsetHeight + "px");
+  if ("ResizeObserver" in window) new ResizeObserver(setDock).observe(askerEl);
+  setDock();
+  window.addEventListener("load", setDock);
+  if (document.fonts) document.fonts.ready.then(setDock);
   function layout() {
     const wide = window.innerWidth >= 1024;
     const left = wide && !heroEl.classList.contains("is-exploring") ? side.getBoundingClientRect().width : 0;
@@ -329,6 +336,7 @@
     );
     lensButtons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lens === currentLens)));
     map()?.setLens(currentLens);
+    setDock(); // the suggestions just changed, and with them the ask box's height
     try { localStorage.setItem("lens", currentLens); } catch (e) {}
   }
 
