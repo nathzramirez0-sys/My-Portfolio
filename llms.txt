@@ -5,13 +5,13 @@
 Studying: Computer Science, University of Pangasinan – PHINMA (Pangasinan, Philippines)
 Languages: English, Tagalog
 Contact: nathzramirez0@gmail.com
-GitHub: https://github.com/nathzramirez0-sys
+GitHub: https://github.com/nathzramirez0-sys and https://github.com/Nathan-281000
 
 ## Selected work
 
 ### Cable Manager (thesis project, 2026)
 
-Role: Full-stack developer.
+Role: Full-stack developer. Source code is not public (built for a real client); walkthroughs on request.
 
 Billing and subscriber management for a local cable and internet provider. One set of records, reached three ways:
 

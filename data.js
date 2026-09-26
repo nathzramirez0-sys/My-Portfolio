@@ -136,6 +136,12 @@ window.PORTFOLIO = {
       sources: [["#work", "Case study"]],
     },
     {
+      keys: ["source code", "the code", "see the code", "see your code", "code public", "repo", "repository", "open source", "github"],
+      text: "Cable Manager's code isn't public, because it was built for a real client, but I'm glad to walk you through it on a call. My GitHub accounts are github.com/nathzramirez0-sys and github.com/Nathan-281000.",
+      nodes: ["git"],
+      sources: [["#work", "Case study"], ["#contact", "Contact"]],
+    },
+    {
       keys: ["stack", "tech", "technologies", "language", "languages", "framework", "frameworks", "tools"],
       text: "PHP 8 and MariaDB on the web side, Kotlin with Jetpack Compose on Android, and PowerShell, Inno Setup and Tailscale to package and deploy it. I keep dependencies low: the Android app uses Android's own HTTP and JSON classes, and the test runner needs nothing installed.",
       nodes: ["php", "mariadb", "js", "kotlin", "compose", "apache", "powershell", "inno", "tailscale", "git"],

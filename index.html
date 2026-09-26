@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -153,6 +153,8 @@
             <div><dt>Roles</dt><dd>4, enforced server-side</dd></div>
             <div><dt>Test files</dt><dd>11, no dependencies</dd></div>
           </dl>
+
+          <p class="case-note"><span class="mono">Source code</span> Not public: Cable Manager was built for a real client. I'm glad to walk you through the code on a call.</p>
 
           <div class="brief">
             <h3 class="h3">The brief</h3>
@@ -331,7 +333,8 @@
             <button type="button" class="btn btn-ghost btn-sm" id="copy-email">Copy</button>
           </div>
           <div class="links">
-            <a href="https://github.com/nathzramirez0-sys" rel="me noopener" target="_blank">GitHub</a>
+            <a href="https://github.com/nathzramirez0-sys" rel="me noopener" target="_blank">GitHub · nathzramirez0-sys</a>
+            <a href="https://github.com/Nathan-281000" rel="me noopener" target="_blank">GitHub · Nathan-281000</a>
           </div>
         </div>
       </div>
@@ -343,10 +346,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=9"></script>
-  <script src="ui.js?v=9"></script>
+  <script src="data.js?v=10"></script>
+  <script src="ui.js?v=10"></script>
   <script type="module">
-    import("./scene.js?v=9").catch(() => {
+    import("./scene.js?v=10").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

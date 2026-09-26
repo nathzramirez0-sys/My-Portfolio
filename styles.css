@@ -661,6 +661,9 @@ html:not(.motion) .cursor { animation: none; }
 .spec > div + div { padding-left: 16px; border-left: 1px solid var(--line); }
 .spec dt { font-family: var(--font-mono); font-size: var(--step--2); color: var(--faint); text-transform: uppercase; letter-spacing: 0.12em; }
 .spec dd { margin-top: 6px; font-weight: 500; }
+/* a quiet line under the summary row, sitting close to it */
+.case-note { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: -28px; color: var(--muted); font-size: 0.9375rem; }
+.case-note .mono { color: var(--faint); font-size: var(--step--2); text-transform: uppercase; letter-spacing: 0.12em; }
 @media (max-width: 640px) {
   .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .spec > div:nth-child(3) { padding-left: 0; border-left: 0; }
