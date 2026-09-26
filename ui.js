@@ -112,14 +112,14 @@
   };
   let streamId = 0;
 
-  // tell the map how much of it is covered, so it can centre in the rest
+  // tell the map how much of it the introduction column covers, so it can
+  // centre in the rest (answers sit in that column, so nothing else covers it)
   const heroEl = $("top");
   const side = document.querySelector(".hero-side");
   function layout() {
     const wide = window.innerWidth >= 1024;
     const left = wide && !heroEl.classList.contains("is-exploring") ? side.getBoundingClientRect().width : 0;
-    const right = wide && !ro.panel.classList.contains("is-idle") ? ro.panel.offsetWidth + 24 : 0;
-    map()?.setInsets(left, right);
+    map()?.setInsets(left, 0);
   }
   window.addEventListener("resize", layout);
   document.addEventListener("portfolio:scene-ready", layout);

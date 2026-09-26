@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=14">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -81,25 +81,6 @@
             </div>
           </div>
         </div>
-
-        <div class="asker panel">
-          <div class="lens" role="group" aria-label="I'm visiting as">
-            <span class="lens-label" aria-hidden="true">Visiting as</span>
-            <button type="button" data-lens="recruiter" aria-pressed="false">Recruiter</button>
-            <button type="button" data-lens="client" aria-pressed="false">Client</button>
-            <button type="button" data-lens="faculty" aria-pressed="false">Faculty</button>
-          </div>
-          <form class="ask" id="ask-form" autocomplete="off">
-            <label class="sr-only" for="ask-input">Ask a question about my work</label>
-            <span class="ask-caret" aria-hidden="true">&gt;</span>
-            <input id="ask-input" name="q" type="text" placeholder="Ask about my work" maxlength="160">
-            <kbd class="ask-kbd" aria-hidden="true">/</kbd>
-            <button class="ask-go" type="submit" aria-label="Ask">
-              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </form>
-          <div class="chips" id="chips" aria-label="Suggested questions"></div>
-        </div>
       </div>
 
       <div class="stage" id="stage">
@@ -136,15 +117,36 @@
         </div>
       </div>
 
-      <aside class="readout panel is-idle" id="readout" aria-live="polite" aria-label="Readout">
-        <div class="ro-top">
-          <span class="ro-kicker mono" id="ro-kicker"></span>
-          <button type="button" class="ro-reset" id="ro-reset">Close</button>
-        </div>
-        <h2 class="ro-title" id="ro-title"></h2>
-        <div class="ro-body" id="ro-body"></div>
-        <div class="ro-links" id="ro-links"></div>
-      </aside>
+      <!-- answers appear above the ask box, in the left column, so the map stays clear -->
+      <div class="dock">
+        <aside class="readout panel is-idle" id="readout" aria-live="polite" aria-label="Readout">
+          <div class="ro-top">
+            <span class="ro-kicker mono" id="ro-kicker"></span>
+            <button type="button" class="ro-reset" id="ro-reset">Close</button>
+          </div>
+          <h2 class="ro-title" id="ro-title"></h2>
+          <div class="ro-body" id="ro-body"></div>
+          <div class="ro-links" id="ro-links"></div>
+        </aside>
+          <div class="asker panel">
+            <div class="lens" role="group" aria-label="I'm visiting as">
+              <span class="lens-label" aria-hidden="true">Visiting as</span>
+              <button type="button" data-lens="recruiter" aria-pressed="false">Recruiter</button>
+              <button type="button" data-lens="client" aria-pressed="false">Client</button>
+              <button type="button" data-lens="faculty" aria-pressed="false">Faculty</button>
+            </div>
+            <form class="ask" id="ask-form" autocomplete="off">
+              <label class="sr-only" for="ask-input">Ask a question about my work</label>
+              <span class="ask-caret" aria-hidden="true">&gt;</span>
+              <input id="ask-input" name="q" type="text" placeholder="Ask about my work" maxlength="160">
+              <kbd class="ask-kbd" aria-hidden="true">/</kbd>
+              <button class="ask-go" type="submit" aria-label="Ask">
+                <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+            <div class="chips" id="chips" aria-label="Suggested questions"></div>
+          </div>
+      </div>
     </section>
 
     <!-- ───────────── Work ───────────── -->
@@ -434,10 +436,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=13"></script>
-  <script src="ui.js?v=13"></script>
+  <script src="data.js?v=14"></script>
+  <script src="ui.js?v=14"></script>
   <script type="module">
-    import("./scene.js?v=13").catch(() => {
+    import("./scene.js?v=14").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";
