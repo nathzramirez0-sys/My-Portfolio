@@ -117,9 +117,11 @@ function circlePoints(r, seg = 48, plane = "xy") {
   return pts;
 }
 
-// one shape per ring: work is a turning octahedron, solved a ring,
-// services a diamond, tools a plain point
+// one shape per ring, named in data.js: the thesis is a turning
+// octahedron, projects a turning cube, solved a ring, services a diamond,
+// tools a plain point
 const OCTA = new THREE.EdgesGeometry(new THREE.OctahedronGeometry(0.27));
+const CUBE = new THREE.EdgesGeometry(new THREE.BoxGeometry(0.3, 0.3, 0.3));
 const RING_BADGE = loopGeometry(circlePoints(0.19));
 const DIAMOND = loopGeometry([
   new THREE.Vector3(0, 0.23, 0), new THREE.Vector3(0.23, 0, 0),
@@ -173,7 +175,7 @@ const gridUniforms = {
 };
 const grid = (() => {
   const pts = [];
-  for (let r = 1; r <= 13; r++) {
+  for (let r = 1; r <= 20; r++) {
     const seg = r * 24;
     for (let i = 0; i < seg; i++) {
       const a0 = (i / seg) * TAU, a1 = ((i + 1) / seg) * TAU;
@@ -182,7 +184,7 @@ const grid = (() => {
   }
   for (let d = 0; d < 360; d += 15) {
     const a = (d * Math.PI) / 180;
-    pts.push(Math.cos(a) * 1.2, 0, Math.sin(a) * 1.2, Math.cos(a) * 13, 0, Math.sin(a) * 13);
+    pts.push(Math.cos(a) * 1.2, 0, Math.sin(a) * 1.2, Math.cos(a) * 20, 0, Math.sin(a) * 20);
   }
   const geo = new THREE.BufferGeometry();
   geo.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
@@ -211,7 +213,7 @@ const grid = (() => {
       varying vec3 vPos;
       void main() {
         float r = length(vPos.xz);
-        float fade = (1.0 - smoothstep(5.5, 13.0, r)) * smoothstep(0.8, 2.2, r);
+        float fade = (1.0 - smoothstep(7.0, 20.0, r)) * smoothstep(0.8, 2.2, r);
         float cursor = uCursorOn * (1.0 - smoothstep(0.0, 3.4, distance(vPos.xz, uCursor)));
         float pulse = uPulseAmt * (1.0 - smoothstep(0.0, 0.8, abs(r - uPulse)));
         float ripple = uRippleAmt * (1.0 - smoothstep(0.0, 0.55, abs(distance(vPos.xz, uRipple) - uRippleR)));
@@ -288,7 +290,8 @@ DATA.rings.forEach((ring, ri) => {
   orbit.add(new THREE.Points(beltGeo, beltMat));
 
   const list = DATA.nodes.filter((n) => n.ring === ring.id);
-  const size = ri === 0 ? 0.1 : ri === DATA.rings.length - 1 ? 0.065 : 0.08;
+  const shape = ring.shape || "dot";
+  const size = { octa: 0.1, cube: 0.09, dot: 0.065 }[shape] || 0.08;
   const tail = Math.sign(ring.speed) || 1; // points move toward lower angles when speed > 0
   const trailLength = 2.2 / ring.radius;
 
@@ -308,8 +311,8 @@ DATA.rings.forEach((ring, ri) => {
     mesh.add(aura);
 
     let octa = null;
-    if (ri === 0) {
-      octa = new THREE.LineSegments(OCTA, lineMaterial(COL.node.clone(), 0.8));
+    if (shape === "octa" || shape === "cube") {
+      octa = new THREE.LineSegments(shape === "octa" ? OCTA : CUBE, lineMaterial(COL.node.clone(), 0.8));
       octa.rotation.set(Math.random(), Math.random(), 0);
       mesh.add(octa);
     }
@@ -327,8 +330,8 @@ DATA.rings.forEach((ring, ri) => {
     );
     bill.add(halo);
     let badge = null;
-    if (ri === 1) badge = new THREE.LineLoop(RING_BADGE, lineMaterial(COL.node.clone(), 0.6));
-    if (ri === 2) badge = new THREE.LineLoop(DIAMOND, lineMaterial(COL.node.clone(), 0.6));
+    if (shape === "ring") badge = new THREE.LineLoop(RING_BADGE, lineMaterial(COL.node.clone(), 0.6));
+    if (shape === "diamond") badge = new THREE.LineLoop(DIAMOND, lineMaterial(COL.node.clone(), 0.6));
     if (badge) bill.add(badge);
 
     // a fading trail behind the point as it travels
@@ -418,12 +421,12 @@ const starUniforms = {
   uMotion: { value: calmAtLoad ? 0 : 1 },
 };
 const stars = (() => {
-  const N = 700;
+  const N = 1300;
   const pos = new Float32Array(N * 3);
   const phase = new Float32Array(N);
   const sizes = new Float32Array(N);
   for (let i = 0; i < N; i++) {
-    const r = 2 + Math.pow(Math.random(), 0.55) * 14;
+    const r = 2 + Math.pow(Math.random(), 0.7) * 26;
     const a = Math.random() * TAU;
     pos.set([Math.cos(a) * r, (Math.random() - 0.35) * (1.5 + r * 0.55), Math.sin(a) * r], i * 3);
     phase[i] = Math.random();
@@ -1069,7 +1072,7 @@ function frame(now) {
       n.badge.material.color.copy(COL.node).lerp(COL.accent, glow);
       n.badge.material.opacity = n.appear * (0.12 + n.level * 0.5);
     }
-    if (n.trailMat) n.trailMat.opacity = n.appear * state.spin * (n.ri === 0 ? 0.55 : 0.3) * n.level;
+    if (n.trailMat) n.trailMat.opacity = n.appear * state.spin * (n.ri <= 1 ? 0.5 : 0.3) * n.level;
 
     n.bill.position.copy(p);
     n.bill.quaternion.copy(camera.quaternion);
@@ -1086,7 +1089,7 @@ function frame(now) {
     if (l.node) {
       const n = l.node;
       l.base = n.appear * clamp01(Math.max(n.level, n.swept * 0.8) * 1.1) * n.near;
-      l.prio = n.lit * 10 + (n.id === state.hover ? 10 : 0) + n.level * 2 + (n.ri === 0 ? 1.5 : 0) + (n.id === "core" ? 2.5 : 0) + n.near;
+      l.prio = n.lit * 10 + (n.id === state.hover ? 10 : 0) + n.level * 2 + (n.ri === 0 ? 1.5 : n.ri === 1 ? 1 : 0) + (n.id === "core" ? 2.5 : 0) + n.near;
     } else {
       l.base = l.ring.tagBase;
       l.prio = 0.4 * l.ring.emphasis;
@@ -1180,7 +1183,7 @@ function frame(now) {
   offset.setFromSpherical(sph);
   camera.position.copy(controls.target).add(offset);
   controls.update();
-  camera.setViewOffset(view.w, view.h, -(state.curL - state.curR) / 2, 0, view.w, view.h);
+  camera.setViewOffset(view.w, view.h, -(state.curL - state.curR) / 2, narrow ? 0 : view.h * 0.045, view.w, view.h);
   writeHud(sph);
 
   scene.updateMatrixWorld();

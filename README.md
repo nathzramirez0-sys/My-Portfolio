@@ -33,10 +33,11 @@ CV. Left out until I have them: a LinkedIn link and a résumé download.
 
 ## Adding a project
 
-1. Write it up as a new section in `index.html`.
-2. In `data.js`, add a point for it on the `work` ring, link it to the
-   tools and problems it involved in `edges`, and add an answer whose
-   `nodes` light it up.
+1. Add a card to the "More projects" section in `index.html`, and a
+   button for it in the hero's "Also built" list.
+2. In `data.js`, add a point for it on the `projects` ring, link it to the
+   tools and services it involved in `edges` (and to `core`), and add it
+   to the "what else have you built?" answer.
 3. Add a few lines to `llms.txt`.
 
 ## Keeping the build log current

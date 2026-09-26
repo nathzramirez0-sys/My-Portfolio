@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=12">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -47,6 +47,7 @@
       </a>
       <nav class="nav" aria-label="Sections">
         <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
         <a href="#services">Services</a>
         <a href="#stack">Stack</a>
         <a href="#about">About</a>
@@ -67,6 +68,17 @@
           <div class="cta-row">
             <a class="btn btn-primary" id="cta" href="#work">Read the case study</a>
             <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+          <div class="also">
+            <span class="also-label mono">Also built</span>
+            <div class="also-list">
+              <button type="button" data-node="p-arts">Arts &amp; Design Showcase</button>
+              <button type="button" data-node="p-auction">Auction Market</button>
+              <button type="button" data-node="p-court">St. Francis Court</button>
+              <button type="button" data-node="p-pucu">PUCU Event Calendar</button>
+              <button type="button" data-node="p-campus">Campus App</button>
+              <button type="button" data-node="p-ucwd">UCWD Leave Monitoring</button>
+            </div>
           </div>
         </div>
 
@@ -114,7 +126,8 @@
               <span class="hint-touch">Swipe sideways to turn · tap a point</span>
             </p>
             <div class="ring-keys" role="group" aria-label="Rings on the map">
-              <button type="button" class="ring-key" data-ring-key="work" aria-pressed="false"><span class="rk-name">Work</span><span class="rk-note">Cable Manager's parts</span></button>
+              <button type="button" class="ring-key" data-ring-key="work" aria-pressed="false"><span class="rk-name">Thesis</span><span class="rk-note">Cable Manager's parts</span></button>
+              <button type="button" class="ring-key" data-ring-key="projects" aria-pressed="false"><span class="rk-name">Projects</span><span class="rk-note">Other work</span></button>
               <button type="button" class="ring-key" data-ring-key="solved" aria-pressed="false"><span class="rk-name">Solved</span><span class="rk-note">Hard problems</span></button>
               <button type="button" class="ring-key" data-ring-key="services" aria-pressed="false"><span class="rk-name">Services</span><span class="rk-note">What I can build</span></button>
               <button type="button" class="ring-key" data-ring-key="tools" aria-pressed="false"><span class="rk-name">Tools</span><span class="rk-note">What I use</span></button>
@@ -233,6 +246,81 @@
       </div>
     </section>
 
+    <!-- ───────────── More projects ───────────── -->
+    <section class="section wrap" id="projects" aria-labelledby="projects-title">
+      <div class="section-label" data-ring="projects">
+        <span class="mono">More projects</span>
+      </div>
+      <div class="section-body">
+        <h2 class="h2" id="projects-title">Other things I've built</h2>
+        <p class="section-note">Solo work, and team projects where I was a programmer.</p>
+        <div class="projects">
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Web app</span><span>2026</span></p>
+            <h3 class="project-title">Arts &amp; Design Showcase</h3>
+            <p class="project-text">A gallery where visitors browse artworks and artist profiles, search, and send artists a message. An admin area manages artists and artworks.</p>
+            <ul class="project-tags"><li>PHP</li><li>MySQL</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Programmer</span>
+              <button type="button" class="map-link" data-node="p-arts">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Web app</span><span>2026</span></p>
+            <h3 class="project-title">Auction Market</h3>
+            <p class="project-text">Sellers list items and buyers bid, with the current bid updating without reloading the page. An admin sees the analytics.</p>
+            <ul class="project-tags"><li>PHP</li><li>MySQL</li><li>JavaScript</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Programmer</span>
+              <button type="button" class="map-link" data-node="p-auction">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Web app</span><span>2025</span></p>
+            <h3 class="project-title">St. Francis Court</h3>
+            <p class="project-text">Court booking: players book and edit their slots, and the admin sees court usage, monthly bookings and revenue trends.</p>
+            <ul class="project-tags"><li>PHP</li><li>MySQL</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Programmer</span>
+              <button type="button" class="map-link" data-node="p-court">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Web app</span><span>2025</span></p>
+            <h3 class="project-title">PUCU Event Calendar</h3>
+            <p class="project-text">A school event calendar. Organisations have their own dashboard, admins manage users, and events show as upcoming, pending or recently finished.</p>
+            <ul class="project-tags"><li>PHP</li><li>MySQL</li><li>JavaScript</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Team</b> · Programmer</span>
+              <button type="button" class="map-link" data-node="p-pucu">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Android app</span><span>2025</span></p>
+            <h3 class="project-title">ITE 393 Campus App</h3>
+            <p class="project-text">A campus companion: sign-in, student profiles, a floor-by-floor building map, events, courses and modules.</p>
+            <ul class="project-tags"><li>Kotlin</li><li>Firebase</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Team</b> · Programmer</span>
+              <a class="project-code" href="https://github.com/Nathan-281000/ITE_393" target="_blank" rel="noopener">Code on GitHub ↗</a>
+              <button type="button" class="map-link" data-node="p-campus">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Android app</span><span>2025</span></p>
+            <h3 class="project-title">UCWD Leave Monitoring</h3>
+            <p class="project-text">Employees file leave applications from their phones, and the office tracks and summarises them. There's a web version too.</p>
+            <ul class="project-tags"><li>Kotlin</li><li>Firebase</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Team</b> · Programmer</span>
+              <a class="project-code" href="https://github.com/CodeDears2dot0/UCWD-Leave-Monitoring-System" target="_blank" rel="noopener">Code on GitHub ↗</a>
+              <button type="button" class="map-link" data-node="p-ucwd">On the map</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────── Services ───────────── -->
     <section class="section wrap" id="services" aria-labelledby="services-title">
       <div class="section-label" data-ring="services">
@@ -346,10 +434,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=11"></script>
-  <script src="ui.js?v=11"></script>
+  <script src="data.js?v=12"></script>
+  <script src="ui.js?v=12"></script>
   <script type="module">
-    import("./scene.js?v=11").catch(() => {
+    import("./scene.js?v=12").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

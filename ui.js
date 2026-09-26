@@ -586,7 +586,7 @@
   progress();
 
   // a soft light follows the pointer across cards
-  document.querySelectorAll(".service, .arch .node, .hard-list li, .asker").forEach((el) => {
+  document.querySelectorAll(".service, .arch .node, .hard-list li, .asker, .project").forEach((el) => {
     el.classList.add("spot");
     el.addEventListener("pointermove", (e) => {
       const r = el.getBoundingClientRect();
