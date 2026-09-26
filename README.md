@@ -29,9 +29,7 @@ showing the old copy.
 ## Details on the page
 
 Name, education, location, languages and the About paragraph come from my
-CV. Left out until I have them: a LinkedIn link, a résumé download, and my
-role on the thesis (add a `<div><dt>Role</dt><dd>…</dd></div>` back to the
-case study's `.spec` list and set the grid to four columns).
+CV. Left out until I have them: a LinkedIn link and a résumé download.
 
 ## Adding a project
 

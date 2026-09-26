@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -148,6 +148,7 @@
           </header>
 
           <dl class="spec">
+            <div><dt>Role</dt><dd>Full-stack developer</dd></div>
             <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
             <div><dt>Roles</dt><dd>4, enforced server-side</dd></div>
             <div><dt>Test files</dt><dd>11, no dependencies</dd></div>
@@ -342,10 +343,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=6"></script>
-  <script src="ui.js?v=6"></script>
+  <script src="data.js?v=7"></script>
+  <script src="ui.js?v=7"></script>
   <script type="module">
-    import("./scene.js?v=6").catch(() => {
+    import("./scene.js?v=7").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

@@ -128,6 +128,12 @@ window.PORTFOLIO = {
       sources: [["#work", "Case study"]],
     },
     {
+      keys: ["your role", "role in", "role on", "what was your role", "what did you do", "your part", "position"],
+      text: "My role on Cable Manager was full-stack developer. The case study below walks through what the system does and the problems it made me solve.",
+      nodes: ["office", "portal", "android-app", "remote"],
+      sources: [["#work", "Case study"]],
+    },
+    {
       keys: ["stack", "tech", "technologies", "language", "languages", "framework", "frameworks", "tools"],
       text: "PHP 8 and MariaDB on the web side, Kotlin with Jetpack Compose on Android, and PowerShell, Inno Setup and Tailscale to package and deploy it. I keep dependencies low: the Android app uses Android's own HTTP and JSON classes, and the test runner needs nothing installed.",
       nodes: ["php", "mariadb", "js", "kotlin", "compose", "apache", "powershell", "inno", "tailscale", "git"],

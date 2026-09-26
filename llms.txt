@@ -11,6 +11,8 @@ GitHub: https://github.com/nathzramirez0-sys
 
 ### Cable Manager (thesis project, 2026)
 
+Role: Full-stack developer.
+
 Billing and subscriber management for a local cable and internet provider. One set of records, reached three ways:
 
 - Office system: a single Windows installer (Inno Setup) that bundles Apache 2.4, MariaDB 10.4 and PHP 8.2. Runs on one office computer with no internet connection and nothing else installed.
