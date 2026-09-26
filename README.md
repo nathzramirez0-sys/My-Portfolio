@@ -31,7 +31,6 @@ showing the old copy.
 Search all files for these placeholders and replace them:
 
 - `Your Name` (in `index.html`, `data.js` and `llms.txt`)
-- `you@example.com` (in `index.html` and `llms.txt`)
 - `your-handle` (the LinkedIn link in `index.html`)
 - The About paragraph, `Your program, Your university` and `Your city`
 - `resume.pdf`: put your résumé in this folder under that name
