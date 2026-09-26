@@ -220,8 +220,8 @@ window.PORTFOLIO = {
       sources: [["#services", "Services"], ["#contact", "Contact"]],
     },
     {
-      keys: ["hire", "hiring", "available", "availability", "open to", "roles", "job", "work with", "start", "begin", "price", "cost", "rate", "quote", "email", "contact", "reach"],
-      text: (email) => `I'm open to full-time roles and freelance projects. The quickest way to reach me is email: ${email}. Send a few lines about what you need and I'll reply with next steps.`,
+      keys: ["internship", "intern", "ojt", "practicum", "cv", "resume", "hire", "hiring", "available", "availability", "open to", "roles", "job", "work with", "start", "begin", "price", "cost", "rate", "quote", "email", "contact", "reach"],
+      text: (email) => `I'm looking for an internship in software development, and I'm open to freelance projects. The quickest way to reach me is email: ${email}. My one-page CV is in the About section.`,
       nodes: ["core"],
       sources: [["#contact", "Contact"], ["#about", "About"]],
     },
@@ -233,7 +233,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
-      text: "I'm Jonathan Cercenina Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and six other projects. I'm available now for freelance and full-time work.",
+      text: "I'm Jonathan Cercenina Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and six other projects. I graduate in 2027 and I'm looking for an internship.",
       nodes: ["core"],
       sources: [["#about", "About"]],
     },
@@ -255,7 +255,7 @@ window.PORTFOLIO = {
     recruiter: {
       lede: "Full-stack developer with a shipped thesis system: an office server, a subscriber portal and an Android app sharing one database, backed by automated tests.",
       cta: ["#about", "About me"],
-      chips: ["What's your stack?", "What else have you built?", "What was the hardest part?", "Are you open to roles?"],
+      chips: ["What's your stack?", "What else have you built?", "What was the hardest part?", "Are you looking for an internship?"],
       rings: ["projects", "solved", "tools"],
     },
     client: {

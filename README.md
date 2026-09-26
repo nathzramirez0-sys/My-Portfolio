@@ -23,6 +23,8 @@ Then open `http://localhost:5510/`.
 | `favicon.svg` | The tab icon |
 | `og-image.png` | The picture shown when the link is shared (1200×630) |
 | `404.html` | The page GitHub shows for a mistyped address |
+| `Jonathan-Cercenina-Ramirez-CV.pdf` | My one-page CV, linked from About and Contact |
+| `cv/cv.html` | The source the CV PDF is printed from |
 
 After changing a CSS or JS file, raise the `?v=5` number on its link in
 `index.html` (all four use the same number). Browsers otherwise keep
@@ -31,7 +33,18 @@ showing the old copy.
 ## Details on the page
 
 Name, education, location, languages and the About paragraph come from my
-CV. Left out until I have them: a LinkedIn link and a résumé download.
+CV. Left out until I have one: a LinkedIn link.
+
+## Rebuilding the CV
+
+Edit `cv/cv.html`, then print it to PDF with Microsoft Edge (it keeps the
+fonts and selectable text, and must stay on one page):
+
+```bash
+"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="C:\\Users\\Jonathan\\Desktop\\My-Portfolio\\Jonathan-Cercenina-Ramirez-CV.pdf" "file:///C:/Users/Jonathan/Desktop/My-Portfolio/cv/cv.html"
+```
+
+It leaves out my phone number on purpose, since anyone can download it.
 
 ## Adding a project
 

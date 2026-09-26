@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jonathan Cercenina Ramirez · CV</title>
+  <!-- Source for Jonathan-Cercenina-Ramirez-CV.pdf. To rebuild the PDF, see the README. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    @page { size: A4; margin: 14mm 15mm 13mm; }
+    :root {
+      --ink: #1a1d22;
+      --body: #353a42;
+      --muted: #5d6470;
+      --line: #dfe3e8;
+      --accent: #2c7891;
+      --font: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+      --mono: "JetBrains Mono", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { margin: 0; color: var(--body); font: 400 9.4pt/1.42 var(--font); }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p, ul { margin: 0; }
+    ul { padding: 0; list-style: none; }
+
+    header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6pt 20pt; padding-bottom: 10pt; border-bottom: 1.4pt solid var(--ink); }
+    h1 { color: var(--ink); font-size: 23pt; font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
+    .role { margin-top: 4pt; color: var(--accent); font: 500 8.2pt/1.2 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+    .contact { text-align: right; font-size: 8.6pt; line-height: 1.5; color: var(--body); }
+    .contact b { color: var(--ink); font-weight: 600; }
+
+    section { display: grid; grid-template-columns: 27mm 1fr; gap: 0 5mm; padding-top: 9pt; }
+    section + section { margin-top: 6pt; border-top: 0.6pt solid var(--line); }
+    h2 { padding-top: 1pt; color: var(--accent); font: 500 7.6pt/1.3 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .summary { color: var(--ink); font-size: 9.8pt; line-height: 1.45; }
+
+    .item + .item { margin-top: 7pt; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+    h3 { color: var(--ink); font-size: 10.2pt; font-weight: 600; }
+    h3 span { color: var(--muted); font-weight: 400; }
+    .when { flex: none; color: var(--muted); font: 400 8pt/1 var(--mono); }
+    .tech { margin-top: 2pt; color: var(--muted); font: 400 7.9pt/1.35 var(--mono); }
+    .bullets { margin-top: 4pt; }
+    .bullets li { position: relative; padding-left: 10pt; }
+    .bullets li + li { margin-top: 2pt; }
+    .bullets li::before { content: ""; position: absolute; left: 1pt; top: 0.62em; width: 3.5pt; height: 3.5pt; border-radius: 50%; background: var(--accent); }
+
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 7pt 16pt; }
+    .project h3 { font-size: 9.6pt; }
+    .project .meta { margin-top: 1pt; color: var(--accent); font: 500 7.6pt/1.3 var(--mono); }
+    .project p { margin-top: 2pt; font-size: 8.8pt; line-height: 1.38; }
+
+    .rows > div { display: grid; grid-template-columns: 20mm 1fr; gap: 6pt; }
+    .rows > div + div { margin-top: 3pt; }
+    .rows dt { color: var(--ink); font-weight: 600; }
+    dl, dd { margin: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Jonathan Cercenina Ramirez</h1>
+      <p class="role">Full-stack developer · Computer Science student</p>
+    </div>
+    <div class="contact">
+      <b>nathzramirez0@gmail.com</b><br>
+      <a href="https://nathzramirez0-sys.github.io/My-Portfolio/">nathzramirez0-sys.github.io/My-Portfolio</a><br>
+      <a href="https://github.com/nathzramirez0-sys">github.com/nathzramirez0-sys</a><br>
+      Pangasinan, Philippines
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="summary">Computer Science student at the University of Pangasinan – PHINMA, graduating in 2027 and looking for an internship in software development. I build full-stack web and Android software. My thesis, Cable Manager, is billing and subscriber management for a local cable and internet provider: an office system, a subscriber portal and an Android app on one database.</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-head">
+        <h3>BS Computer Science <span>· University of Pangasinan – PHINMA</span></h3>
+        <span class="when">Expected 2027</span>
+      </div>
+      <p class="tech">Thesis: Cable Manager, as full-stack developer</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Thesis</h2>
+    <div class="item">
+      <div class="item-head">
+        <h3>Cable Manager <span>· Full-stack developer</span></h3>
+        <span class="when">2026</span>
+      </div>
+      <p class="tech">PHP&nbsp;8 · MariaDB · Apache · JavaScript · Kotlin · Jetpack&nbsp;Compose · PowerShell · Inno&nbsp;Setup · Tailscale</p>
+      <ul class="bullets">
+        <li>Built billing and subscriber management for a local cable and internet provider, delivered three ways on one database: an office system, a subscriber portal that installs on a phone, and a native Android app.</li>
+        <li>Packaged the office system as a single Windows installer that bundles its own Apache, MariaDB and PHP, so it runs on one computer with no internet connection and nothing else installed.</li>
+        <li>Made backup restores atomic: a safety copy first, then tables refilled inside one transaction, refusing wrong, truncated or newer backup files before touching anything.</li>
+        <li>Secured it with bcrypt, prepared statements, CSRF tokens, server-side access control for four roles, and sign-in throttling on all three entry points with an audit trail.</li>
+        <li>Wrote 11 automated test files that run with one command and rebuild a throwaway database on every run.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <div class="item-head"><h3>Arts &amp; Design Showcase</h3><span class="when">2026</span></div>
+        <p class="meta">Solo · Full-stack · PHP, MySQL</p>
+        <p>A gallery of artworks and artist profiles with search, messaging and an admin area for managing artists and artworks.</p>
+      </div>
+      <div class="project">
+        <div class="item-head"><h3>Auction Market</h3><span class="when">2026</span></div>
+        <p class="meta">Solo · Full-stack · PHP, MySQL, JavaScript</p>
+        <p>Sellers list items and buyers bid, with the current bid updating without a page reload, plus admin analytics.</p>
+      </div>
+      <div class="project">
+        <div class="item-head"><h3>St. Francis Court</h3><span class="when">2025</span></div>
+        <p class="meta">Solo · Full-stack · PHP, MySQL</p>
+        <p>Court booking where players book and edit slots, and the admin sees court usage, monthly bookings and revenue trends.</p>
+      </div>
+      <div class="project">
+        <div class="item-head"><h3>PUCU Event Calendar</h3><span class="when">2025</span></div>
+        <p class="meta">Team · Programmer · PHP, MySQL, JavaScript</p>
+        <p>A school event calendar with organisation dashboards, user management, and upcoming, pending and finished events.</p>
+      </div>
+      <div class="project">
+        <div class="item-head"><h3>ITE 393 Campus App</h3><span class="when">2025</span></div>
+        <p class="meta">Team · Programmer · Kotlin, Firebase</p>
+        <p>An Android campus companion: sign-in, student profiles, a floor-by-floor building map, events, courses and modules.</p>
+      </div>
+      <div class="project">
+        <div class="item-head"><h3>UCWD Leave Monitoring</h3><span class="when">2025</span></div>
+        <p class="meta">Team · Programmer · Kotlin, Firebase</p>
+        <p>An Android app where employees file leave applications and the office tracks and summarises them, with a web version.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="rows">
+      <div><dt>Web</dt><dd>PHP, MySQL / MariaDB, JavaScript, HTML &amp; CSS, progressive web apps</dd></div>
+      <div><dt>Mobile</dt><dd>Kotlin, Jetpack Compose, Firebase (Firestore, Realtime Database)</dd></div>
+      <div><dt>Tools</dt><dd>Git, Apache, PowerShell, Inno Setup, Tailscale</dd></div>
+      <div><dt>Practices</dt><dd>Prepared statements, CSRF protection, bcrypt, role-based access control, automated testing</dd></div>
+      <div><dt>Other</dt><dd>Photo editing, Microsoft Office</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p>English (professional working) · Tagalog (full professional)</p>
+  </section>
+</body>
+</html>
