@@ -241,9 +241,25 @@ button { font: inherit; }
   padding-block: clamp(32px, 4vw, 56px) clamp(20px, 2.5vw, 32px);
   padding-left: var(--edge);
   padding-right: 36px;
-  background: linear-gradient(90deg, var(--ground) calc(100% - 56px), rgba(17, 20, 24, 0));
+  /* the map's grid and stars show through at the far left; the backing
+     firms up behind the words so they stay easy to read */
+  background: linear-gradient(90deg,
+    rgba(17, 20, 24, 0.3) 0,
+    rgba(17, 20, 24, 0.8) calc(var(--edge) - 24px),
+    rgba(17, 20, 24, 0.93) calc(var(--edge) + 48px));
   transition: transform var(--slide), opacity 0.45s;
 }
+/* a long, soft fade from the column into the map instead of a hard
+   edge; it lives in the map's layer so the map's controls stay above it */
+.stage::before {
+  content: "";
+  position: absolute; top: 0; bottom: 0; left: var(--side); z-index: 2;
+  width: 180px;
+  background: linear-gradient(90deg, rgba(17, 20, 24, 0.93), rgba(17, 20, 24, 0));
+  pointer-events: none;
+  transition: opacity 0.45s;
+}
+.hero.is-exploring .stage::before { opacity: 0; }
 .hero.is-exploring .hero-side { transform: translateX(-100%); opacity: 0; pointer-events: none; }
 
 /* controls laid over the map itself */
@@ -296,7 +312,7 @@ button { font: inherit; }
   position: absolute; inset: 0; z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 75% at calc(50% + var(--side) / 2) 52%, transparent 50%, rgba(6, 8, 11, 0.6) 100%),
+    radial-gradient(ellipse 90% 90% at 55% 50%, transparent 55%, rgba(6, 8, 11, 0.5) 100%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .hint { font-size: 0.6875rem; color: var(--faint); letter-spacing: 0.06em; }
@@ -550,6 +566,7 @@ html:not(.motion) .cursor { animation: none; }
 @media (max-width: 1023px) {
   .hero { height: auto; overflow: visible; display: flex; flex-direction: column; }
   .hero-side { display: contents; }
+  .stage::before { display: none; }
   .intro { order: 1; padding: 36px var(--gutter) 4px; }
   .stage { position: relative; order: 2; height: clamp(360px, 100vw, 600px); }
   .stage-note { left: 50%; }
