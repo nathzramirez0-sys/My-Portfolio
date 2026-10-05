@@ -1,15 +1,15 @@
 /* ─────────────────────────────────────────────
    Everything the map and the ask box know.
 
-   rings    the four orbits on the map, inside to outside
+   rings    the five orbits on the map, inside to outside
    nodes    the points on each orbit; `keys` are extra words visitors
             might use for it, `section` is where it's written up below
    edges    which points are related; drawn as lines on the map
    answers  scripted replies; `nodes` are the points they light up
    lenses   what changes for a recruiter, client or faculty visitor
 
-   To add a project: add a node to the "work" ring, a few edges, and an
-   answer that mentions it. Keep llms.txt in step.
+   To add a project: add a node to the "projects" ring, a few edges, and
+   mention it in the projects answer. Keep llms.txt and the CV in step.
    ───────────────────────────────────────────── */
 
 window.PORTFOLIO = {
@@ -89,6 +89,10 @@ window.PORTFOLIO = {
       text: "One-file installers, automatic backups and remote access, so the system runs without anyone babysitting it." },
 
     // Projects
+    { id: "p-ferg", ring: "projects", label: "FergBentables", keys: ["fergbentables", "ferg", "blushdesk", "showroom", "tablet", "receipt", "receipts", "excel", "orders", "buyers"], section: "#projects",
+      text: "Solo project, as full-stack developer. An offline Android tablet app for a showroom counter, now in use there: buyers, orders of several products followed from processing to delivery, PDF receipts for paid orders, and Excel export." },
+    { id: "p-thesisflow", ring: "projects", label: "ThesisFlow", keys: ["thesisflow", "thesis flow", "kanban", "adviser", "advisor", "chapters", "chapter", "drafts"], section: "#projects",
+      text: "Solo project, as full-stack developer, still in progress. An Android app for thesis groups: chapters with versioned drafts, a task board, adviser feedback and an activity feed, on Firebase. Four of its seven phases are done." },
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
       text: "Solo project, as full-stack developer. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
     { id: "p-auction", ring: "projects", label: "Auction Market", keys: ["auction", "auctions", "bidding", "bid", "bids"], section: "#projects",
@@ -110,11 +114,13 @@ window.PORTFOLIO = {
     { id: "js", ring: "tools", label: "JavaScript", keys: ["javascript", "js", "service worker"], section: "#stack",
       text: "The portal's interactive parts and its service worker, which lets it install on a phone, plus the live bidding in Auction Market." },
     { id: "kotlin", ring: "tools", label: "Kotlin", keys: ["kotlin"], section: "#stack",
-      text: "Every Android app I've built: Cable Manager's subscriber app, the ITE 393 Campus App and UCWD Leave Monitoring." },
+      text: "Every Android app I've built: Cable Manager's subscriber app, FergBentables, ThesisFlow, the ITE 393 Campus App and UCWD Leave Monitoring." },
     { id: "firebase", ring: "tools", label: "Firebase", keys: ["firebase", "firestore", "realtime database"], section: "#stack",
-      text: "The cloud database behind my team Android apps: Firestore for the campus app, and the Realtime Database for leave monitoring." },
+      text: "ThesisFlow's back end: Auth, Firestore, Cloud Storage, and Cloud Functions in TypeScript, with security rules for each role. Also behind my team Android apps: Firestore for the campus app, and the Realtime Database for leave monitoring." },
     { id: "compose", ring: "tools", label: "Jetpack Compose", keys: ["compose", "jetpack", "material"], section: "#stack",
-      text: "Every screen of the Android app, with Material 3." },
+      text: "Every screen of Cable Manager's Android app, FergBentables and ThesisFlow, with Material 3." },
+    { id: "room", ring: "tools", label: "Room", keys: ["room", "sqlite", "local database", "migration", "migrations"], section: "#stack",
+      text: "The on-device database in FergBentables, with every migration tested on real SQLite, and ThesisFlow's offline copy of its Firestore data." },
     { id: "apache", ring: "tools", label: "Apache", keys: ["apache", "web server"], section: "#stack",
       text: "The bundled web server. The launcher renders its configuration fresh on every start." },
     { id: "powershell", ring: "tools", label: "PowerShell", keys: ["powershell", "scripts", "script"], section: "#stack",
@@ -143,7 +149,9 @@ window.PORTFOLIO = {
     ["p-pucu", "php"], ["p-pucu", "mariadb"], ["p-pucu", "js"],
     ["p-campus", "kotlin"], ["p-campus", "firebase"], ["p-campus", "svc-android"],
     ["p-ucwd", "kotlin"], ["p-ucwd", "firebase"], ["p-ucwd", "svc-android"], ["p-ucwd", "svc-business"],
-    ["core", "p-arts"], ["core", "p-auction"], ["core", "p-court"], ["core", "p-pucu"], ["core", "p-campus"], ["core", "p-ucwd"],
+    ["p-ferg", "kotlin"], ["p-ferg", "compose"], ["p-ferg", "room"], ["p-ferg", "svc-android"], ["p-ferg", "svc-business"],
+    ["p-thesisflow", "kotlin"], ["p-thesisflow", "compose"], ["p-thesisflow", "firebase"], ["p-thesisflow", "room"], ["p-thesisflow", "svc-android"],
+    ["core", "p-ferg"], ["core", "p-thesisflow"], ["core", "p-arts"], ["core", "p-auction"], ["core", "p-court"], ["core", "p-pucu"], ["core", "p-campus"], ["core", "p-ucwd"],
   ],
 
   answers: [
@@ -161,20 +169,26 @@ window.PORTFOLIO = {
     },
     {
       keys: ["source code", "the code", "see the code", "see your code", "code public", "repo", "repository", "open source", "github"],
-      text: "Cable Manager's code isn't public, because it was built for a real client, but I'm glad to walk you through it on a call. My GitHub accounts are github.com/nathzramirez0-sys and github.com/Nathan-281000.",
-      nodes: ["git"],
-      sources: [["#work", "Case study"], ["#contact", "Contact"]],
+      text: "FergBentables and ThesisFlow are public on github.com/nathzramirez0-sys, and the ITE 393 Campus App on github.com/Nathan-281000. Cable Manager's code isn't public, because it was built for a real client, but I'm glad to walk you through it on a call.",
+      nodes: ["git", "p-ferg", "p-thesisflow", "p-campus"],
+      sources: [["#projects", "Projects"], ["#contact", "Contact"]],
     },
     {
       keys: ["what else", "other projects", "projects", "portfolio", "built", "solo", "team", "teams", "group", "groupmates"],
-      text: "Besides Cable Manager, three web projects I built solo as a full-stack developer: Arts & Design Showcase, Auction Market and St. Francis Court. And three team projects where I was a programmer: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
-      nodes: ["p-arts", "p-auction", "p-court", "p-pucu", "p-campus", "p-ucwd"],
+      text: "Besides Cable Manager, five projects I built solo as a full-stack developer. Two Android apps: FergBentables, an offline tablet app now in use at a showroom, and ThesisFlow, a manager for thesis groups that I'm still building. And three web projects: Arts & Design Showcase, Auction Market and St. Francis Court. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
+      nodes: ["p-ferg", "p-thesisflow", "p-arts", "p-auction", "p-court", "p-pucu", "p-campus", "p-ucwd"],
+      sources: [["#projects", "Projects"]],
+    },
+    {
+      keys: ["latest", "newest", "recent", "recently", "currently", "working on", "right now", "in progress", "current project", "lately", "building now"],
+      text: "Right now I'm building ThesisFlow, an Android app where thesis groups track chapters, tasks and their adviser's feedback, on Firebase. Four of its seven phases are done. Just before that I finished FergBentables, an offline tablet app that's now in use at a showroom.",
+      nodes: ["p-thesisflow", "p-ferg"],
       sources: [["#projects", "Projects"]],
     },
     {
       keys: ["stack", "tech", "technologies", "language", "languages", "framework", "frameworks", "tools"],
-      text: "PHP 8 and MariaDB on the web side, Kotlin with Jetpack Compose and Firebase on Android, and PowerShell, Inno Setup and Tailscale to package and deploy. I keep dependencies low: the Android app uses Android's own HTTP and JSON classes, and the test runner needs nothing installed.",
-      nodes: ["php", "mariadb", "js", "kotlin", "compose", "firebase", "apache", "powershell", "inno", "tailscale", "git"],
+      text: "PHP 8 and MariaDB on the web side, Kotlin with Jetpack Compose, Room and Firebase on Android, and PowerShell, Inno Setup and Tailscale to package and deploy. I keep dependencies low: the Android app uses Android's own HTTP and JSON classes, and the test runner needs nothing installed.",
+      nodes: ["php", "mariadb", "js", "kotlin", "compose", "room", "firebase", "apache", "powershell", "inno", "tailscale", "git"],
       sources: [["#stack", "Stack"]],
     },
     {
@@ -197,8 +211,8 @@ window.PORTFOLIO = {
     },
     {
       keys: ["test", "tests", "testing", "tested", "quality", "bugs", "reliable"],
-      text: "Eleven test files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens.",
-      nodes: ["tests", "php"],
+      text: "Eleven test files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 74 unit tests and 78 on-device tests, and ThesisFlow has 111 unit tests so far.",
+      nodes: ["tests", "php", "p-ferg", "p-thesisflow"],
       sources: [["#work", "Case study"]],
     },
     {
@@ -233,7 +247,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
-      text: "I'm Jonathan Cercenina Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and six other projects. I graduate in 2027 and I'm looking for an internship.",
+      text: "I'm Jonathan Cercenina Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and eight other projects, including an Android app now in use at a showroom. I graduate in 2027 and I'm looking for an internship.",
       nodes: ["core"],
       sources: [["#about", "About"]],
     },

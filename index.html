@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Jonathan Cercenina Ramirez">
   <meta property="og:title" content="Jonathan Cercenina Ramirez · Full-stack developer">
-  <meta property="og:description" content="I build software that runs where the work happens: office systems, customer portals and Android apps. Thesis: Cable Manager, plus six more projects.">
+  <meta property="og:description" content="I build software that runs where the work happens: office systems, customer portals and Android apps. Thesis: Cable Manager, plus eight more projects.">
   <meta property="og:url" content="https://nathzramirez0-sys.github.io/My-Portfolio/">
   <meta property="og:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
   <meta property="og:locale" content="en_PH">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Jonathan Cercenina Ramirez · Full-stack developer">
-  <meta name="twitter:description" content="I build software that runs where the work happens: office systems, customer portals and Android apps. Thesis: Cable Manager, plus six more projects.">
+  <meta name="twitter:description" content="I build software that runs where the work happens: office systems, customer portals and Android apps. Thesis: Cable Manager, plus eight more projects.">
   <meta name="twitter:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/og-image.png">
 
   <!-- who this page is about, for search engines -->
@@ -40,7 +40,7 @@
       "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Pangasinan – PHINMA" },
       "address": { "@type": "PostalAddress", "addressRegion": "Pangasinan", "addressCountry": "PH" },
       "knowsLanguage": ["English", "Tagalog"],
-      "knowsAbout": ["Full-stack development", "PHP", "MySQL", "JavaScript", "Kotlin", "Jetpack Compose", "Firebase"],
+      "knowsAbout": ["Full-stack development", "Android development", "PHP", "MySQL", "JavaScript", "Kotlin", "Jetpack Compose", "Room", "Firebase"],
       "sameAs": ["https://github.com/nathzramirez0-sys", "https://github.com/Nathan-281000"]
     }
   </script>
@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=21">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -104,12 +104,15 @@
           <div class="also">
             <span class="also-label mono">Also built</span>
             <div class="also-list">
+              <button type="button" data-node="p-ferg">FergBentables</button>
+              <button type="button" data-node="p-thesisflow">ThesisFlow</button>
               <button type="button" data-node="p-arts">Arts &amp; Design Showcase</button>
               <button type="button" data-node="p-auction">Auction Market</button>
               <button type="button" data-node="p-court">St. Francis Court</button>
               <button type="button" data-node="p-pucu">PUCU Event Calendar</button>
               <button type="button" data-node="p-campus">Campus App</button>
               <button type="button" data-node="p-ucwd">UCWD Leave Monitoring</button>
+              <a class="also-more" href="#projects" hidden>More</a>
             </div>
           </div>
         </div>
@@ -311,8 +314,30 @@
       </div>
       <div class="section-body">
         <h2 class="h2" id="projects-title">Other things I've built</h2>
-        <p class="section-note">Solo projects I built end to end as a full-stack developer, and team projects where I was a programmer.</p>
+        <p class="section-note">Solo projects where I built every part as a full-stack developer, and team projects where I was a programmer.</p>
         <div class="projects">
+          <article class="project project-lead reveal">
+            <p class="project-meta mono"><span>Android tablet app</span><span>2026</span></p>
+            <h3 class="project-title">FergBentables</h3>
+            <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers and their orders, follows each order from processing to delivery, prints PDF receipts for paid orders and exports everything to Excel. I shipped changes from the client's feedback, and it has 74 unit tests and 78 on-device tests.</p>
+            <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>Apache POI</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Full-stack developer</span>
+              <a class="project-code" href="https://github.com/nathzramirez0-sys/fergbentables" target="_blank" rel="noopener">Code on GitHub ↗</a>
+              <button type="button" class="map-link" data-node="p-ferg">On the map</button>
+            </div>
+          </article>
+          <article class="project project-lead reveal">
+            <p class="project-meta mono"><span>Android app</span><span class="project-status">In progress</span></p>
+            <h3 class="project-title">ThesisFlow</h3>
+            <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, a task board, adviser feedback and a group activity feed, all working offline. Firebase handles sign-in, data and files, with Cloud Functions and security rules for each role. Four of seven phases are done, with 111 unit tests.</p>
+            <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Cloud Functions</li><li>Room</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Full-stack developer</span>
+              <a class="project-code" href="https://github.com/nathzramirez0-sys/ThesisFlow" target="_blank" rel="noopener">Code on GitHub ↗</a>
+              <button type="button" class="map-link" data-node="p-thesisflow">On the map</button>
+            </div>
+          </article>
           <article class="project reveal">
             <p class="project-meta mono"><span>Web app</span><span>2026</span></p>
             <h3 class="project-title">Arts &amp; Design Showcase</h3>
@@ -426,11 +451,17 @@
             <button type="button" class="tag" data-node="js">JavaScript</button>
             <span class="tag">HTML &amp; CSS</span>
             <span class="tag">Progressive web apps</span>
+            <span class="tag">TypeScript</span>
           </dd></div>
           <div class="reveal"><dt class="mono">Mobile</dt><dd>
             <button type="button" class="tag" data-node="kotlin">Kotlin</button>
             <button type="button" class="tag" data-node="compose">Jetpack Compose</button>
             <span class="tag">Material 3</span>
+            <button type="button" class="tag" data-node="room">Room</button>
+            <button type="button" class="tag" data-node="firebase">Firebase</button>
+            <span class="tag">Hilt</span>
+            <span class="tag">Coroutines &amp; Flow</span>
+            <span class="tag">WorkManager</span>
           </dd></div>
           <div class="reveal"><dt class="mono">Ops</dt><dd>
             <button type="button" class="tag" data-node="apache">Apache</button>
@@ -445,6 +476,7 @@
             <span class="tag">bcrypt</span>
             <button type="button" class="tag" data-node="throttle">Audit trails</button>
             <button type="button" class="tag" data-node="tests">Automated tests</button>
+            <span class="tag">MVVM</span>
           </dd></div>
         </dl>
       </div>
@@ -457,9 +489,9 @@
       </div>
       <div class="section-body about">
         <h2 class="h2" id="about-title">Hello, I'm Jonathan Cercenina Ramirez.</h2>
-        <p>I'm a full-stack developer and a Computer Science student at the University of Pangasinan – PHINMA. I like building software for the places it actually gets used: an office with no IT staff, a subscriber checking a bill on their phone, a student finding a room on campus.</p>
-        <p>My thesis, Cable Manager, shows how I work. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. Alongside it, I've built three web projects on my own from start to finish, and worked as a programmer on three team projects for web and Android.</p>
-        <p>On the web I work in PHP, MySQL and JavaScript; on Android, in Kotlin with Jetpack Compose and Firebase. I care most about the parts that decide whether software survives real use: backups that restore completely or not at all, sign-ins that resist guessing, and tests that run with one command. Part-time work during my studies taught me to manage my time and see things through, and photo editing gives me an eye for how things look.</p>
+        <p>I'm a full-stack developer and a Computer Science student at the University of Pangasinan – PHINMA. I like building software for the places it actually gets used: an office with no IT staff, a subscriber checking a bill on their phone, a showroom counter printing a receipt, a student finding a room on campus.</p>
+        <p>My thesis, Cable Manager, shows how I work. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. Alongside it, I've built two Android apps on my own: FergBentables, now in use at a showroom, and ThesisFlow, which I'm building now. I've also built three web projects on my own, and worked as a programmer on three team projects for web and Android.</p>
+        <p>On the web I work in PHP, MySQL and JavaScript; on Android, in Kotlin with Jetpack Compose, Room and Firebase. I care most about the parts that decide whether software survives real use: backups that restore completely or not at all, sign-ins that resist guessing, and tests that run with one command. Part-time work during my studies taught me to manage my time and see things through, and photo editing gives me an eye for how things look.</p>
         <dl class="rows">
           <div><dt class="mono">Studying</dt><dd>BS Computer Science, University of Pangasinan – PHINMA · graduating 2027</dd></div>
           <div><dt class="mono">Based in</dt><dd>Pangasinan, Philippines</dd></div>
@@ -497,10 +529,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=19"></script>
-  <script src="ui.js?v=19"></script>
+  <script src="data.js?v=21"></script>
+  <script src="ui.js?v=21"></script>
   <script type="module">
-    import("./scene.js?v=19").catch(() => {
+    import("./scene.js?v=21").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

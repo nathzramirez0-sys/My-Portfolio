@@ -116,9 +116,35 @@
   // centre in the rest (answers sit in that column, so nothing else covers it)
   const heroEl = $("top");
   const side = document.querySelector(".hero-side");
+  // "Also built" shows as many projects as fit on this screen with the ask box
+  // still in view; the rest become a "+N more" link down to the projects
+  const alsoEl = document.querySelector(".also");
+  const alsoChips = alsoEl ? [...alsoEl.querySelectorAll("button[data-node]")] : [];
+  const alsoMore = alsoEl && alsoEl.querySelector(".also-more");
+  const dockEl = document.querySelector(".dock");
+  function fitAlso() {
+    if (!alsoEl || !alsoMore || !dockEl) return;
+    alsoEl.hidden = false;
+    alsoChips.forEach((c) => (c.hidden = false));
+    alsoMore.hidden = true;
+    if (window.innerWidth < 1024) return; // on phones the hero stacks and scrolls anyway
+    const fits = () => dockEl.getBoundingClientRect().bottom + window.scrollY <= window.innerHeight;
+    for (let k = alsoChips.length; k >= 2; k--) {
+      alsoChips.forEach((c, i) => (c.hidden = i >= k));
+      alsoMore.hidden = k === alsoChips.length;
+      alsoMore.textContent = `+${alsoChips.length - k} more`;
+      if (fits()) return;
+    }
+    alsoEl.hidden = true;
+  }
+  window.addEventListener("resize", fitAlso);
+
   // the introduction column keeps clear of the ask box, however its suggestions wrap
   const askerEl = document.querySelector(".asker");
-  const setDock = () => heroEl.style.setProperty("--dock-h", askerEl.offsetHeight + "px");
+  const setDock = () => {
+    heroEl.style.setProperty("--dock-h", askerEl.offsetHeight + "px");
+    fitAlso();
+  };
   if ("ResizeObserver" in window) new ResizeObserver(setDock).observe(askerEl);
   setDock();
   window.addEventListener("load", setDock);

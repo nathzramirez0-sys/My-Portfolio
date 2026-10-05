@@ -1,6 +1,6 @@
 # Jonathan Cercenina Ramirez
 
-> Full-stack developer. I build software that runs where the work happens: office systems that install on one computer, customer portals, and native Android apps. Open to full-time roles and freelance projects.
+> Full-stack developer. I build software that runs where the work happens: office systems that install on one computer, customer portals, and native Android apps. Looking for an internship; open to freelance projects.
 
 Studying: BS Computer Science, University of Pangasinan – PHINMA (Pangasinan, Philippines), graduating 2027
 Languages: English, Tagalog
@@ -33,6 +33,8 @@ Notable engineering:
 
 Solo: built alone, as full-stack developer. Team: a group project, as programmer.
 
+- FergBentables (solo, Android tablet app, 2026): offline showroom counter app, in use at a showroom. Buyers, orders of up to 30 products followed from processing to delivery, PDF receipts for paid orders, Excel export (Apache POI). Kotlin, Jetpack Compose, Room with tested migrations; 74 unit tests and 78 on-device tests. https://github.com/nathzramirez0-sys/fergbentables
+- ThesisFlow (solo, Android app, in progress since 2026): thesis and group-project manager for college students. Chapters with versioned drafts, tasks with a kanban board, adviser feedback and a group activity feed, working offline. Kotlin, Jetpack Compose, Hilt, Room, WorkManager, Firebase (Auth, Firestore, Cloud Storage, Cloud Functions in TypeScript, per-role security rules); 111 unit tests. Phases 1-4 of 7 done. https://github.com/nathzramirez0-sys/ThesisFlow
 - Arts & Design Showcase (solo, web, 2026): gallery of artworks and artist profiles with search, messaging and an admin area. PHP, MySQL.
 - Auction Market (solo, web, 2026): sellers list items, buyers bid, the current bid updates without reloading, admin analytics. PHP, MySQL, JavaScript.
 - St. Francis Court (solo, web, 2025): court booking with an admin view of usage, monthly bookings and revenue. PHP, MySQL.
@@ -49,4 +51,4 @@ Solo: built alone, as full-stack developer. Team: a group project, as programmer
 
 ## Stack
 
-PHP 8, MariaDB/MySQL, JavaScript, HTML and CSS, progressive web apps, Kotlin, Jetpack Compose, Apache, PowerShell, Inno Setup, Tailscale, Git.
+PHP 8, MariaDB/MySQL, JavaScript, TypeScript, HTML and CSS, progressive web apps, Kotlin, Jetpack Compose, Room, Firebase, Hilt, WorkManager, Apache, PowerShell, Inno Setup, Tailscale, Git.

@@ -1001,13 +1001,15 @@ button.tag:hover { border-color: var(--accent-line); background: var(--accent-so
 /* ─────────────────────────────────────────────
    More projects: a card each
    ───────────────────────────────────────────── */
+/* six columns: the two newest projects take half a row each, the rest a third */
 .projects {
   margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 14px;
 }
 .project {
+  grid-column: span 2;
   display: flex; flex-direction: column; gap: 10px;
   padding: 20px;
   background: var(--surface);
@@ -1016,6 +1018,20 @@ button.tag:hover { border-color: var(--accent-line); background: var(--accent-so
   transition: border-color 0.2s;
 }
 .project:hover { border-color: var(--line-strong); }
+.project-lead {
+  grid-column: span 3;
+  background: linear-gradient(180deg, rgba(143, 203, 224, 0.05), transparent 55%), var(--surface);
+  border-color: var(--line-strong);
+}
+.project-lead:hover { border-color: var(--accent-line); }
+.project-lead .project-title { font-size: var(--step-2); letter-spacing: -0.01em; }
+.project-status { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); }
+.project-status::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.motion .project-status::before { animation: breathe 2.4s ease-in-out infinite; }
+@keyframes breathe { 50% { opacity: 0.35; } }
 .project-meta {
   display: flex; justify-content: space-between; gap: 12px;
   color: var(--faint); font-size: var(--step--2);
@@ -1039,21 +1055,25 @@ button.tag:hover { border-color: var(--accent-line); background: var(--accent-so
 .project-code { font: 500 0.75rem/1 var(--font-mono); color: var(--muted); text-underline-offset: 3px; }
 .project-code:hover { color: var(--accent); }
 .project-foot .map-link { margin-top: 0; margin-left: auto; }
-@media (max-width: 1000px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1000px) {
+  .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project, .project-lead { grid-column: auto; }
+}
 @media (max-width: 640px) { .projects { grid-template-columns: minmax(0, 1fr); } }
 
 /* "Also built": the other projects, under the hero's buttons */
 .also { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
 .also-label { color: var(--faint); font-size: var(--step--2); text-transform: uppercase; letter-spacing: 0.14em; }
 .also-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.also-list button {
-  font: 400 0.8125rem/1.2 var(--font-body);
+.also-list button, .also-more {
+  font: 400 0.8125rem/1.2 var(--font-body); text-decoration: none;
   color: var(--muted); background: rgba(17, 20, 24, 0.6);
   border: 1px solid var(--line-strong); border-radius: 999px;
   padding: 6px 11px; cursor: pointer;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
-.also-list button:hover { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
-/* on short desktop screens there isn't room for it beside the ask box */
-@media (min-width: 1024px) and (max-height: 820px) { .also { display: none; } }
+.also-list button:hover, .also-more:hover { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
+.also-more { color: var(--accent); border-style: dashed; }
+/* ui.js fits the chips to the screen; without it, short desktop screens drop them */
+@media (min-width: 1024px) and (max-height: 820px) { html:not(.js) .also { display: none; } }
 @media (hover: none) { .spot::after { display: none; } }

@@ -49,11 +49,15 @@ It leaves out my phone number on purpose, since anyone can download it.
 ## Adding a project
 
 1. Add a card to the "More projects" section in `index.html`, and a
-   button for it in the hero's "Also built" list.
+   button for it in the hero's "Also built" list. A `project-lead` card
+   takes half a row; there should be two of them, or none. `ui.js` shows
+   as many "Also built" buttons as fit above the ask box and turns the
+   rest into "+N more".
 2. In `data.js`, add a point for it on the `projects` ring, link it to the
    tools and services it involved in `edges` (and to `core`), and add it
    to the "what else have you built?" answer.
-3. Add a few lines to `llms.txt`.
+3. Add a few lines to `llms.txt`, and the project to `cv/cv.html`
+   (then rebuild the PDF; it must stay on one page).
 
 ## Keeping the build log current
 
@@ -82,7 +86,7 @@ else, including the ask box, still works.
 
 ## Publishing on GitHub Pages
 
-1. Create a repository named `Nathan-281000.github.io` on GitHub.
-2. Push this folder's contents to it.
-3. The site appears at `https://nathan-281000.github.io/` within a minute
-   or two. A custom domain can be added later under Settings → Pages.
+The site is published from the `main` branch of
+`nathzramirez0-sys/My-Portfolio`, at
+<https://nathzramirez0-sys.github.io/My-Portfolio/>. A push rebuilds it in
+about a minute. A custom domain can be added under Settings → Pages.
