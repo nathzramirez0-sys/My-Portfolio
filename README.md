@@ -38,11 +38,20 @@ CV. Left out until I have one: a LinkedIn link.
 ## Rebuilding the CV
 
 Edit `cv/cv.html`, then print it to PDF with Microsoft Edge (it keeps the
-fonts and selectable text, and must stay on one page):
+fonts, selectable text and clickable links, and must stay on one page). Give
+Edge its own profile folder, or it does nothing while Edge is already open,
+and wait a few seconds: the file lands just after the command returns.
 
 ```bash
-"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="C:\\Users\\Jonathan\\Desktop\\My-Portfolio\\Jonathan-Cercenina-Ramirez-CV.pdf" "file:///C:/Users/Jonathan/Desktop/My-Portfolio/cv/cv.html"
+"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --user-data-dir="C:\\Temp\\edge-print" --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="C:\\Users\\Jonathan\\Desktop\\My-Portfolio\\Jonathan-Cercenina-Ramirez-CV.pdf" "file:///C:/Users/Jonathan/Desktop/My-Portfolio/cv/cv.html"
 ```
+
+The layout is a dark sidebar in the portfolio's colours beside a white main
+column. The main column comes first in the markup, so applicant-tracking
+systems read name, profile and work first. The QR code in the sidebar is an
+inline SVG of the portfolio's address, made with the Python library `segno`
+(`segno.make(url, error="m").svg_inline(border=0)`); it only needs remaking
+if the address changes.
 
 It leaves out my phone number on purpose, since anyone can download it.
 
