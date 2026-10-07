@@ -21,10 +21,10 @@ window.PORTFOLIO = {
   // Milestones are dated commits, reworded.
   build: {
     start: "2026-04-13",
-    weeks: [2, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 22, 8, 15, 7, 3, 5, 22, 31],
+    weeks: [2, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 22, 8, 15, 7, 3, 5, 22, 31, 0, 3],
     phases: [
       { label: "UI prototype", from: 0, to: 15 },
-      { label: "Working system", from: 16, to: 23 },
+      { label: "Working system", from: 16, to: 25 },
     ],
     milestones: [
       { week: 0, date: "19 Apr", text: "The UI prototype begins" },
@@ -36,6 +36,7 @@ window.PORTFOLIO = {
       { week: 22, date: "15 Sep", text: "Sign-in throttling on all three doors", node: "throttle" },
       { week: 23, date: "21 Sep", text: "An audit, and the fixes for what it found", node: "roles" },
       { week: 23, date: "25 Sep", text: "A dashboard of what's waiting on staff", node: "office" },
+      { week: 25, date: "5 Oct", text: "The Android app redrawn from its mockups, with payment history and a PDF statement", node: "android-app" },
     ],
   },
 
@@ -60,7 +61,7 @@ window.PORTFOLIO = {
     { id: "portal", ring: "work", label: "Subscriber portal", keys: ["portal", "website", "pwa", "subscriber", "subscribers"], section: "#work",
       text: "Where subscribers see their bills, report payments and follow their requests to the office as a conversation. It installs on a phone like an app." },
     { id: "android-app", ring: "work", label: "Android app", keys: ["android", "mobile", "phone", "phones", "apk"], section: "#work",
-      text: "Native Kotlin with Jetpack Compose. Reminders, QR payment, PDF receipts and two connection tests. It still shows the balance when the office computer is off." },
+      text: "Native Kotlin with Jetpack Compose. Reminders, QR payment, payment history with a PDF statement, and two connection tests. It still shows the balance when the office computer is off." },
     { id: "remote", ring: "work", label: "Remote access", keys: ["remote", "access", "outside", "https", "dns", "funnel"], section: "#work",
       text: "Tailscale Funnel gives the portal and app a permanent HTTPS address with no router setup. The launcher re-registers it every time the system starts." },
 
@@ -223,7 +224,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["customers use", "on their phones", "on their phone", "on a phone", "on phones", "phone", "phones", "mobile"],
-      text: "Yes, two ways. The portal installs on a phone straight from the browser, like an app, and there's a native Android app with reminders, QR payment and PDF receipts.",
+      text: "Yes, two ways. The portal installs on a phone straight from the browser, like an app, and there's a native Android app with reminders, QR payment, payment history and PDF receipts.",
       nodes: ["portal", "android-app", "svc-portal", "svc-android"],
       sources: [["#work", "Case study"], ["#services", "Services"]],
     },

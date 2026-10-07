@@ -19,7 +19,7 @@ Billing and subscriber management for a local cable and internet provider. One s
 
 - Office system: a single Windows installer (Inno Setup) that bundles Apache 2.4, MariaDB 10.4 and PHP 8.2. Runs on one office computer with no internet connection and nothing else installed.
 - Subscriber portal: an installable web app where subscribers see bills, report payments and follow their requests to the office.
-- Android app: native Kotlin with Jetpack Compose. Reminders, QR payment, PDF receipts, connection tests. Keeps the last answer it was given, so it still shows a balance when the office computer is off.
+- Android app: native Kotlin with Jetpack Compose. Reminders, QR payment, payment history with a PDF statement, PDF receipts, connection tests. Keeps the last answer it was given, so it still shows a balance when the office computer is off.
 - Remote access: Tailscale Funnel gives the portal and app a permanent HTTPS address with no router configuration.
 
 Notable engineering:
