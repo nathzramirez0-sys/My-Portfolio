@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=21">
+  <link rel="stylesheet" href="styles.css?v=22">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -328,9 +328,9 @@
             </div>
           </article>
           <article class="project project-lead reveal">
-            <p class="project-meta mono"><span>Android app</span><span class="project-status">In progress</span></p>
+            <p class="project-meta mono"><span>Android app</span><span>2026</span></p>
             <h3 class="project-title">ThesisFlow</h3>
-            <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, a task board, adviser feedback and a group activity feed, all working offline. Firebase handles sign-in, data and files, with Cloud Functions and security rules for each role. Four of seven phases are done, with 111 unit tests.</p>
+            <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, adviser feedback, a kanban task board, a group activity feed, push notifications, daily deadline reminders, a defense countdown and team stats, all working offline. Firebase handles sign-in, data, files and pushes, with Cloud Functions and security rules for each role. It has 138 unit tests, 59 security-rule tests and CI on every push.</p>
             <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Cloud Functions</li><li>Room</li></ul>
             <div class="project-foot">
               <span class="project-role"><b>Solo</b> · Full-stack developer</span>
@@ -490,7 +490,7 @@
       <div class="section-body about">
         <h2 class="h2" id="about-title">Hello, I'm Jonathan Cercenina Ramirez.</h2>
         <p>I'm a full-stack developer and a Computer Science student at the University of Pangasinan – PHINMA. I like building software for the places it actually gets used: an office with no IT staff, a subscriber checking a bill on their phone, a showroom counter printing a receipt, a student finding a room on campus.</p>
-        <p>My thesis, Cable Manager, shows how I work. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. Alongside it, I've built two Android apps on my own: FergBentables, now in use at a showroom, and ThesisFlow, which I'm building now. I've also built three web projects on my own, and worked as a programmer on three team projects for web and Android.</p>
+        <p>My thesis, Cable Manager, shows how I work. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. Alongside it, I've built two Android apps on my own: FergBentables, now in use at a showroom, and ThesisFlow, a manager for thesis groups and their adviser. I've also built three web projects on my own, and worked as a programmer on three team projects for web and Android.</p>
         <p>On the web I work in PHP, MySQL and JavaScript; on Android, in Kotlin with Jetpack Compose, Room and Firebase. I care most about the parts that decide whether software survives real use: backups that restore completely or not at all, sign-ins that resist guessing, and tests that run with one command. Part-time work during my studies taught me to manage my time and see things through, and photo editing gives me an eye for how things look.</p>
         <dl class="rows">
           <div><dt class="mono">Studying</dt><dd>BS Computer Science, University of Pangasinan – PHINMA · graduating 2027</dd></div>
@@ -529,10 +529,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=21"></script>
-  <script src="ui.js?v=21"></script>
+  <script src="data.js?v=22"></script>
+  <script src="ui.js?v=22"></script>
   <script type="module">
-    import("./scene.js?v=21").catch(() => {
+    import("./scene.js?v=22").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";
