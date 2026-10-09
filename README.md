@@ -38,7 +38,7 @@ CV. Left out until I have one: a LinkedIn link.
 ## Rebuilding the CV
 
 Edit `cv/cv.html`, then print it to PDF with Microsoft Edge (it keeps the
-fonts, selectable text and clickable links, and must stay on one page). Give
+fonts, selectable text and clickable links, and must stay at two A4 pages). Give
 Edge its own profile folder, or it does nothing while Edge is already open,
 and wait a few seconds: the file lands just after the command returns.
 
@@ -46,12 +46,16 @@ and wait a few seconds: the file lands just after the command returns.
 "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --user-data-dir="C:\\Temp\\edge-print" --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="C:\\Users\\Jonathan\\Desktop\\My-Portfolio\\Jonathan-Cercenina-Ramirez-CV.pdf" "file:///C:/Users/Jonathan/Desktop/My-Portfolio/cv/cv.html"
 ```
 
-The layout is a dark sidebar in the portfolio's colours beside a white main
-column. The main column comes first in the markup, so applicant-tracking
-systems read name, profile and work first. The QR code in the sidebar is an
-inline SVG of the portfolio's address, made with the Python library `segno`
-(`segno.make(url, error="m").svg_inline(border=0)`); it only needs remaking
-if the address changes.
+The layout follows a PHINMA-style CV sample: Montserrat, a grey sidebar
+(`#5d6661`) with green (`#2cdd98`) headings, green bars between sections,
+and a second page that shows three projects with pictures. The screenshots
+are in `cv/assets`: ThesisFlow's come from its README, and FergBentables'
+from its 1.1.3 commit, which shows the app's current name. Keep wide letter
+spacing off small text: past about 0.15em, PDF text extraction (and so
+applicant-tracking systems) reads "F U L L - S T A C K". The QR code in the
+sidebar is an inline SVG of the portfolio's address, made with the Python
+library `segno` (`segno.make(url, error="m").svg_inline(border=0)`); it
+only needs remaking if the address changes.
 
 It leaves out my phone number on purpose, since anyone can download it.
 
@@ -66,7 +70,7 @@ It leaves out my phone number on purpose, since anyone can download it.
    tools and services it involved in `edges` (and to `core`), and add it
    to the "what else have you built?" answer.
 3. Add a few lines to `llms.txt`, and the project to `cv/cv.html`
-   (then rebuild the PDF; it must stay on one page).
+   (then rebuild the PDF; page 1 must not overflow).
 
 ## Keeping the build log current
 

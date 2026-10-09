@@ -3,313 +3,343 @@
 <head>
   <meta charset="utf-8">
   <title>Jonathan Cercenina Ramirez · CV</title>
-  <!-- Source for Jonathan-Cercenina-Ramirez-CV.pdf. To rebuild the PDF, see the README.
-       The main column comes first in the markup, so text readers and applicant-tracking
-       systems read name, profile and work before the sidebar. -->
+  <!-- Source for Jonathan-Cercenina-Ramirez-CV.pdf (two A4 pages). To rebuild the PDF, see
+       the README. The layout follows the PHINMA-style CV sample the user chose: a grey
+       sidebar with green headings, green bars between sections, and a project showcase on
+       page 2. Screenshots live in cv/assets. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <style>
     @page { size: A4; margin: 0; }
     :root {
-      /* the sidebar wears the portfolio's colours: cool slate and one glacier blue */
-      --side: #121820;
-      --side-raise: #1b232d;
-      --side-line: #2a3440;
-      --side-text: #dce1e7;
-      --side-muted: #95a0ad;
-      --glacier: #8fcbe0;
-      --ok: #7fd1a8;
-      /* the page is white, with a darker blue that holds up in print */
-      --ink: #12161b;
-      --body: #3a414b;
-      --muted: #69717d;
-      --line: #e1e5ea;
-      --accent: #23708a;
-      --accent-soft: #eef6f9;
-      --accent-line: #bddce7;
-      --font: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
-      --mono: "JetBrains Mono", Consolas, monospace;
+      --slate: #5d6661;   /* sidebar and page-2 header */
+      --green: #2cdd98;   /* headings on the sidebar, bars between sections */
+      --ink: #545454;     /* headings and text on white */
+      --soft: #6b6b6b;
+      --tech: #a9a9a9;    /* the tools line under each project */
+      --font: "Montserrat", "Segoe UI", Arial, sans-serif;
     }
     * { box-sizing: border-box; }
     html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     html, body { margin: 0; }
-    body {
-      width: 210mm; height: 297mm;
-      display: grid; grid-template-columns: 63mm minmax(0, 1fr);
-      color: var(--body); font: 400 8.7pt/1.45 var(--font);
-    }
+    body { color: var(--ink); font: 400 7.6pt/1.4 var(--font); }
     a { color: inherit; text-decoration: none; }
-    h1, h2, h3, h4, p, ul, dl, dd { margin: 0; }
+    h1, h2, h3, p, ul { margin: 0; }
     ul { padding: 0; list-style: none; }
 
-    /* ───── shared pieces ───── */
-    h2 {
-      display: flex; align-items: center; gap: 2.4mm;
-      margin-bottom: 2.6mm;
-      color: var(--accent); font: 500 7pt/1 var(--mono);
-      letter-spacing: 0.16em; text-transform: uppercase;
-    }
-    h2::after { content: ""; flex: 1; height: 0.6pt; background: var(--line); }
-    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
-    .when { flex: none; color: var(--muted); font: 400 7.2pt/1 var(--mono); }
-    .chips { display: flex; flex-wrap: wrap; gap: 1.2mm; }
-    .chips li {
-      padding: 0.9mm 1.6mm;
-      color: var(--accent); background: var(--accent-soft);
-      border: 0.5pt solid var(--accent-line); border-radius: 1.2mm;
-      font: 400 6.8pt/1.15 var(--mono);
-    }
+    .page { position: relative; width: 210mm; height: 297mm; overflow: hidden; break-after: page; }
+    .page:last-child { break-after: auto; }
 
-    /* ───── main column ───── */
-    main {
-      grid-column: 2; grid-row: 1;
-      display: flex; flex-direction: column; gap: 5.2mm;
-      padding: 13mm 11mm 10mm 10mm;
-    }
-    .eyebrow { color: var(--accent); font: 500 7.2pt/1 var(--mono); letter-spacing: 0.16em; text-transform: uppercase; }
-    h1 {
-      margin-top: 2.4mm;
-      color: var(--ink); font-size: 24pt; font-weight: 300; line-height: 1.02; letter-spacing: -0.025em;
-    }
-    h1 b { font-weight: 600; }
-    .summary { margin-top: 3.2mm; color: var(--body); font-size: 9.1pt; line-height: 1.5; }
-    .summary strong { color: var(--ink); font-weight: 600; }
+    /* ───────────── page 1 ───────────── */
+    .p1 { display: grid; grid-template-columns: 72mm minmax(0, 1fr); }
 
-    .stats {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-      border: 0.6pt solid var(--line); border-radius: 2.2mm;
-    }
-    .stats div { display: flex; align-items: center; gap: 2.4mm; padding: 2.6mm 3.2mm; }
-    .stats div + div { border-left: 0.6pt solid var(--line); }
-    .stats b { color: var(--accent); font: 500 16pt/1 var(--font); letter-spacing: -0.03em; }
-    .stats span { color: var(--muted); font-size: 7.2pt; line-height: 1.25; }
-
-    h3 { color: var(--ink); font-size: 10.4pt; font-weight: 600; line-height: 1.25; }
-    .sub { margin-top: 0.6mm; color: var(--muted); font-size: 8.4pt; }
-    .thesis .chips { margin-top: 2.2mm; }
-    .bullets { margin-top: 2.6mm; }
-    .bullets li { position: relative; padding-left: 4mm; }
-    .bullets li + li { margin-top: 1.3mm; }
-    /* a small diamond, like the points on the portfolio's map */
-    .bullets li::before {
-      content: ""; position: absolute; left: 0.7mm; top: 0.56em;
-      width: 1.3mm; height: 1.3mm; background: var(--accent); transform: rotate(45deg);
-    }
-    .bullets b { color: var(--ink); font-weight: 600; }
-
-    .note { margin: -1mm 0 2.4mm; color: var(--muted); font-size: 7.6pt; }
-    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4mm; }
-    .card { padding: 2.6mm 3mm 2.9mm; border: 0.6pt solid var(--line); border-radius: 2mm; }
-    .card.lead { background: var(--accent-soft); border-color: var(--accent-line); }
-    .card h3 { font-size: 9.4pt; }
-    .meta { display: flex; align-items: center; gap: 1.6mm; margin-top: 1.1mm; color: var(--muted); font: 400 6.8pt/1.2 var(--mono); }
-    .pill { padding: 0.75mm 1.3mm; border-radius: 0.9mm; font: 500 6.2pt/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
-    .pill.solo { color: #fff; background: var(--accent); }
-    .pill.team { color: #4a525d; background: #e8ebef; }
-    .card p.desc { margin-top: 1.4mm; font-size: 8.1pt; line-height: 1.4; }
-
-    /* ───── sidebar ───── */
     .side {
-      grid-column: 1; grid-row: 1;
-      position: relative; overflow: hidden;
-      display: flex; flex-direction: column; gap: 8.6mm;
-      padding: 13mm 7mm 10mm 8mm;
-      color: var(--side-text); background: var(--side);
-      font-size: 7.9pt;
+      display: flex; flex-direction: column;
+      padding: 10mm 6mm 9mm 7mm;
+      color: #fff; background: var(--slate);
     }
-    .orbits { position: absolute; top: -26mm; right: -34mm; width: 96mm; height: 70mm; }
-    .side > * { position: relative; }
-    .side > .orbits { position: absolute; }
-    .side h2 { color: var(--glacier); }
-    .side h2::after { background: var(--side-line); }
-
-    .brand { display: flex; align-items: center; justify-content: space-between; }
-    .glyph { width: 9mm; height: 9mm; }
-    .status {
-      display: inline-flex; align-items: center; gap: 1.6mm;
-      padding: 1.3mm 2.2mm;
-      border: 0.5pt solid var(--side-line); border-radius: 99px;
-      font: 500 6.6pt/1 var(--mono);
+    .name { font-size: 22pt; font-weight: 400; line-height: 1.08; letter-spacing: 0.1em; text-transform: uppercase; }
+    .title { margin-top: 4.2mm; font-size: 9.6pt; font-weight: 500; line-height: 1.25; letter-spacing: 0.13em; text-transform: uppercase; }
+    .side h2 {
+      margin: 6.2mm 0 2.4mm;
+      color: var(--green); font-size: 9.4pt; font-weight: 700; line-height: 1.3;
+      letter-spacing: 0.14em; text-transform: uppercase;
     }
-    .status i { width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0.7mm rgba(127, 209, 168, 0.18); }
+    .side li { font-size: 8.6pt; letter-spacing: 0.04em; }
+    .icons li { display: flex; align-items: center; gap: 2.6mm; line-height: 1.3; }
+    .icons li + li { margin-top: 2.1mm; }
+    .icons .dot {
+      flex: none; display: grid; place-items: center;
+      width: 4.8mm; height: 4.8mm; border-radius: 50%; background: var(--green);
+    }
+    .icons .dot svg { width: 2.8mm; height: 2.8mm; fill: none; stroke: var(--slate); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .icons .line svg { flex: none; width: 4.8mm; height: 4.8mm; fill: none; stroke: var(--green); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .bullets li { position: relative; padding-left: 4.4mm; }
+    .bullets li + li { margin-top: 1.55mm; }
+    .bullets li::before { content: ""; position: absolute; left: 0.8mm; top: 0.52em; width: 1.3mm; height: 1.3mm; border-radius: 50%; background: #fff; }
 
-    .contact li { display: flex; align-items: flex-start; gap: 2.2mm; line-height: 1.35; }
-    .contact li + li { margin-top: 1.8mm; }
-    .contact svg { flex: none; width: 3.3mm; height: 3.3mm; margin-top: 0.15mm; fill: none; stroke: var(--glacier); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-
-    .edu b { display: block; color: #fff; font-size: 8.6pt; font-weight: 600; }
-    .edu span { display: block; }
-    .edu .dim { margin-top: 0.8mm; color: var(--side-muted); font: 400 7pt/1.2 var(--mono); }
-
-    .group + .group { margin-top: 2.6mm; }
-    .group h4 { margin-bottom: 1.3mm; color: var(--side-muted); font: 400 6.4pt/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
-    .side .chips li { color: var(--side-text); background: var(--side-raise); border-color: var(--side-line); }
-
-    .langs > div { display: flex; justify-content: space-between; gap: 2mm; }
-    .langs > div + div { margin-top: 1.2mm; }
-    .langs dt { color: #fff; font-weight: 600; }
-    .langs dd { color: var(--side-muted); }
-
-    .qr { margin-top: auto; display: flex; align-items: center; gap: 3mm; }
-    .qr-tile { flex: none; width: 22mm; height: 22mm; padding: 2.2mm; background: #fff; border-radius: 1.6mm; }
+    .qr { margin-top: auto; padding-top: 5mm; display: flex; align-items: center; gap: 3mm; }
+    .qr-tile { flex: none; width: 19mm; height: 19mm; padding: 1.9mm; background: #fff; border-radius: 1.2mm; }
     .qr-tile svg { display: block; width: 100%; height: 100%; }
-    .qr p { color: var(--side-muted); font-size: 7.2pt; line-height: 1.4; }
-    .qr b { display: block; margin-bottom: 0.6mm; color: #fff; font-weight: 600; font-size: 7.9pt; }
+    .qr p { font-size: 7.4pt; line-height: 1.4; letter-spacing: 0.03em; }
+    .qr b { display: block; color: var(--green); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .main { padding: 9mm 9mm 8mm 0; }
+    .block { padding: 0 0 4.6mm 6.4mm; }
+    /* the green bar runs from the column's edge off the right of the page */
+    .bar { height: 1mm; margin: 0 -9mm 4.8mm 2.2mm; background: var(--green); }
+    .main h2 { margin-bottom: 2.6mm; color: var(--ink); font-size: 8.8pt; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+    .main p { color: var(--soft); }
+    .main .where { color: var(--ink); }
+    .main .tech { color: var(--tech); }
+    .summary { line-height: 1.45; }
+
+    .item + .item { margin-top: 3.4mm; }
+    .main h3 { color: var(--ink); font-size: 7.9pt; font-weight: 700; line-height: 1.3; letter-spacing: 0.16em; text-transform: uppercase; }
+    .where { color: var(--ink); font-size: 7.9pt; font-weight: 600; letter-spacing: 0.1em; }
+    .tech { margin-top: 0.8mm; color: var(--tech); font-size: 7.6pt; font-weight: 600; line-height: 1.35; letter-spacing: 0.02em; }
+    .desc { margin: 1.2mm 0 0 6.6mm; }
+    .main .dots { margin: 0.8mm 0 0 10.4mm; color: var(--soft); }
+    .main .dots li { position: relative; padding-left: 3.4mm; }
+    .main .dots li::before { content: "•"; position: absolute; left: 0; }
+
+    .others { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm 5mm; }
+    .others h3 { font-size: 7.4pt; }
+    .others .where { font-size: 7.2pt; }
+    .others p { margin-top: 0.6mm; font-size: 7.3pt; line-height: 1.38; }
+
+    /* ───────────── page 2: the showcase ───────────── */
+    .band { padding: 9mm 10mm 7mm; color: #fff; background: var(--slate); }
+    .band .name { font-size: 25pt; letter-spacing: 0.1em; line-height: 1.1; }
+    .band .title { margin-top: 2.6mm; font-size: 9.4pt; }
+    .show { padding: 0 14mm 0 14mm; }
+    .row { display: grid; grid-template-columns: 50mm minmax(0, 1fr); gap: 6mm; padding: 7mm 0; }
+    .row + .row { border-top: 1mm solid var(--green); }
+    .row h3 { color: var(--ink); font-size: 8.6pt; font-weight: 700; line-height: 1.3; letter-spacing: 0.16em; text-transform: uppercase; }
+    .row .where { display: block; margin-top: 0.6mm; font-size: 8.2pt; line-height: 1.35; }
+    .row .tech { margin-top: 1.6mm; font-size: 7.6pt; }
+    .row .note { margin-top: 2.4mm; color: var(--soft); font-size: 7.3pt; line-height: 1.45; }
+    .shots { display: flex; align-items: center; justify-content: flex-start; gap: 4mm; }
+    .shots img { display: block; border-radius: 1.4mm; box-shadow: 0 0 0 0.25mm #d9dcda; }
+    .phone { height: 76mm; }
+    .tablet { height: 50mm; }
+    .receipt { height: 57mm; }
+    .diagram { width: 100%; height: auto; }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <p class="eyebrow">Full-stack developer · Android &amp; web</p>
-      <h1>Jonathan Cercenina <b>Ramirez</b></h1>
-      <p class="summary">Computer Science student at the University of Pangasinan – PHINMA, graduating in 2027 and <strong>looking for an internship in software development</strong>. I build web and Android software that holds up in real use, from an office billing system that runs without the internet to an offline tablet app now in use at a showroom.</p>
+  <!-- ═══════════════ page 1 ═══════════════ -->
+  <section class="page p1">
+    <aside class="side">
+      <h1 class="name">Jonathan Cercenina Ramirez</h1>
+      <p class="title">Full-stack developer</p>
+
+      <h2>Contact information</h2>
+      <ul class="icons">
+        <li><span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><a href="mailto:nathzramirez0@gmail.com">nathzramirez0@gmail.com</a></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.2"/></svg></span>Pangasinan, Philippines</li>
+      </ul>
+
+      <h2>Portfolio</h2>
+      <ul class="icons">
+        <li class="line"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><a href="https://nathzramirez0-sys.github.io/My-Portfolio/">nathzramirez0-sys.github.io<br>/My-Portfolio</a></li>
+        <li class="line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><a href="https://github.com/nathzramirez0-sys">github.com/nathzramirez0-sys</a></li>
+        <li class="line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><a href="https://github.com/Nathan-281000">github.com/Nathan-281000</a></li>
+      </ul>
+
+      <h2>Technical skills</h2>
+      <ul class="bullets">
+        <li>Full-Stack Web Development</li>
+        <li>Android App Development</li>
+        <li>Database Design</li>
+        <li>Automated Testing</li>
+        <li>Deployment &amp; Packaging</li>
+        <li>Application Security</li>
+      </ul>
+
+      <h2>Programming languages, tools &amp; frameworks</h2>
+      <ul class="bullets">
+        <li>Kotlin | Jetpack Compose</li>
+        <li>PHP | JavaScript | TypeScript</li>
+        <li>MySQL | MariaDB | Room</li>
+        <li>Firebase | Cloud Functions</li>
+        <li>Git | GitHub Actions</li>
+        <li>PowerShell | Inno Setup</li>
+        <li>Photo Editing | MS Office</li>
+      </ul>
+
+      <h2>Core work skills</h2>
+      <ul class="bullets">
+        <li>Problem Solving</li>
+        <li>Time Management</li>
+        <li>Attention to Detail</li>
+        <li>Teamwork &amp; Collaboration</li>
+        <li>Working Independently</li>
+        <li>Clear Documentation</li>
+      </ul>
+
+      <div class="qr">
+        <div class="qr-tile"><svg viewBox="0 0 33 33" role="img" aria-label="QR code for nathzramirez0-sys.github.io/My-Portfolio" shape-rendering="crispEdges"><path stroke="#2b302d" d="M0 0.5h7m1 0h1m2 0h1m1 0h1m2 0h4m2 0h2m2 0h7m-33 1h1m5 0h1m1 0h1m3 0h2m4 0h1m1 0h4m2 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h4m4 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h2m5 0h1m3 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m5 0h2m4 0h5m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h4m2 0h1m2 0h2m1 0h1m3 0h1m-25 1h1m1 0h2m1 0h3m1 0h4m1 0h1m2 0h5m2 0h1m1 0h1m2 0h1m1 0h2m-32 1h4m2 0h3m4 0h1m1 0h1m2 0h1m3 0h1m2 0h2m1 0h2m1 0h1m-33 1h2m4 0h1m1 0h1m2 0h2m1 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h3m1 0h2m-33 1h1m1 0h3m2 0h2m2 0h1m1 0h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h2m-27 1h2m1 0h1m1 0h1m6 0h2m2 0h4m1 0h3m1 0h2m-32 1h1m5 0h1m2 0h3m3 0h3m5 0h3m2 0h3m-30 1h2m2 0h3m1 0h1m2 0h5m4 0h1m3 0h4m-29 1h1m1 0h1m5 0h1m2 0h3m1 0h1m2 0h4m2 0h6m-26 1h2m3 0h2m1 0h1m1 0h1m2 0h2m1 0h3m1 0h2m1 0h3m-31 1h5m3 0h5m2 0h1m1 0h2m1 0h7m1 0h2m1 0h2m-32 1h3m1 0h2m1 0h1m2 0h1m1 0h1m1 0h3m2 0h2m2 0h1m2 0h2m1 0h1m-31 1h1m1 0h4m2 0h2m5 0h2m5 0h3m1 0h1m1 0h1m-26 1h1m1 0h2m1 0h1m1 0h4m4 0h2m1 0h1m2 0h1m2 0h1m1 0h3m-32 1h1m1 0h1m2 0h1m1 0h7m1 0h1m1 0h2m4 0h1m2 0h1m2 0h1m2 0h1m-31 1h1m1 0h3m2 0h2m1 0h1m1 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m2 0h3m-32 1h2m1 0h1m3 0h3m2 0h1m2 0h1m1 0h2m3 0h1m1 0h3m-28 1h1m2 0h1m2 0h1m1 0h2m2 0h4m1 0h1m4 0h1m1 0h5m-21 1h3m4 0h5m1 0h1m2 0h1m3 0h2m-30 1h7m1 0h1m2 0h3m2 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1m1 0h4m3 0h4m-32 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h1m2 0h2m1 0h6m1 0h3m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m3 0h2m1 0h3m3 0h1m1 0h2m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h4m1 0h1m3 0h2m1 0h2m2 0h1m1 0h2m1 0h1m-30 1h1m5 0h1m3 0h10m2 0h1m1 0h2m1 0h2m3 0h1m-33 1h7m1 0h2m2 0h1m1 0h4m2 0h2m1 0h1m2 0h1m1 0h1"/></svg></div>
+        <p><b>Scan me</b>to see my work on an interactive 3D map.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="block">
+        <h2>Profile summary</h2>
+        <p class="summary">A Computer Science student at the University of Pangasinan – PHINMA and a full-stack developer, graduating in 2027 and looking for an internship in software development. Experienced in building web and Android software that holds up in real use: an office billing system that runs without the internet, a subscriber portal, and native Android apps in Kotlin with Jetpack Compose. Skilled in PHP, MySQL, JavaScript, Kotlin and Firebase, with a habit of automated testing and secure design. Works well independently and as part of a team.</p>
+      </div>
+      <div class="bar"></div>
+
+      <div class="block">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Bachelor of Science in Computer Science</h3>
+          <p class="where">University of Pangasinan – PHINMA | Expected 2027</p>
+          <ul class="dots">
+            <li>Thesis: Cable Manager, as full-stack developer</li>
+            <li>Built five projects on my own and three as part of a team during the degree</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bar"></div>
+
+      <div class="block">
+        <h2>Projects</h2>
+        <div class="item">
+          <h3>Cable Manager: cable &amp; internet billing system</h3>
+          <p class="where">Capstone Project | Apr 2026 - Oct 2026</p>
+          <p class="tech">PHP | MariaDB | Apache | JavaScript | Kotlin | Jetpack Compose | Inno Setup</p>
+          <p class="desc">As full-stack developer, built billing for a local provider on one database: an office system, a subscriber portal and an Android app.</p>
+          <ul class="dots">
+            <li>Packaged the office system as one Windows installer that runs offline.</li>
+            <li>Atomic backup restores; bcrypt, CSRF tokens, four roles and throttling.</li>
+            <li>11 automated test files, run with one command on a throwaway database.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>FergBentables: showroom app for Android tablets</h3>
+          <p class="where">Client Project | Oct 2026</p>
+          <p class="tech">Android | Kotlin | Jetpack Compose | Room | Apache POI | Git</p>
+          <p class="desc">Built on my own an offline tablet app that a showroom uses for its buyers and orders.</p>
+          <ul class="dots">
+            <li>Orders of up to 30 products, tracked to delivery, with PDF receipts.</li>
+            <li>Excel export; shipped several rounds of changes from client feedback.</li>
+            <li>72 unit tests, 78 on-device tests, and a signed, shrunk release build.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>ThesisFlow: thesis group manager for Android</h3>
+          <p class="where">Personal Project | Sep 2026 - Oct 2026</p>
+          <p class="tech">Android | Kotlin | Jetpack Compose | Hilt | Room | Firebase | Cloud Functions</p>
+          <p class="desc">Thesis groups track chapters, tasks and their adviser's feedback, even offline.</p>
+          <ul class="dots">
+            <li>Versioned drafts, a kanban board, push reminders and a defense countdown.</li>
+            <li>Firebase back end with Cloud Functions and per-role security rules.</li>
+            <li>138 unit tests, 59 security-rule tests, and CI on every push.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bar"></div>
+
+      <div class="block">
+        <h2>Other projects</h2>
+        <div class="others">
+          <div>
+            <h3>Arts &amp; Design Showcase</h3>
+            <p class="where">Solo Project | 2026</p>
+            <p>A gallery of artworks and artist profiles with search, messaging and an admin area. PHP, MySQL.</p>
+          </div>
+          <div>
+            <h3>Auction Market</h3>
+            <p class="where">Solo Project | 2026</p>
+            <p>Live bidding that updates without a page reload, plus admin analytics. PHP, MySQL, JavaScript.</p>
+          </div>
+          <div>
+            <h3>St. Francis Court</h3>
+            <p class="where">Solo Project | 2025</p>
+            <p>Court booking, with admin views of usage, monthly bookings and revenue. PHP, MySQL.</p>
+          </div>
+          <div>
+            <h3>PUCU Event Calendar</h3>
+            <p class="where">Team Project, Programmer | 2025</p>
+            <p>A school event calendar with organisation dashboards and user management. PHP, MySQL.</p>
+          </div>
+          <div>
+            <h3>ITE 393 Campus App</h3>
+            <p class="where">Team Project, Programmer | 2025</p>
+            <p>An Android campus companion with a floor-by-floor building map. Kotlin, Firebase.</p>
+          </div>
+          <div>
+            <h3>UCWD Leave Monitoring</h3>
+            <p class="where">Team Project, Programmer | 2025</p>
+            <p>Employees file leave from their phones; the office tracks it. Kotlin, Firebase.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ═══════════════ page 2: project showcase ═══════════════ -->
+  <section class="page">
+    <header class="band">
+      <p class="name">Jonathan Cercenina Ramirez</p>
+      <p class="title">Full-stack developer</p>
     </header>
 
-    <div class="stats">
-      <div><b>9</b><span>projects,<br>5 built solo</span></div>
-      <div><b>349</b><span>automated tests in my two newest apps</span></div>
-      <div><b>124</b><span>commits on my<br>thesis system</span></div>
+    <div class="show">
+      <div class="row">
+        <div>
+          <h3>Cable Manager: cable &amp; internet billing system</h3>
+          <span class="where">Capstone Project | Apr 2026 - Oct 2026</span>
+          <p class="tech">PHP | MariaDB | Apache | JavaScript | Kotlin | Jetpack Compose | Inno Setup | Tailscale</p>
+          <p class="note">Built for a real client, so the code isn't public; I'm glad to walk through it.</p>
+        </div>
+        <svg class="diagram" viewBox="0 0 470 236" role="img" aria-label="Cable Manager's three parts share one database">
+          <g font-family="Montserrat, Arial, sans-serif" text-anchor="middle">
+            <g fill="#f4f6f5" stroke="#5d6661" stroke-width="1.2">
+              <rect x="1" y="1" width="146" height="78" rx="7"/>
+              <rect x="162" y="1" width="146" height="78" rx="7"/>
+              <rect x="323" y="1" width="146" height="78" rx="7"/>
+            </g>
+            <g fill="#545454" font-size="9.6" font-weight="700" letter-spacing="0.9">
+              <text x="74" y="26">OFFICE SYSTEM</text>
+              <text x="235" y="26">SUBSCRIBER PORTAL</text>
+              <text x="396" y="26">ANDROID APP</text>
+            </g>
+            <g fill="#6b6b6b" font-size="8.6">
+              <text x="74" y="46">One Windows installer</text>
+              <text x="74" y="61">Runs with no internet</text>
+              <text x="235" y="46">Installs on a phone</text>
+              <text x="235" y="61">Bills, payments, requests</text>
+              <text x="396" y="46">Kotlin + Compose</text>
+              <text x="396" y="61">QR payment, PDF statements</text>
+            </g>
+            <g stroke="#5d6661" stroke-width="1.4" fill="none">
+              <path d="M74 80v34M235 80v34M396 80v34"/>
+            </g>
+            <g fill="#5d6661">
+              <path d="M70 110l4 7 4-7z"/><path d="M231 110l4 7 4-7z"/><path d="M392 110l4 7 4-7z"/>
+            </g>
+            <rect x="1" y="118" width="468" height="44" rx="7" fill="#2cdd98"/>
+            <text x="235" y="145" fill="#1f2a25" font-size="11.5" font-weight="700" letter-spacing="2">ONE MARIADB DATABASE</text>
+            <g fill="#6b6b6b" font-size="8.8">
+              <text x="235" y="188">Automatic backups and atomic restore · four roles checked on the server</text>
+              <text x="235" y="204">Sign-in throttling with an audit trail · Tailscale Funnel for remote access</text>
+              <text x="235" y="220">11 automated test files, one command, a throwaway database</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="row">
+        <div>
+          <h3>FergBentables: showroom app for Android tablets</h3>
+          <span class="where">Client Project | Oct 2026</span>
+          <p class="tech">Android | Kotlin | Jetpack Compose | Room | Apache POI | Git</p>
+          <p class="note">Buyers and their orders on one screen, and a PDF receipt for each paid order.</p>
+        </div>
+        <div class="shots">
+          <img class="tablet" src="assets/fergbentables-dashboard.jpg" alt="FergBentables dashboard: buyers on the left, the selected buyer's orders on the right">
+          <img class="receipt" src="assets/fergbentables-receipt.jpg" alt="A paid FergBentables receipt">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <h3>ThesisFlow: thesis group manager for Android</h3>
+          <span class="where">Personal Project | Sep 2026 - Oct 2026</span>
+          <p class="tech">Android | Kotlin | Jetpack Compose | Hilt | Room | Firebase | Cloud Functions</p>
+          <p class="note">A group's overview with its defense countdown, the task board, and team stats.</p>
+        </div>
+        <div class="shots">
+          <img class="phone" src="assets/thesisflow-overview.jpg" alt="ThesisFlow group overview with the defense countdown">
+          <img class="phone" src="assets/thesisflow-tasks.jpg" alt="ThesisFlow task board">
+          <img class="phone" src="assets/thesisflow-stats.jpg" alt="ThesisFlow team stats">
+        </div>
+      </div>
     </div>
-
-    <section class="thesis">
-      <h2>Thesis</h2>
-      <div class="row"><h3>Cable Manager</h3><span class="when">2026</span></div>
-      <p class="sub">Full-stack developer · billing and subscribers for a local cable and internet provider</p>
-      <ul class="chips">
-        <li>PHP 8</li><li>MariaDB</li><li>Apache</li><li>JavaScript</li><li>Kotlin</li><li>Jetpack Compose</li><li>PowerShell</li><li>Inno Setup</li><li>Tailscale</li>
-      </ul>
-      <ul class="bullets">
-        <li>Delivered it three ways on <b>one database</b>: an office system, a subscriber portal that installs on a phone, and a native Android app with QR payment and PDF statements.</li>
-        <li>Packaged the office system as <b>one Windows installer</b> that bundles Apache, MariaDB and PHP, so it runs on a computer with no internet and nothing else installed.</li>
-        <li>Made backup restores <b>atomic</b>: a safety copy first, then every table refilled in one transaction, refusing wrong, truncated or newer files before touching anything.</li>
-        <li>Secured it with bcrypt, prepared statements, CSRF tokens, <b>server-side access control for four roles</b>, and sign-in throttling with an audit trail.</li>
-        <li>Wrote <b>11 automated test files</b> that run with one command and rebuild a throwaway database on every run.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <p class="note">Solo: I built every part, as full-stack developer. Team: I was a programmer.</p>
-      <div class="projects">
-        <article class="card lead">
-          <div class="row"><h3>FergBentables</h3><span class="when">2026</span></div>
-          <p class="meta"><span class="pill solo">Solo</span>Kotlin · Compose · Room</p>
-          <p class="desc">An offline Android tablet app in use at a showroom: buyers, multi-product orders, PDF receipts and Excel export, with 72 unit and 78 on-device tests.</p>
-        </article>
-        <article class="card lead">
-          <div class="row"><h3>ThesisFlow</h3><span class="when">2026</span></div>
-          <p class="meta"><span class="pill solo">Solo</span>Kotlin · Compose · Firebase</p>
-          <p class="desc">An Android app for thesis groups: versioned drafts, adviser feedback, a task board and push reminders, with 138 unit and 59 security-rule tests.</p>
-        </article>
-        <article class="card">
-          <div class="row"><h3>Arts &amp; Design Showcase</h3><span class="when">2026</span></div>
-          <p class="meta"><span class="pill solo">Solo</span>PHP · MySQL</p>
-          <p class="desc">Artworks and artist profiles with search, messaging, and an admin area for both.</p>
-        </article>
-        <article class="card">
-          <div class="row"><h3>Auction Market</h3><span class="when">2026</span></div>
-          <p class="meta"><span class="pill solo">Solo</span>PHP · MySQL · JavaScript</p>
-          <p class="desc">Live bidding that updates without a page reload, plus admin analytics.</p>
-        </article>
-        <article class="card">
-          <div class="row"><h3>St. Francis Court</h3><span class="when">2025</span></div>
-          <p class="meta"><span class="pill solo">Solo</span>PHP · MySQL</p>
-          <p class="desc">Court booking, with admin views of usage, monthly bookings and revenue.</p>
-        </article>
-        <article class="card">
-          <div class="row"><h3>PUCU Event Calendar</h3><span class="when">2025</span></div>
-          <p class="meta"><span class="pill team">Team</span>PHP · MySQL · JavaScript</p>
-          <p class="desc">A school event calendar with organisation dashboards and user management.</p>
-        </article>
-        <article class="card">
-          <div class="row"><h3>ITE 393 Campus App</h3><span class="when">2025</span></div>
-          <p class="meta"><span class="pill team">Team</span>Kotlin · Firebase</p>
-          <p class="desc">A campus companion: profiles, a floor-by-floor building map, events and courses.</p>
-        </article>
-        <article class="card">
-          <div class="row"><h3>UCWD Leave Monitoring</h3><span class="when">2025</span></div>
-          <p class="meta"><span class="pill team">Team</span>Kotlin · Firebase</p>
-          <p class="desc">Employees file leave from their phones; the office tracks and summarises it.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <aside class="side">
-    <svg class="orbits" viewBox="0 0 96 70" aria-hidden="true">
-      <g fill="none" stroke="#1f2833" stroke-width="0.35" transform="rotate(-18 48 35)">
-        <ellipse cx="48" cy="35" rx="16" ry="6.5"/>
-        <ellipse cx="48" cy="35" rx="28" ry="11.5"/>
-        <ellipse cx="48" cy="35" rx="40" ry="16.5"/>
-      </g>
-      <circle cx="21" cy="44" r="0.9" fill="#3a4a58"/>
-      <circle cx="73" cy="22" r="0.7" fill="#3a4a58"/>
-    </svg>
-
-    <div class="brand">
-      <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1b232d"/><ellipse cx="16" cy="16" rx="11" ry="4.5" fill="none" stroke="#3f4b59" stroke-width="1.4" transform="rotate(-18 16 16)"/><circle cx="16" cy="16" r="3.2" fill="#8fcbe0"/></svg>
-      <span class="status"><i></i>Open to internships</span>
-    </div>
-
-    <section>
-      <h2>Contact</h2>
-      <ul class="contact">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><a href="mailto:nathzramirez0@gmail.com">nathzramirez0@gmail.com</a></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><a href="https://nathzramirez0-sys.github.io/My-Portfolio/">nathzramirez0-sys.github.io<br>/My-Portfolio</a></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><a href="https://github.com/nathzramirez0-sys">github.com/nathzramirez0-sys</a></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><a href="https://github.com/Nathan-281000">github.com/Nathan-281000</a></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Pangasinan, Philippines</span></li>
-      </ul>
-    </section>
-
-    <section class="edu">
-      <h2>Education</h2>
-      <b>BS Computer Science</b>
-      <span>University of Pangasinan – PHINMA</span>
-      <span class="dim">Expected 2027</span>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="group">
-        <h4>Languages</h4>
-        <ul class="chips"><li>Kotlin</li><li>PHP</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>HTML &amp; CSS</li></ul>
-      </div>
-      <div class="group">
-        <h4>Android</h4>
-        <ul class="chips"><li>Jetpack Compose</li><li>Room</li><li>Hilt</li><li>Coroutines</li><li>WorkManager</li><li>MVVM</li></ul>
-      </div>
-      <div class="group">
-        <h4>Back end &amp; cloud</h4>
-        <ul class="chips"><li>MariaDB / MySQL</li><li>Firebase</li><li>Cloud Functions</li><li>Apache</li></ul>
-      </div>
-      <div class="group">
-        <h4>Tools</h4>
-        <ul class="chips"><li>Git</li><li>GitHub Actions</li><li>PowerShell</li><li>Inno Setup</li><li>Tailscale</li></ul>
-      </div>
-      <div class="group">
-        <h4>Practices</h4>
-        <ul class="chips"><li>Unit &amp; UI tests</li><li>Access control</li><li>Security rules</li><li>bcrypt &amp; CSRF</li></ul>
-      </div>
-      <div class="group">
-        <h4>Also</h4>
-        <ul class="chips"><li>Photo editing</li><li>Microsoft Office</li></ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Languages</h2>
-      <dl class="langs">
-        <div><dt>English</dt><dd>Professional working</dd></div>
-        <div><dt>Tagalog</dt><dd>Full professional</dd></div>
-      </dl>
-    </section>
-
-    <div class="qr">
-      <div class="qr-tile"><svg viewBox="0 0 33 33" role="img" aria-label="QR code for nathzramirez0-sys.github.io/My-Portfolio" shape-rendering="crispEdges"><path stroke="#12161b" d="M0 0.5h7m1 0h1m2 0h1m1 0h1m2 0h4m2 0h2m2 0h7m-33 1h1m5 0h1m1 0h1m3 0h2m4 0h1m1 0h4m2 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h4m4 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h2m5 0h1m3 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m5 0h2m4 0h5m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h4m2 0h1m2 0h2m1 0h1m3 0h1m-25 1h1m1 0h2m1 0h3m1 0h4m1 0h1m2 0h5m2 0h1m1 0h1m2 0h1m1 0h2m-32 1h4m2 0h3m4 0h1m1 0h1m2 0h1m3 0h1m2 0h2m1 0h2m1 0h1m-33 1h2m4 0h1m1 0h1m2 0h2m1 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h3m1 0h2m-33 1h1m1 0h3m2 0h2m2 0h1m1 0h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h2m-27 1h2m1 0h1m1 0h1m6 0h2m2 0h4m1 0h3m1 0h2m-32 1h1m5 0h1m2 0h3m3 0h3m5 0h3m2 0h3m-30 1h2m2 0h3m1 0h1m2 0h5m4 0h1m3 0h4m-29 1h1m1 0h1m5 0h1m2 0h3m1 0h1m2 0h4m2 0h6m-26 1h2m3 0h2m1 0h1m1 0h1m2 0h2m1 0h3m1 0h2m1 0h3m-31 1h5m3 0h5m2 0h1m1 0h2m1 0h7m1 0h2m1 0h2m-32 1h3m1 0h2m1 0h1m2 0h1m1 0h1m1 0h3m2 0h2m2 0h1m2 0h2m1 0h1m-31 1h1m1 0h4m2 0h2m5 0h2m5 0h3m1 0h1m1 0h1m-26 1h1m1 0h2m1 0h1m1 0h4m4 0h2m1 0h1m2 0h1m2 0h1m1 0h3m-32 1h1m1 0h1m2 0h1m1 0h7m1 0h1m1 0h2m4 0h1m2 0h1m2 0h1m2 0h1m-31 1h1m1 0h3m2 0h2m1 0h1m1 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m2 0h3m-32 1h2m1 0h1m3 0h3m2 0h1m2 0h1m1 0h2m3 0h1m1 0h3m-28 1h1m2 0h1m2 0h1m1 0h2m2 0h4m1 0h1m4 0h1m1 0h5m-21 1h3m4 0h5m1 0h1m2 0h1m3 0h2m-30 1h7m1 0h1m2 0h3m2 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1m1 0h4m3 0h4m-32 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h1m2 0h2m1 0h6m1 0h3m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h1m3 0h2m1 0h3m3 0h1m1 0h2m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h4m1 0h1m3 0h2m1 0h2m2 0h1m1 0h2m1 0h1m-30 1h1m5 0h1m3 0h10m2 0h1m1 0h2m1 0h2m3 0h1m-33 1h7m1 0h2m2 0h1m1 0h4m2 0h2m1 0h1m2 0h1m1 0h1"/></svg></div>
-      <p><b>Interactive portfolio</b>Scan to explore my work on a 3D map, or ask it a question.</p>
-    </div>
-  </aside>
+  </section>
 </body>
 </html>
