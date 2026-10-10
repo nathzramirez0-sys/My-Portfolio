@@ -95,7 +95,7 @@ window.PORTFOLIO = {
     { id: "p-thesisflow", ring: "projects", label: "ThesisFlow", keys: ["thesisflow", "thesis flow", "kanban", "adviser", "advisor", "chapters", "chapter", "drafts"], section: "#projects",
       text: "Solo project, as full-stack developer. An Android app for thesis groups: chapters with versioned drafts, adviser feedback, a task board, a group activity feed, push notifications, deadline reminders and team stats, all working offline, on Firebase." },
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
-      text: "Solo project, as full-stack developer. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
+      text: "Client project, built solo as full-stack developer. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
     { id: "p-auction", ring: "projects", label: "Auction Market", keys: ["auction", "auctions", "bidding", "bid", "bids"], section: "#projects",
       text: "Solo project, as full-stack developer. An online auction: sellers list items, buyers bid, the current bid updates without reloading the page, and an admin sees the analytics." },
     { id: "p-court", ring: "projects", label: "St. Francis Court", keys: ["court", "courts", "booking", "bookings", "st francis", "reservation"], section: "#projects",
@@ -176,7 +176,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["what else", "other projects", "projects", "portfolio", "built", "solo", "team", "teams", "group", "groupmates"],
-      text: "Besides Cable Manager, five projects I built solo as a full-stack developer. Two Android apps: FergBentables, an offline tablet app now in use at a showroom, and ThesisFlow, a manager for thesis groups with adviser feedback, a task board and team stats. And three web projects: Arts & Design Showcase, Auction Market and St. Francis Court. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
+      text: "Besides Cable Manager, five projects I built solo as a full-stack developer. Two Android apps: FergBentables, an offline tablet app now in use at a showroom, and ThesisFlow, a manager for thesis groups with adviser feedback, a task board and team stats. And three web projects: Arts & Design Showcase for a client, plus Auction Market and St. Francis Court. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
       nodes: ["p-ferg", "p-thesisflow", "p-arts", "p-auction", "p-court", "p-pucu", "p-campus", "p-ucwd"],
       sources: [["#projects", "Projects"]],
     },
