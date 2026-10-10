@@ -212,7 +212,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["test", "tests", "testing", "tested", "quality", "bugs", "reliable"],
-      text: "Eleven test files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 72 unit tests and 78 on-device tests, and ThesisFlow has 138 unit tests, 59 tests for its security rules, and GitHub Actions CI that runs them on every push.",
+      text: "Eleven test files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 77 unit tests and 84 on-device tests, and ThesisFlow has 138 unit tests, 59 tests for its security rules, and GitHub Actions CI that runs them on every push.",
       nodes: ["tests", "php", "p-ferg", "p-thesisflow"],
       sources: [["#work", "Case study"]],
     },

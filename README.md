@@ -50,7 +50,7 @@ The layout follows a PHINMA-style CV sample: Montserrat, a grey sidebar
 (`#5d6661`) with green (`#2cdd98`) headings, green bars between sections,
 and a second page that shows three projects with pictures. The screenshots
 are in `cv/assets`: ThesisFlow's come from its README, and FergBentables'
-from its 1.1.3 commit, which shows the app's current name. Keep wide letter
+from its 1.1.4 commit, with the redrawn logo. Keep wide letter
 spacing off small text: past about 0.15em, PDF text extraction (and so
 applicant-tracking systems) reads "F U L L - S T A C K". The QR code in the
 sidebar is an inline SVG of the portfolio's address, made with the Python
