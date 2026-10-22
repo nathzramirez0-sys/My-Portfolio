@@ -41,14 +41,20 @@
       "address": { "@type": "PostalAddress", "addressRegion": "Pangasinan", "addressCountry": "PH" },
       "knowsLanguage": ["English", "Tagalog"],
       "knowsAbout": ["Full-stack development", "Android development", "PHP", "MySQL", "JavaScript", "Kotlin", "Jetpack Compose", "Room", "Firebase"],
-      "sameAs": ["https://github.com/nathzramirez0-sys", "https://github.com/Nathan-281000"]
+      "sameAs": ["https://github.com/nathzramirez0-sys", "https://github.com/Nathan-281000"],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Certified Cybersecurity Professional (CCP)", "credentialCategory": "certificate", "recognizedBy": { "@type": "Organization", "name": "Appkademiya" }, "dateCreated": "2026-10-07", "url": "https://appkademiya.online/verify/CERT-CCP-CYBERSECURITY-PROFESSIONAL-20261007-E77AB244F8B3" },
+        { "@type": "EducationalOccupationalCredential", "name": "Ethical Hacker", "credentialCategory": "certificate", "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy" }, "dateCreated": "2026-02-25" },
+        { "@type": "EducationalOccupationalCredential", "name": "Introduction to Data Science", "credentialCategory": "certificate", "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy" }, "dateCreated": "2026-01-12" },
+        { "@type": "EducationalOccupationalCredential", "name": "Introduction to Cybersecurity", "credentialCategory": "certificate", "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy" }, "dateCreated": "2026-01-07" }
+      ]
     }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=26">
+  <link rel="stylesheet" href="styles.css?v=28">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -225,7 +231,7 @@
             <div><dt>Role</dt><dd>Full-stack developer</dd></div>
             <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
             <div><dt>Roles</dt><dd>4, enforced server-side</dd></div>
-            <div><dt>Test files</dt><dd>11, no dependencies</dd></div>
+            <div><dt>Tests</dt><dd>602, in 10 files</dd></div>
           </dl>
 
           <p class="case-note"><span class="mono">Source code</span> Not public: Cable Manager was built for a real client. I'm glad to walk you through the code on a call.</p>
@@ -260,6 +266,28 @@
               <span class="node-meta">Reached from outside over Tailscale Funnel: permanent HTTPS, no router setup</span>
             </div>
             <figcaption id="arch-cap">Three ways in, one set of records. The office computer is the server.</figcaption>
+          </figure>
+
+          <figure class="screens reveal" aria-labelledby="screens-cap">
+            <div class="screens-row">
+              <a class="shot shot-wide" href="img/cm-office.jpg" target="_blank" rel="noopener">
+                <img src="img/cm-office.jpg" width="1600" height="1000" loading="lazy" alt="The office system's admin dashboard: subscribers, revenue, open tickets, stock alerts and quick actions">
+                <span class="shot-cap mono">Office system</span>
+              </a>
+              <a class="shot" href="img/cm-portal.jpg" target="_blank" rel="noopener">
+                <img src="img/cm-portal.jpg" width="585" height="1266" loading="lazy" alt="The subscriber portal on a phone: balance, plan speed and notices">
+                <span class="shot-cap mono">Portal</span>
+              </a>
+              <a class="shot" href="img/cm-app-home.jpg" target="_blank" rel="noopener">
+                <img src="img/cm-app-home.jpg" width="540" height="1200" loading="lazy" alt="The Android app's home screen: balance, plan, connection and monthly bills">
+                <span class="shot-cap mono">Android app</span>
+              </a>
+              <a class="shot" href="img/cm-app-bills.jpg" target="_blank" rel="noopener">
+                <img src="img/cm-app-bills.jpg" width="540" height="1200" loading="lazy" alt="The Android app's payment history, with a PDF statement to download">
+                <span class="shot-cap mono">Payments</span>
+              </a>
+            </div>
+            <figcaption id="screens-cap">Since October all three share one design. Captured from the test database with sample accounts; the client's name and logo are blurred. Choose a screen to see it full size.</figcaption>
           </figure>
 
           <div class="hard">
@@ -317,10 +345,11 @@
         <p class="section-note">Solo projects where I built every part as a full-stack developer, and team projects where I was a programmer.</p>
         <div class="projects">
           <article class="project project-lead reveal">
-            <p class="project-meta mono"><span>Android tablet app</span><span>2026</span></p>
+            <a class="project-shot" href="img/fb-dashboard.jpg" target="_blank" rel="noopener"><img src="img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="FergBentables on a tablet: buyers on the left, the selected buyer's orders on the right"></a>
+            <p class="project-meta mono"><span>Capstone · Android tablet app</span><span>2026</span></p>
             <h3 class="project-title">FergBentables</h3>
-            <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers and their orders, follows each order from processing to delivery, prints PDF receipts for paid orders and exports everything to Excel. I shipped changes from the client's feedback, and it has 77 unit tests and 84 on-device tests.</p>
-            <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>Apache POI</li></ul>
+            <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers, orders and the showroom's stock: each order is followed from processing to delivery and takes its items from the inventory, paid orders get a PDF receipt, staff are reminded to restock, and everything exports to Excel. I shipped changes from the client's feedback, and it has 104 unit tests and 118 on-device tests.</p>
+            <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Apache POI</li></ul>
             <div class="project-foot">
               <span class="project-role"><b>Solo</b> · Full-stack developer</span>
               <a class="project-code" href="https://github.com/nathzramirez0-sys/fergbentables" target="_blank" rel="noopener">Code on GitHub ↗</a>
@@ -328,7 +357,8 @@
             </div>
           </article>
           <article class="project project-lead reveal">
-            <p class="project-meta mono"><span>Android app</span><span>2026</span></p>
+            <a class="project-shot" href="img/tf-banner.jpg" target="_blank" rel="noopener"><img src="img/tf-banner.jpg" width="1280" height="800" loading="lazy" alt="ThesisFlow on three phones: a group's overview with its defense countdown, the task board, and team stats"></a>
+            <p class="project-meta mono"><span>Personal · Android app</span><span>2026</span></p>
             <h3 class="project-title">ThesisFlow</h3>
             <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, adviser feedback, a kanban task board, a group activity feed, push notifications, daily deadline reminders, a defense countdown and team stats, all working offline. Firebase handles sign-in, data, files and pushes, with Cloud Functions and security rules for each role. It has 138 unit tests, 59 security-rule tests and CI on every push.</p>
             <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Cloud Functions</li><li>Room</li></ul>
@@ -477,8 +507,43 @@
             <button type="button" class="tag" data-node="throttle">Audit trails</button>
             <button type="button" class="tag" data-node="tests">Automated tests</button>
             <span class="tag">MVVM</span>
+            <span class="tag">Ethical hacking</span>
           </dd></div>
         </dl>
+      </div>
+    </section>
+
+    <!-- ───────────── Certifications ───────────── -->
+    <section class="section wrap" id="certifications" aria-labelledby="certs-title">
+      <div class="section-label" data-ring="core">
+        <span class="mono">Certifications</span>
+      </div>
+      <div class="section-body">
+        <h2 class="h2" id="certs-title">Certified in</h2>
+        <p class="section-note">Four certifications from 2026, three of them in security.</p>
+        <ul class="certs">
+          <li class="cert reveal">
+            <p class="cert-issuer mono">Appkademiya</p>
+            <h3 class="cert-title">Certified Cybersecurity Professional (CCP)</h3>
+            <p class="cert-meta">Certificate of achievement · Oct 2026</p>
+            <a class="cert-link" href="https://appkademiya.online/verify/CERT-CCP-CYBERSECURITY-PROFESSIONAL-20261007-E77AB244F8B3" target="_blank" rel="noopener">Verify online ↗</a>
+          </li>
+          <li class="cert reveal">
+            <p class="cert-issuer mono">Cisco Networking Academy</p>
+            <h3 class="cert-title">Ethical Hacker</h3>
+            <p class="cert-meta">Certificate and badge · Feb 2026</p>
+          </li>
+          <li class="cert reveal">
+            <p class="cert-issuer mono">Cisco Networking Academy</p>
+            <h3 class="cert-title">Introduction to Data Science</h3>
+            <p class="cert-meta">Certificate and badge · Jan 2026</p>
+          </li>
+          <li class="cert reveal">
+            <p class="cert-issuer mono">Cisco Networking Academy</p>
+            <h3 class="cert-title">Introduction to Cybersecurity</h3>
+            <p class="cert-meta">Certificate and badge · Jan 2026</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -496,6 +561,7 @@
           <div><dt class="mono">Studying</dt><dd>BS Computer Science, University of Pangasinan – PHINMA · graduating 2027</dd></div>
           <div><dt class="mono">Based in</dt><dd>Pangasinan, Philippines</dd></div>
           <div><dt class="mono">Languages</dt><dd>English, Tagalog</dd></div>
+          <div><dt class="mono">Certified</dt><dd><a href="#certifications">Cybersecurity Professional (Appkademiya); Ethical Hacker, Introduction to Cybersecurity and Introduction to Data Science (Cisco)</a></dd></div>
           <div><dt class="mono">Availability</dt><dd>Looking for an internship; open to freelance projects</dd></div>
           <div><dt class="mono">Résumé</dt><dd><a href="Jonathan-Cercenina-Ramirez-CV.pdf" download>Download my CV (PDF, two pages)</a></dd></div>
         </dl>
@@ -529,10 +595,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=26"></script>
-  <script src="ui.js?v=26"></script>
+  <script src="data.js?v=28"></script>
+  <script src="ui.js?v=28"></script>
   <script type="module">
-    import("./scene.js?v=26").catch(() => {
+    import("./scene.js?v=28").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

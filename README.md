@@ -22,6 +22,7 @@ Then open `http://localhost:5510/`.
 | `llms.txt` | A plain-text copy of the page for AI agents and crawlers |
 | `favicon.svg` | The tab icon |
 | `og-image.png` | The picture shown when the link is shared (1200×630) |
+| `img/` | Screenshots, used by the page and the CV. Cable Manager's come from the test database, with the client's name and logo blurred; FergBentables' and ThesisFlow's come from their READMEs |
 | `404.html` | The page GitHub shows for a mistyped address |
 | `Jonathan-Cercenina-Ramirez-CV.pdf` | My one-page CV, linked from About and Contact |
 | `cv/cv.html` | The source the CV PDF is printed from |
@@ -48,9 +49,10 @@ and wait a few seconds: the file lands just after the command returns.
 
 The layout follows a PHINMA-style CV sample: Montserrat, a grey sidebar
 (`#5d6661`) with green (`#2cdd98`) headings, green bars between sections,
-and a second page that shows three projects with pictures. The screenshots
-are in `cv/assets`: ThesisFlow's come from its README, and FergBentables'
-from its 1.1.4 commit, with the redrawn logo. Keep wide letter
+and a second page that shows three projects with pictures. The pictures
+come from `img/`, shared with the site (`../img/...` from `cv/`). Never use
+a Cable Manager screenshot that shows the client's name, a real subscriber
+or the real payment QR. Keep wide letter
 spacing off small text: past about 0.15em, PDF text extraction (and so
 applicant-tracking systems) reads "F U L L - S T A C K". The QR code in the
 sidebar is an inline SVG of the portfolio's address, made with the Python

@@ -764,6 +764,34 @@ html:not(.motion) .cursor { animation: none; }
 }
 .arch figcaption { margin-top: 14px; font-size: 0.875rem; color: var(--faint); }
 
+/* Screenshots of the three surfaces: columns sized by each picture's shape, so all
+   four stand the same height */
+.screens { margin: 0; }
+.screens-row {
+  display: grid; gap: 12px; align-items: start;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.462fr) repeat(2, minmax(0, 0.45fr));
+}
+.shot {
+  position: relative; display: block; overflow: hidden;
+  border: 1px solid var(--line-strong); border-radius: 10px;
+  background: var(--surface);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.shot:hover { border-color: var(--accent-line); }
+.motion .shot:hover { transform: translateY(-2px); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot-cap {
+  position: absolute; left: 8px; bottom: 8px;
+  padding: 3px 7px; border-radius: 5px;
+  color: var(--text); background: rgba(17, 20, 24, 0.82);
+  font-size: var(--step--2); text-transform: uppercase; letter-spacing: 0.1em;
+}
+.screens figcaption { margin-top: 12px; font-size: 0.875rem; color: var(--faint); }
+@media (max-width: 700px) {
+  .screens-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .shot-wide { grid-column: 1 / -1; }
+}
+
 @media (max-width: 700px) {
   .arch-row { grid-template-columns: minmax(0, 1fr); }
   .arch-link { grid-template-columns: minmax(0, 1fr); }
@@ -1025,6 +1053,13 @@ button.tag:hover { border-color: var(--accent-line); background: var(--accent-so
 }
 .project-lead:hover { border-color: var(--accent-line); }
 .project-lead .project-title { font-size: var(--step-2); letter-spacing: -0.01em; }
+.project-shot {
+  display: block; overflow: hidden; margin: -8px -8px 4px;
+  border: 1px solid var(--line-strong); border-radius: 8px;
+  aspect-ratio: 16 / 10; background: var(--ground);
+}
+.project-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.motion .project-shot:hover img { transform: scale(1.03); }
 .project-status { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); }
 .project-status::before {
   content: ""; width: 6px; height: 6px; border-radius: 50%;
@@ -1060,6 +1095,20 @@ button.tag:hover { border-color: var(--accent-line); background: var(--accent-so
   .project, .project-lead { grid-column: auto; }
 }
 @media (max-width: 640px) { .projects { grid-template-columns: minmax(0, 1fr); } }
+
+/* Certifications: a card each */
+.certs { margin: 28px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.cert {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 18px 20px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+}
+.cert:first-child { border-color: var(--accent-line); background: linear-gradient(180deg, rgba(143, 203, 224, 0.05), transparent 60%), var(--surface); }
+.cert-issuer { color: var(--faint); font-size: var(--step--2); text-transform: uppercase; letter-spacing: 0.12em; }
+.cert-title { margin: 0; font-size: var(--step-1); font-weight: 500; line-height: 1.3; }
+.cert-meta { margin: 0; color: var(--muted); font-size: 0.875rem; }
+.cert-link { align-self: flex-start; margin-top: 4px; color: var(--accent); font: 500 0.75rem/1 var(--font-mono); text-underline-offset: 3px; }
+@media (max-width: 640px) { .certs { grid-template-columns: minmax(0, 1fr); } }
 
 /* "Also built": the other projects, under the hero's buttons */
 .also { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
