@@ -21,10 +21,10 @@ Then open `http://localhost:5510/`.
 | `ui.js` | The ask box, the readout panel, the visitor lens, the build-log chart, and the "See it on the map" links |
 | `llms.txt` | A plain-text copy of the page for AI agents and crawlers |
 | `favicon.svg` | The tab icon |
-| `og-image.png` | The picture shown when the link is shared (1200×630) |
+| `og-image.png` | The picture shown when the link is shared (1200×630), captured from `og-image.html` |
 | `img/` | Screenshots, used by the page and the CV. Cable Manager's come from the test database, with the client's name and logo blurred; FergBentables' and ThesisFlow's come from their READMEs |
 | `404.html` | The page GitHub shows for a mistyped address |
-| `Jonathan-Cercenina-Ramirez-CV.pdf` | My one-page CV, linked from About and Contact |
+| `Jonathan-Cercenia-Ramirez-CV.pdf` | My one-page CV, linked from About and Contact |
 | `cv/cv.html` | The source the CV PDF is printed from |
 
 After changing a CSS or JS file, raise the `?v=5` number on its link in
@@ -44,7 +44,7 @@ Edge its own profile folder, or it does nothing while Edge is already open,
 and wait a few seconds: the file lands just after the command returns.
 
 ```bash
-"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --user-data-dir="C:\\Temp\\edge-print" --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="C:\\Users\\Jonathan\\Desktop\\My-Portfolio\\Jonathan-Cercenina-Ramirez-CV.pdf" "file:///C:/Users/Jonathan/Desktop/My-Portfolio/cv/cv.html"
+"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --user-data-dir="C:\\Temp\\edge-print" --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf="C:\\Users\\Jonathan\\Desktop\\My-Portfolio\\Jonathan-Cercenia-Ramirez-CV.pdf" "file:///C:/Users/Jonathan/Desktop/My-Portfolio/cv/cv.html"
 ```
 
 The layout follows a PHINMA-style CV sample: Montserrat, a grey sidebar

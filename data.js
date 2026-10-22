@@ -13,7 +13,7 @@
    ───────────────────────────────────────────── */
 
 window.PORTFOLIO = {
-  name: "Jonathan Cercenina Ramirez",
+  name: "Jonathan Cercenia Ramirez",
   // the shorter name at the centre of the map
   mapName: "Jonathan",
 
@@ -255,7 +255,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
-      text: "I'm Jonathan Cercenina Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and eight other projects, including an Android app now in use at a showroom. I graduate in 2027 and I'm looking for an internship.",
+      text: "I'm Jonathan Cercenia Ramirez, a full-stack developer and Computer Science student at the University of Pangasinan – PHINMA. I build web and Android software that holds up in real use: my thesis, Cable Manager, and eight other projects, including an Android app now in use at a showroom. I graduate in 2027 and I'm looking for an internship.",
       nodes: ["core"],
       sources: [["#about", "About"]],
     },
