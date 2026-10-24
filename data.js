@@ -93,8 +93,8 @@ window.PORTFOLIO = {
     // Projects
     { id: "p-ferg", ring: "projects", label: "FergBentables", keys: ["fergbentables", "ferg", "blushdesk", "showroom", "tablet", "receipt", "receipts", "excel", "orders", "buyers", "capstone", "capstone project", "stock", "restock"], section: "#projects",
       text: "My capstone project, built solo as full-stack developer. An offline Android tablet app for a showroom counter, now in use there: buyers, orders followed from processing to delivery, an inventory that moves with each order, restock and low-stock reminders, PDF receipts for paid orders, and Excel export." },
-    { id: "p-thesisflow", ring: "projects", label: "ThesisFlow", keys: ["thesisflow", "thesis flow", "kanban", "adviser", "advisor", "chapters", "chapter", "drafts"], section: "#projects",
-      text: "Solo project, as full-stack developer. An Android app for thesis groups: chapters with versioned drafts, adviser feedback, a task board, a group activity feed, push notifications, deadline reminders and team stats, all working offline, on Firebase." },
+    { id: "p-thesisflow", ring: "projects", label: "ThesisFlow", keys: ["thesisflow", "thesis flow", "kanban", "adviser", "advisor", "chapters", "chapter", "drafts", "local build", "no account"], section: "#projects",
+      text: "Solo project, as full-stack developer. An Android app for thesis groups: chapters with versioned drafts, adviser feedback, a task board, a group activity feed, push notifications, deadline reminders and team stats, all working offline, on Firebase. A second, local build keeps everything on one phone with no account or internet, so anyone can try it." },
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
       text: "Client project, built solo as full-stack developer. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
     { id: "p-auction", ring: "projects", label: "Auction Market", keys: ["auction", "auctions", "bidding", "bid", "bids"], section: "#projects",
@@ -122,7 +122,7 @@ window.PORTFOLIO = {
     { id: "compose", ring: "tools", label: "Jetpack Compose", keys: ["compose", "jetpack", "material"], section: "#stack",
       text: "Every screen of Cable Manager's Android app, FergBentables and ThesisFlow, with Material 3." },
     { id: "room", ring: "tools", label: "Room", keys: ["room", "sqlite", "local database", "migration", "migrations"], section: "#stack",
-      text: "The on-device database in FergBentables, with every migration tested on real SQLite, and ThesisFlow's offline copy of its Firestore data." },
+      text: "The on-device database in FergBentables, with every migration tested on real SQLite, and in ThesisFlow: the offline copy of its Firestore data, and the only store in its local build." },
     { id: "apache", ring: "tools", label: "Apache", keys: ["apache", "web server"], section: "#stack",
       text: "The bundled web server. The launcher renders its configuration fresh on every start." },
     { id: "powershell", ring: "tools", label: "PowerShell", keys: ["powershell", "scripts", "script"], section: "#stack",
@@ -183,7 +183,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["latest", "newest", "recent", "recently", "currently", "working on", "right now", "in progress", "current project", "lately", "building now"],
-      text: "Most recently I added an Inventory System to FergBentables, my capstone: stock that moves with each order, restock and low-stock reminders, and inventory reports in Excel. I also redrew Cable Manager's office system and portal to match its Android app. Before that I finished ThesisFlow, an Android app where thesis groups track chapters, tasks and their adviser's feedback.",
+      text: "Most recently I gave ThesisFlow, my Android app for thesis groups, a second build that keeps everything on one phone, with no account or internet needed. Before that I added an Inventory System to FergBentables, my capstone: stock that moves with each order, restock and low-stock reminders, and inventory reports in Excel. I also redrew Cable Manager's office system and portal to match its Android app.",
       nodes: ["p-thesisflow", "p-ferg"],
       sources: [["#projects", "Projects"]],
     },
@@ -213,7 +213,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["test", "tests", "testing", "tested", "quality", "bugs", "reliable"],
-      text: "602 tests in 10 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 104 unit tests and 118 on-device tests, and ThesisFlow has 138 unit tests, 59 tests for its security rules, and GitHub Actions CI that runs them on every push.",
+      text: "602 tests in 10 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 104 unit tests and 118 on-device tests, and ThesisFlow has 142 unit tests, 59 tests for its security rules, 26 on-device tests for its local build, and GitHub Actions CI that runs them on every push.",
       nodes: ["tests", "php", "p-ferg", "p-thesisflow"],
       sources: [["#work", "Case study"]],
     },

@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=30">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -360,7 +360,7 @@
             <a class="project-shot" href="img/tf-banner.jpg" target="_blank" rel="noopener"><img src="img/tf-banner.jpg" width="1280" height="800" loading="lazy" alt="ThesisFlow on three phones: a group's overview with its defense countdown, the task board, and team stats"></a>
             <p class="project-meta mono"><span>Personal · Android app</span><span>2026</span></p>
             <h3 class="project-title">ThesisFlow</h3>
-            <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, adviser feedback, a kanban task board, a group activity feed, push notifications, daily deadline reminders, a defense countdown and team stats, all working offline. Firebase handles sign-in, data, files and pushes, with Cloud Functions and security rules for each role. It has 138 unit tests, 59 security-rule tests and CI on every push.</p>
+            <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, adviser feedback, a kanban task board, a group activity feed, push notifications, daily deadline reminders, a defense countdown and team stats, all working offline. Firebase handles sign-in, data, files and pushes, with Cloud Functions and security rules for each role. A second, local build keeps everything on one phone with no account or internet, so anyone can try it. It has 142 unit tests, 59 security-rule tests, 26 on-device tests and CI on every push.</p>
             <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Cloud Functions</li><li>Room</li></ul>
             <div class="project-foot">
               <span class="project-role"><b>Solo</b> · Full-stack developer</span>
@@ -595,10 +595,10 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=29"></script>
-  <script src="ui.js?v=29"></script>
+  <script src="data.js?v=30"></script>
+  <script src="ui.js?v=30"></script>
   <script type="module">
-    import("./scene.js?v=29").catch(() => {
+    import("./scene.js?v=30").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";
