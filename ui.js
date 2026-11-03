@@ -218,7 +218,7 @@
       const a = reply.answer;
       text = typeof a.text === "function" ? a.text(email()) : a.text;
       lit = a.nodes;
-      links = () => a.sources.map(([href, label]) => linkChip(href, label + " ↓"));
+      links = () => a.sources.map(([href, label]) => linkChip(href, label + (href.startsWith("#") ? " ↓" : " →")));
     } else if (reply && reply.node) {
       const n = reply.node;
       const near = neighbours(n.id);

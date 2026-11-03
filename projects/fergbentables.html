@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FergBentables case study · Jonathan Cercenia Ramirez</title>
+  <meta name="description" content="FergBentables: an offline Android tablet app for a showroom counter, in use at a showroom. My team capstone, where I built the app: buyers, orders, an inventory, PDF receipts and Excel exports, with 222 automated tests.">
+  <meta name="theme-color" content="#111418">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://nathzramirez0-sys.github.io/My-Portfolio/projects/fergbentables.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jonathan Cercenia Ramirez">
+  <meta property="og:title" content="FergBentables · case study">
+  <meta property="og:description" content="An offline Android tablet app for a showroom counter, in use at a showroom. My team capstone, where I built the app.">
+  <meta property="og:url" content="https://nathzramirez0-sys.github.io/My-Portfolio/projects/fergbentables.html">
+  <meta property="og:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/img/fb-dashboard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../styles.css?v=32">
+  <script>
+    // motion is on unless the visitor has switched it off on this site
+    (function () {
+      var root = document.documentElement, choice = null;
+      root.classList.add("js");
+      try { choice = localStorage.getItem("motion"); } catch (e) {}
+      if (choice !== "off") root.classList.add("motion");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="../index.html" aria-label="Home">
+        <span class="mark-glyph" aria-hidden="true"></span>
+        <span class="mark-name">Jonathan Cercenia Ramirez</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Open to internships &amp; projects</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section wrap case-page" aria-labelledby="case-title">
+      <div class="section-label">
+        <span class="mono">Case study</span>
+      </div>
+      <div class="section-body">
+        <a class="page-back" href="../index.html#projects">← All projects</a>
+        <article class="case">
+          <header class="case-head">
+            <p class="case-kicker mono">Capstone project · Android tablet app · 2026</p>
+            <h1 class="case-title" id="case-title">FergBentables</h1>
+            <p class="case-sum">An offline app for a showroom counter, in use at a showroom. It keeps the showroom's buyers, their orders and its stock, follows each order to delivery, prints a receipt for every paid order, and hands the office its records in Excel.</p>
+          </header>
+
+          <dl class="spec">
+            <div><dt>My role</dt><dd>Developer, team of 4</dd></div>
+            <div><dt>Status</dt><dd>In use, version 1.2.0</dd></div>
+            <div><dt>Tests</dt><dd>104 unit, 118 on-device</dd></div>
+            <div><dt>Runs</dt><dd>Offline, Android 10+</dd></div>
+          </dl>
+
+          <p class="case-note"><span class="mono">Team</span><span>My capstone for ITE 381, IT Business Solution, with a team of four. I designed and built the app; the code is <a href="https://github.com/nathzramirez0-sys/fergbentables" target="_blank" rel="noopener">public on GitHub ↗</a>.</span></p>
+
+          <div class="brief">
+            <h2 class="h3">The brief</h2>
+            <p>One tablet at the counter had to be the whole system: who the buyers are, what they bought, where each order stands, a receipt for the paid ones, and files the office can open. No internet, no server and no logins, because the shop has none of them.</p>
+          </div>
+
+          <figure class="screens">
+            <div class="gallery">
+              <a class="shot" href="../img/fb-dashboard.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="The dashboard: buyers on the left, the selected buyer's orders and their lifecycle on the right">
+                <span class="shot-cap mono">Buyers and orders</span>
+              </a>
+              <a class="shot" href="../img/fb-order.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-order.jpg" width="1280" height="800" loading="lazy" alt="A new order with several products, totals worked out as you type">
+                <span class="shot-cap mono">New order</span>
+              </a>
+              <a class="shot" href="../img/fb-inventory.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-inventory.jpg" width="1280" height="800" loading="lazy" alt="The Inventory System: stock counts, what needs restocking and recent stock movements">
+                <span class="shot-cap mono">Inventory</span>
+              </a>
+              <a class="shot" href="../img/fb-product.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-product.jpg" width="1280" height="800" loading="lazy" alt="A product's profile: stock, minimum stock, prices, availability and its restock reminder">
+                <span class="shot-cap mono">A product</span>
+              </a>
+              <a class="shot" href="../img/fb-export.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-export.jpg" width="1280" height="800" loading="lazy" alt="The Excel export dialog, listing what the workbook contains">
+                <span class="shot-cap mono">Excel export</span>
+              </a>
+              <a class="shot" href="../img/fb-receipt.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-receipt.jpg" width="910" height="1287" loading="lazy" alt="A paid order's A4 PDF receipt, with a PAID stamp">
+                <span class="shot-cap mono">PDF receipt</span>
+              </a>
+            </div>
+            <figcaption>Screens from the app with sample data. Choose one to see it full size.</figcaption>
+          </figure>
+
+          <div class="hard">
+            <h2 class="h3">Decisions that mattered</h2>
+            <ul class="hard-list">
+              <li>
+                <h3>Money that never rounds</h3>
+                <p>Prices are BigDecimal in the code and whole centavos in the database, so totals and SQL sums are exact. A third decimal is refused, never rounded away.</p>
+              </li>
+              <li>
+                <h3>Stock that can't go wrong</h3>
+                <p>An order and the stock it takes are saved in one transaction. Editing an order moves only the difference, overselling refuses the whole order, and every movement is credited to whoever made it.</p>
+              </li>
+              <li>
+                <h3>An Excel file a phone will open</h3>
+                <p>Excel for Android called the exports "password-protected". The cause was how the file was zipped, so the app now writes every part with its size and checksum in its own header, the way Excel does, and a test checks it.</p>
+              </li>
+              <li>
+                <h3>The shop's only copy</h3>
+                <p>The database has moved through five versions without a destructive fallback. Every migration is tested on real SQLite, because there is no backup server to restore from.</p>
+              </li>
+              <li>
+                <h3>A small release that still works</h3>
+                <p>R8 shrinks the APK from about 70 MB to about 14 MB. A missing keep rule doesn't fail the build, it fails an export at the counter, so every release is checked by hand: an export and a receipt.</p>
+              </li>
+              <li>
+                <h3>Built from what the staff asked for</h3>
+                <p>Facebook contacts, a Payment Status column, download to the device, inventory and restock reminders all came from the people using it, shipped in rounds as they asked.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="design">
+            <h2 class="h3">Design: the prototype and the intro</h2>
+            <p class="design-note">Every screen also exists as a clickable Figma prototype: 282 frames across the tablet, phones and the PDF receipts, generated by a Figma plugin I wrote so the mockups follow the app.</p>
+            <div class="gallery gallery-figma">
+              <a class="shot" href="../img/fb-figma-tablet.jpg" data-lightbox="fb-figma" target="_blank" rel="noopener">
+                <img src="../img/fb-figma-tablet.jpg" width="1280" height="800" loading="lazy" alt="Figma mockup of the tablet dashboard">
+                <span class="shot-cap mono">Figma · tablet</span>
+              </a>
+              <a class="shot" href="../img/fb-figma-phone.jpg" data-lightbox="fb-figma" target="_blank" rel="noopener">
+                <img src="../img/fb-figma-phone.jpg" width="412" height="915" loading="lazy" alt="Figma mockup of the buyers list on a phone">
+                <span class="shot-cap mono">Phone</span>
+              </a>
+              <a class="shot" href="../img/fb-figma-phone-inventory.jpg" data-lightbox="fb-figma" target="_blank" rel="noopener">
+                <img src="../img/fb-figma-phone-inventory.jpg" width="412" height="915" loading="lazy" alt="Figma mockup of the inventory overview on a phone">
+                <span class="shot-cap mono">Phone</span>
+              </a>
+            </div>
+
+            <div class="film" id="film">
+              <img src="../img/fb-intro-poster.jpg" width="1280" height="720" loading="lazy" alt="The FergBentables intro's title card">
+              <button type="button" class="film-play" id="film-play"><span>▶ Play the 45-second intro</span></button>
+            </div>
+            <p class="design-note">The intro our team opened the capstone presentation with: animated in the browser, with a soundtrack synthesized in the page. It starts muted; turn the sound on in the player.</p>
+          </div>
+
+          <div class="built">
+            <h2 class="h3">Built with</h2>
+            <dl class="rows tags">
+              <div><dt class="mono">App</dt><dd><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Material 3</span><span class="tag">MVVM</span></dd></div>
+              <div><dt class="mono">Data</dt><dd><span class="tag">Room</span><span class="tag">WorkManager</span><span class="tag">Apache POI</span><span class="tag">PdfDocument</span></dd></div>
+              <div><dt class="mono">Tests</dt><dd><span class="tag">JUnit</span><span class="tag">Compose UI tests</span><span class="tag">MigrationTestHelper</span></dd></div>
+              <div><dt class="mono">Design</dt><dd><span class="tag">Figma</span><span class="tag">Motion graphics</span></dd></div>
+            </dl>
+          </div>
+
+          <nav class="next-case" aria-label="More case studies">
+            <a href="../index.html#projects">← All projects</a>
+            <a href="thesisflow.html">ThesisFlow case study →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© <span id="year">2026</span> Jonathan Cercenia Ramirez</span>
+    <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
+  </footer>
+
+  <script src="../lightbox.js?v=32"></script>
+  <script>
+    // the intro loads only when asked for: it is a whole page of its own
+    document.getElementById("film-play").addEventListener("click", function () {
+      var film = document.getElementById("film");
+      var frame = document.createElement("iframe");
+      frame.src = "fergbentables-intro.html";
+      frame.title = "FergBentables intro";
+      frame.allow = "autoplay; fullscreen";
+      frame.allowFullscreen = true;
+      // the visitor pressed Play, so play even where reduced motion would start it paused
+      frame.addEventListener("load", function () {
+        setTimeout(function () {
+          try { var f = frame.contentWindow.__film; if (f) f.play(0); } catch (e) {}
+        }, 1800);
+      });
+      film.replaceChildren(frame);
+      frame.focus();
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

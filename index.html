@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=32">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -222,16 +222,16 @@
       <div class="section-body">
         <article class="case">
           <header class="case-head">
-            <p class="case-kicker mono">Thesis project · 2026</p>
+            <p class="case-kicker mono">Thesis project · In use since October 2026</p>
             <h2 class="case-title" id="work-title">Cable Manager</h2>
-            <p class="case-sum">Billing and subscriber management for a local cable and internet provider. It keeps one record of who is connected, what plan they're on, what they owe, what has been collected and what the office has spent.</p>
+            <p class="case-sum">Billing and subscriber management for a local cable and internet provider. It keeps one record of who is connected, what plan they're on, what they owe, what has been collected and what the office has spent. Since October 2026 it runs the provider's office, with over 900 subscribers on it.</p>
           </header>
 
           <dl class="spec">
             <div><dt>Role</dt><dd>Full-stack developer</dd></div>
+            <div><dt>In use</dt><dd>900+ subscribers</dd></div>
             <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
-            <div><dt>Roles</dt><dd>4, enforced server-side</dd></div>
-            <div><dt>Tests</dt><dd>602, in 10 files</dd></div>
+            <div><dt>Tests</dt><dd>605, in 10 files</dd></div>
           </dl>
 
           <p class="case-note"><span class="mono">Source code</span> Not public: Cable Manager was built for a real client. I'm glad to walk you through the code on a call.</p>
@@ -270,19 +270,19 @@
 
           <figure class="screens reveal" aria-labelledby="screens-cap">
             <div class="screens-row">
-              <a class="shot shot-wide" href="img/cm-office.jpg" target="_blank" rel="noopener">
+              <a class="shot shot-wide" href="img/cm-office.jpg" target="_blank" rel="noopener" data-lightbox="cable">
                 <img src="img/cm-office.jpg" width="1600" height="1000" loading="lazy" alt="The office system's admin dashboard: subscribers, revenue, open tickets, stock alerts and quick actions">
                 <span class="shot-cap mono">Office system</span>
               </a>
-              <a class="shot" href="img/cm-portal.jpg" target="_blank" rel="noopener">
+              <a class="shot" href="img/cm-portal.jpg" target="_blank" rel="noopener" data-lightbox="cable">
                 <img src="img/cm-portal.jpg" width="585" height="1266" loading="lazy" alt="The subscriber portal on a phone: balance, plan speed and notices">
                 <span class="shot-cap mono">Portal</span>
               </a>
-              <a class="shot" href="img/cm-app-home.jpg" target="_blank" rel="noopener">
+              <a class="shot" href="img/cm-app-home.jpg" target="_blank" rel="noopener" data-lightbox="cable">
                 <img src="img/cm-app-home.jpg" width="540" height="1200" loading="lazy" alt="The Android app's home screen: balance, plan, connection and monthly bills">
                 <span class="shot-cap mono">Android app</span>
               </a>
-              <a class="shot" href="img/cm-app-bills.jpg" target="_blank" rel="noopener">
+              <a class="shot" href="img/cm-app-bills.jpg" target="_blank" rel="noopener" data-lightbox="cable">
                 <img src="img/cm-app-bills.jpg" width="540" height="1200" loading="lazy" alt="The Android app's payment history, with a PDF statement to download">
                 <span class="shot-cap mono">Payments</span>
               </a>
@@ -313,6 +313,16 @@
                 <p>A single installer ships its own web server, database and PHP. The launcher migrates the schema, takes a backup, keeps the thirty most recent, and shuts everything down cleanly on close.</p>
                 <button type="button" class="map-link" data-node="installer">See it on the map</button>
               </li>
+              <li class="reveal">
+                <h4>Two staff, one bill</h4>
+                <p>Two people pressing Record on the same bill at the same moment could both get through, and the bill was paid twice. Now the bill is locked inside the payment's transaction, so the second person waits, sees it settled, and is refused. A test reproduces the race.</p>
+                <button type="button" class="map-link" data-node="lock">See it on the map</button>
+              </li>
+              <li class="reveal">
+                <h4>Moving a real office onto it</h4>
+                <p>The provider's existing subscribers and their opening balances went in as one tested restore file, the same for both computers. Going live also turned up a database that wouldn't start under a Windows account whose name isn't plain English letters; the launcher handles it now.</p>
+                <button type="button" class="map-link" data-node="golive">See it on the map</button>
+              </li>
             </ul>
           </div>
 
@@ -342,28 +352,31 @@
       </div>
       <div class="section-body">
         <h2 class="h2" id="projects-title">Other things I've built</h2>
-        <p class="section-note">Solo projects where I built every part as a full-stack developer, and team projects where I was a programmer.</p>
+        <p class="section-note">My capstone, where I built the app for a team of four; solo projects where I built every part as a full-stack developer; and team projects where I was a programmer.</p>
         <div class="projects">
           <article class="project project-lead reveal">
-            <a class="project-shot" href="img/fb-dashboard.jpg" target="_blank" rel="noopener"><img src="img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="FergBentables on a tablet: buyers on the left, the selected buyer's orders on the right"></a>
+            <a class="project-shot" href="projects/fergbentables.html" aria-label="FergBentables case study"><img src="img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="FergBentables on a tablet: buyers on the left, the selected buyer's orders on the right"></a>
             <p class="project-meta mono"><span>Capstone · Android tablet app</span><span>2026</span></p>
             <h3 class="project-title">FergBentables</h3>
             <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers, orders and the showroom's stock: each order is followed from processing to delivery and takes its items from the inventory, paid orders get a PDF receipt, staff are reminded to restock, and everything exports to Excel. I shipped changes from the client's feedback, and it has 104 unit tests and 118 on-device tests.</p>
             <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Apache POI</li></ul>
             <div class="project-foot">
-              <span class="project-role"><b>Solo</b> · Full-stack developer</span>
+              <span class="project-role"><b>Team of 4</b> · I built the app</span>
+              <a class="project-case" href="projects/fergbentables.html">Case study →</a>
               <a class="project-code" href="https://github.com/nathzramirez0-sys/fergbentables" target="_blank" rel="noopener">Code on GitHub ↗</a>
               <button type="button" class="map-link" data-node="p-ferg">On the map</button>
             </div>
           </article>
           <article class="project project-lead reveal">
-            <a class="project-shot" href="img/tf-banner.jpg" target="_blank" rel="noopener"><img src="img/tf-banner.jpg" width="1280" height="800" loading="lazy" alt="ThesisFlow on three phones: a group's overview with its defense countdown, the task board, and team stats"></a>
+            <a class="project-shot" href="projects/thesisflow.html" aria-label="ThesisFlow case study"><img src="img/tf-banner.jpg" width="1280" height="800" loading="lazy" alt="ThesisFlow on three phones: a group's overview with its defense countdown, the task board, and team stats"></a>
             <p class="project-meta mono"><span>Personal · Android app</span><span>2026</span></p>
             <h3 class="project-title">ThesisFlow</h3>
             <p class="project-text">A thesis manager for college groups: chapters with versioned drafts, adviser feedback, a kanban task board, a group activity feed, push notifications, daily deadline reminders, a defense countdown and team stats, all working offline. Firebase handles sign-in, data, files and pushes, with Cloud Functions and security rules for each role. A second, local build keeps everything on one phone with no account or internet, so anyone can try it. It has 142 unit tests, 59 security-rule tests, 26 on-device tests and CI on every push.</p>
             <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Cloud Functions</li><li>Room</li></ul>
             <div class="project-foot">
               <span class="project-role"><b>Solo</b> · Full-stack developer</span>
+              <a class="project-case" href="projects/thesisflow.html">Case study →</a>
+              <a class="project-case" href="projects/thesisflow.html#try">Try it on Android</a>
               <a class="project-code" href="https://github.com/nathzramirez0-sys/ThesisFlow" target="_blank" rel="noopener">Code on GitHub ↗</a>
               <button type="button" class="map-link" data-node="p-thesisflow">On the map</button>
             </div>
@@ -555,7 +568,7 @@
       <div class="section-body about">
         <h2 class="h2" id="about-title">Hello, I'm Jonathan Cercenia Ramirez.</h2>
         <p>I'm a full-stack developer and a Computer Science student at the University of Pangasinan – PHINMA. I like building software for the places it actually gets used: an office with no IT staff, a subscriber checking a bill on their phone, a showroom counter printing a receipt, a student finding a room on campus.</p>
-        <p>My thesis, Cable Manager, shows how I work. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. Alongside it, I've built two Android apps on my own: FergBentables, now in use at a showroom, and ThesisFlow, a manager for thesis groups and their adviser. I've also built three web projects on my own, and worked as a programmer on three team projects for web and Android.</p>
+        <p>My thesis, Cable Manager, shows how I work. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. It has been in use at the provider's office since October 2026. Alongside it, I built the app for my team capstone, FergBentables, which is now in use at a showroom. On my own I've built ThesisFlow, a manager for thesis groups and their adviser, and three web projects, and I've worked as a programmer on three team projects for web and Android.</p>
         <p>On the web I work in PHP, MySQL and JavaScript; on Android, in Kotlin with Jetpack Compose, Room and Firebase. I care most about the parts that decide whether software survives real use: backups that restore completely or not at all, sign-ins that resist guessing, and tests that run with one command. Part-time work during my studies taught me to manage my time and see things through, and photo editing gives me an eye for how things look.</p>
         <dl class="rows">
           <div><dt class="mono">Studying</dt><dd>BS Computer Science, University of Pangasinan – PHINMA · graduating 2027</dd></div>
@@ -595,10 +608,11 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=30"></script>
-  <script src="ui.js?v=30"></script>
+  <script src="data.js?v=32"></script>
+  <script src="ui.js?v=32"></script>
+  <script src="lightbox.js?v=32"></script>
   <script type="module">
-    import("./scene.js?v=30").catch(() => {
+    import("./scene.js?v=32").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

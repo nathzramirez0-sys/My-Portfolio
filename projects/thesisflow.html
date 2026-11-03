@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ThesisFlow case study · Jonathan Cercenia Ramirez</title>
+  <meta name="description" content="ThesisFlow: an Android app where thesis groups and their adviser track chapters, drafts, tasks and feedback. Built solo, end to end, as a cloud build on Firebase and a local build you can try on your phone.">
+  <meta name="theme-color" content="#111418">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://nathzramirez0-sys.github.io/My-Portfolio/projects/thesisflow.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jonathan Cercenia Ramirez">
+  <meta property="og:title" content="ThesisFlow · case study">
+  <meta property="og:description" content="An Android app for thesis groups and their adviser, built solo end to end. Try the local build on your phone.">
+  <meta property="og:url" content="https://nathzramirez0-sys.github.io/My-Portfolio/projects/thesisflow.html">
+  <meta property="og:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/img/tf-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../styles.css?v=32">
+  <script>
+    // motion is on unless the visitor has switched it off on this site
+    (function () {
+      var root = document.documentElement, choice = null;
+      root.classList.add("js");
+      try { choice = localStorage.getItem("motion"); } catch (e) {}
+      if (choice !== "off") root.classList.add("motion");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="../index.html" aria-label="Home">
+        <span class="mark-glyph" aria-hidden="true"></span>
+        <span class="mark-name">Jonathan Cercenia Ramirez</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Open to internships &amp; projects</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section wrap case-page" aria-labelledby="case-title">
+      <div class="section-label">
+        <span class="mono">Case study</span>
+      </div>
+      <div class="section-body">
+        <a class="page-back" href="../index.html#projects">← All projects</a>
+        <article class="case">
+          <header class="case-head">
+            <p class="case-kicker mono">Personal project · Android app · 2026</p>
+            <h1 class="case-title" id="case-title">ThesisFlow</h1>
+            <p class="case-sum">A thesis manager for college groups and their adviser: who is doing what, which chapters are done, what the adviser said, and what is due next. A portfolio project I built solo, from the database to the security rules.</p>
+          </header>
+
+          <dl class="spec">
+            <div><dt>My role</dt><dd>Full-stack developer, solo</dd></div>
+            <div><dt>Builds</dt><dd>Cloud and local</dd></div>
+            <div><dt>Tests</dt><dd>142 unit · 59 rules · 26 on-device</dd></div>
+            <div><dt>Phases</dt><dd>7 of 7 done</dd></div>
+          </dl>
+
+          <p class="case-note"><span class="mono">Code</span><span><a href="https://github.com/nathzramirez0-sys/ThesisFlow" target="_blank" rel="noopener">Public on GitHub ↗</a>, with a README that walks through running it.</span></p>
+
+          <div class="try" id="try">
+            <div>
+              <h2 class="try-title">Try it on your phone</h2>
+              <p>The local build keeps everything on the phone, with no account and no internet. It opens with a sample thesis group, so you can switch between the leader, the members and the adviser and see what each one may do.</p>
+              <p class="try-meta">Android 8 or newer · 3.7 MB · version 0.1.0. It isn't on the Play Store, so your phone will ask you to allow installs from your browser. Signed with a development key.</p>
+            </div>
+            <a class="btn btn-primary" href="../downloads/ThesisFlow-Local-0.1.0.apk" download>Download for Android</a>
+          </div>
+
+          <figure class="screens">
+            <div class="gallery gallery-phones">
+              <a class="shot" href="../img/tf-overview.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-overview.jpg" width="540" height="1200" loading="lazy" alt="A group's overview: defense countdown, thesis progress, tasks and team stats">
+                <span class="shot-cap mono">Overview</span>
+              </a>
+              <a class="shot" href="../img/tf-chapters.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-chapters.jpg" width="540" height="1200" loading="lazy" alt="The chapter timeline, each chapter with its version, status and deadline">
+                <span class="shot-cap mono">Chapters</span>
+              </a>
+              <a class="shot" href="../img/tf-feedback.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-feedback.jpg" width="540" height="1200" loading="lazy" alt="A chapter with the adviser's feedback and its versioned drafts">
+                <span class="shot-cap mono">Feedback</span>
+              </a>
+              <a class="shot" href="../img/tf-tasks.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-tasks.jpg" width="540" height="1200" loading="lazy" alt="The task board: to do, in progress and done">
+                <span class="shot-cap mono">Task board</span>
+              </a>
+              <a class="shot" href="../img/tf-stats.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-stats.jpg" width="540" height="1200" loading="lazy" alt="Team stats: chapters approved, tasks done, feedback, and work finished per week">
+                <span class="shot-cap mono">Team stats</span>
+              </a>
+              <a class="shot" href="../img/tf-activity.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-activity.jpg" width="540" height="1200" loading="lazy" alt="The group's activity feed, grouped by day">
+                <span class="shot-cap mono">Activity</span>
+              </a>
+              <a class="shot" href="../img/tf-light.jpg" data-lightbox="tf" target="_blank" rel="noopener">
+                <img src="../img/tf-light.jpg" width="540" height="1200" loading="lazy" alt="The same app in its light theme">
+                <span class="shot-cap mono">Light theme</span>
+              </a>
+            </div>
+            <figcaption>Screens with a sample group. Choose one to see it full size.</figcaption>
+          </figure>
+
+          <div class="hard">
+            <h2 class="h3">Decisions that mattered</h2>
+            <ul class="hard-list">
+              <li>
+                <h3>Three modules, one direction</h3>
+                <p>The domain module is plain Kotlin with no Android or Firebase imports; the data module implements its interfaces; the app only sees use cases, so most tests run on the JVM without a device.</p>
+              </li>
+              <li>
+                <h3>Works without a signal</h3>
+                <p>Screens read from Room. A sync manager copies Firestore in while the app is open, and uploads wait in a WorkManager queue until there is a connection.</p>
+              </li>
+              <li>
+                <h3>The server decides who can do what</h3>
+                <p>Security rules give each role its limits: only leaders and advisers approve chapters, members move only their own tasks, only advisers post feedback. 59 tests run the rules against the emulators; writing them closed two gaps.</p>
+              </li>
+              <li>
+                <h3>A feed nobody can fake</h3>
+                <p>Activity entries are written only by Cloud Functions, with the actor taken from fields the rules enforce and the event id as the key, so a retry can't post twice. They expire after 180 days.</p>
+              </li>
+              <li>
+                <h3>Two builds, one codebase</h3>
+                <p>A cloud build on Firebase and a local build that keeps everything on the phone. The local one does the cloud functions' jobs on the device and ships a sample group, which is what you can try above.</p>
+              </li>
+              <li>
+                <h3>Checked on every push</h3>
+                <p>GitHub Actions runs the unit tests, a debug build, the security-rule tests and the Cloud Functions build on every push.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="design">
+            <h2 class="h3">Design</h2>
+            <p class="design-note">An "aurora glass" look of its own: a deep-space background with soft violet and cyan light, glass cards, a glowing progress ring and a chapter timeline, set in Space Grotesk and Manrope, in dark and light themes.</p>
+          </div>
+
+          <div class="built">
+            <h2 class="h3">Built with</h2>
+            <dl class="rows tags">
+              <div><dt class="mono">App</dt><dd><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Material 3</span><span class="tag">Hilt</span><span class="tag">Coroutines &amp; Flow</span><span class="tag">Vico charts</span></dd></div>
+              <div><dt class="mono">Data</dt><dd><span class="tag">Room</span><span class="tag">WorkManager</span><span class="tag">DataStore</span></dd></div>
+              <div><dt class="mono">Cloud</dt><dd><span class="tag">Firebase Auth</span><span class="tag">Firestore</span><span class="tag">Cloud Storage</span><span class="tag">Cloud Functions (TypeScript)</span><span class="tag">Cloud Messaging</span></dd></div>
+              <div><dt class="mono">Tests</dt><dd><span class="tag">JUnit</span><span class="tag">MockK</span><span class="tag">Turbine</span><span class="tag">Rules unit testing</span><span class="tag">GitHub Actions</span></dd></div>
+            </dl>
+          </div>
+
+          <nav class="next-case" aria-label="More case studies">
+            <a href="fergbentables.html">← FergBentables case study</a>
+            <a href="../index.html#projects">All projects →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© <span id="year">2026</span> Jonathan Cercenia Ramirez</span>
+    <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
+  </footer>
+
+  <script src="../lightbox.js?v=32"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

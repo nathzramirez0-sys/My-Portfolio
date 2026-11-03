@@ -21,10 +21,10 @@ window.PORTFOLIO = {
   // Milestones are dated commits, reworded.
   build: {
     start: "2026-04-13",
-    weeks: [2, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 22, 8, 15, 7, 3, 5, 22, 31, 0, 3, 0, 10],
+    weeks: [2, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 22, 8, 15, 7, 3, 5, 22, 31, 0, 3, 0, 10, 3, 2],
     phases: [
       { label: "UI prototype", from: 0, to: 15 },
-      { label: "Working system", from: 16, to: 27 },
+      { label: "Working system", from: 16, to: 29 },
     ],
     milestones: [
       { week: 0, date: "19 Apr", text: "The UI prototype begins" },
@@ -38,6 +38,8 @@ window.PORTFOLIO = {
       { week: 23, date: "25 Sep", text: "A dashboard of what's waiting on staff", node: "office" },
       { week: 25, date: "5 Oct", text: "The Android app redrawn from its mockups, with payment history and a PDF statement", node: "android-app" },
       { week: 27, date: "21 Oct", text: "The office system and portal redrawn in the app's design, and the app's contrast measured and fixed", node: "office" },
+      { week: 28, date: "30 Oct", text: "In use at the provider's office, with over 900 subscribers moved in", node: "golive" },
+      { week: 29, date: "3 Nov", text: "A bill is locked before a payment is recorded, so two staff can't pay it twice", node: "lock" },
     ],
   },
 
@@ -77,8 +79,12 @@ window.PORTFOLIO = {
       text: "Web server, database and PHP in one setup file. The launcher migrates the schema, takes a backup, keeps the thirty most recent and shuts everything down cleanly." },
     { id: "roles", ring: "solved", label: "Four roles", keys: ["roles", "permissions", "access control", "admin", "bookkeeper", "staff"], section: "#work",
       text: "Administrator, bookkeeper, staff and subscriber, checked on the server for every page rather than by hiding buttons." },
+    { id: "lock", ring: "solved", label: "Payment locking", keys: ["race", "race condition", "concurrency", "double payment", "paid twice", "lock", "locking", "for update"], section: "#work",
+      text: "A payment locks its bill inside the transaction (SELECT ... FOR UPDATE), so when two staff record the same bill at once, the second waits, sees it settled and is refused. A test reproduces the race." },
+    { id: "golive", ring: "solved", label: "Going live", keys: ["go live", "went live", "live", "in use", "import", "imported", "real subscribers", "production", "real client"], section: "#work",
+      text: "In use at the provider's office since October 2026. Over 900 existing subscribers and their opening balances went in as one tested restore file, and going live fixed a database that wouldn't start under a non-English Windows account name." },
     { id: "tests", ring: "solved", label: "Automated tests", keys: ["test", "tests", "testing", "tested", "quality"], section: "#work",
-      text: "602 tests in 10 files, one command, no dependencies. Every run rebuilds a throwaway database, so real records are never touched." },
+      text: "605 tests in 10 files, one command, no dependencies. Every run rebuilds a throwaway database, so real records are never touched." },
 
     // Services
     { id: "svc-business", ring: "services", label: "Business systems", keys: ["billing", "inventory", "records", "reports"], section: "#services",
@@ -92,7 +98,7 @@ window.PORTFOLIO = {
 
     // Projects
     { id: "p-ferg", ring: "projects", label: "FergBentables", keys: ["fergbentables", "ferg", "blushdesk", "showroom", "tablet", "receipt", "receipts", "excel", "orders", "buyers", "capstone", "capstone project", "stock", "restock"], section: "#projects",
-      text: "My capstone project, built solo as full-stack developer. An offline Android tablet app for a showroom counter, now in use there: buyers, orders followed from processing to delivery, an inventory that moves with each order, restock and low-stock reminders, PDF receipts for paid orders, and Excel export." },
+      text: "My capstone, with a team of four, where I designed and built the app. An offline Android tablet app for a showroom counter, now in use there: buyers, orders followed from processing to delivery, an inventory that moves with each order, restock and low-stock reminders, PDF receipts for paid orders, and Excel export." },
     { id: "p-thesisflow", ring: "projects", label: "ThesisFlow", keys: ["thesisflow", "thesis flow", "kanban", "adviser", "advisor", "chapters", "chapter", "drafts", "local build", "no account"], section: "#projects",
       text: "Solo project, as full-stack developer. An Android app for thesis groups: chapters with versioned drafts, adviser feedback, a task board, a group activity feed, push notifications, deadline reminders and team stats, all working offline, on Firebase. A second, local build keeps everything on one phone with no account or internet, so anyone can try it." },
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
@@ -145,6 +151,7 @@ window.PORTFOLIO = {
     ["installer", "inno"], ["installer", "powershell"], ["installer", "svc-setup"],
     ["roles", "svc-business"], ["tests", "php"], ["tests", "git"],
     ["offline", "svc-android"], ["throttle", "roles"],
+    ["lock", "office"], ["lock", "mariadb"], ["lock", "tests"], ["golive", "office"], ["golive", "restore"], ["golive", "installer"], ["golive", "svc-business"],
     ["p-arts", "php"], ["p-arts", "mariadb"], ["p-arts", "svc-portal"],
     ["p-auction", "php"], ["p-auction", "mariadb"], ["p-auction", "js"],
     ["p-court", "php"], ["p-court", "mariadb"], ["p-court", "svc-business"],
@@ -159,7 +166,7 @@ window.PORTFOLIO = {
   answers: [
     {
       keys: ["thesis", "cable manager", "what did you build", "main project", "biggest project", "project"],
-      text: "Cable Manager: billing and subscriber management for a local cable and internet provider. It comes three ways that share one database: an office system that installs as a single Windows file, a subscriber portal that installs on a phone, and a native Android app. Tailscale Funnel lets the portal and app reach it from anywhere.",
+      text: "Cable Manager: billing and subscriber management for a local cable and internet provider. It comes three ways that share one database: an office system that installs as a single Windows file, a subscriber portal that installs on a phone, and a native Android app. Tailscale Funnel lets the portal and app reach it from anywhere. It has been in use at the provider's office since October 2026, with over 900 subscribers.",
       nodes: ["office", "portal", "android-app", "remote"],
       sources: [["#work", "Case study"]],
     },
@@ -177,7 +184,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["what else", "other projects", "projects", "portfolio", "built", "solo", "team", "teams", "group", "groupmates"],
-      text: "Besides Cable Manager, five projects I built solo as a full-stack developer. Two Android apps: FergBentables, my capstone, an offline tablet app with an inventory, now in use at a showroom, and ThesisFlow, a manager for thesis groups with adviser feedback, a task board and team stats. And three web projects: Arts & Design Showcase for a client, plus Auction Market and St. Francis Court. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
+      text: "Besides Cable Manager: FergBentables, my team capstone, where I built the app, an offline tablet app with an inventory, now in use at a showroom. Four projects I built solo as a full-stack developer: ThesisFlow, an Android app for thesis groups that you can try on your phone, and three web projects, Arts & Design Showcase for a client, plus Auction Market and St. Francis Court. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
       nodes: ["p-ferg", "p-thesisflow", "p-arts", "p-auction", "p-court", "p-pucu", "p-campus", "p-ucwd"],
       sources: [["#projects", "Projects"]],
     },
@@ -213,7 +220,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["test", "tests", "testing", "tested", "quality", "bugs", "reliable"],
-      text: "602 tests in 10 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 104 unit tests and 118 on-device tests, and ThesisFlow has 142 unit tests, 59 tests for its security rules, 26 on-device tests for its local build, and GitHub Actions CI that runs them on every push.",
+      text: "605 tests in 10 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 104 unit tests and 118 on-device tests, and ThesisFlow has 142 unit tests, 59 tests for its security rules, 26 on-device tests for its local build, and GitHub Actions CI that runs them on every push.",
       nodes: ["tests", "php", "p-ferg", "p-thesisflow"],
       sources: [["#work", "Case study"]],
     },
@@ -248,6 +255,18 @@ window.PORTFOLIO = {
       sources: [["#certifications", "Certifications"]],
     },
     {
+      keys: ["two staff", "same payment", "same bill", "same time", "paid twice", "double payment", "race", "race condition", "concurrency", "concurrent"],
+      text: "The bill is locked first. Recording a payment opens a transaction, locks the bill's row (SELECT ... FOR UPDATE) and only then checks whether it's already paid, so when two staff press Record on the same bill at once, the second waits, sees it settled and is refused. A test reproduces exactly that race.",
+      nodes: ["lock", "tests", "mariadb"],
+      sources: [["#work", "What was hard"]],
+    },
+    {
+      keys: ["try", "try it", "try one", "download", "apk", "install", "demo", "test it", "play with"],
+      text: "Yes: ThesisFlow's local build installs on any Android 8 or newer phone and keeps everything on the phone, with no account or internet. It opens with a sample thesis group, so you can switch between the leader, members and adviser. The download is on its case study page.",
+      nodes: ["p-thesisflow"],
+      sources: [["projects/thesisflow.html#try", "Try ThesisFlow"]],
+    },
+    {
       keys: ["docs", "documentation", "document", "manual", "guide", "paper", "defense", "defence", "methodology"],
       text: "The system ships with a user guide, a server setup guide, a features document and a tech-stack document. The README covers installing, remote access, backup and restore, security, the data model, what each role can do, and troubleshooting.",
       nodes: ["office", "tests"],
@@ -275,7 +294,7 @@ window.PORTFOLIO = {
       rings: [],
     },
     recruiter: {
-      lede: "Full-stack developer with a shipped thesis system: an office server, a subscriber portal and an Android app sharing one database, backed by automated tests.",
+      lede: "Full-stack developer whose thesis system is in use: an office server, a subscriber portal and an Android app on one database, running a local provider with over 900 subscribers.",
       cta: ["#about", "About me"],
       chips: ["What's your stack?", "What else have you built?", "Do you have any certifications?", "Are you looking for an internship?"],
       rings: ["projects", "solved", "tools"],

@@ -19,17 +19,21 @@ Then open `http://localhost:5510/`.
 | `data.js` | What the map and the ask box know: rings, points, links between them, answers, visitor lenses, and the build log's weekly commits and milestones |
 | `scene.js` | The 3D map (Three.js): rings, points, trails, packets, beams, the instrument readout, dragging, hovering, clicking |
 | `ui.js` | The ask box, the readout panel, the visitor lens, the build-log chart, and the "See it on the map" links |
+| `lightbox.js` | The screenshot viewer: any link with `data-lightbox="group"` opens its picture over the page, with arrows, arrow keys, swipe and Esc |
+| `projects/fergbentables.html`, `projects/thesisflow.html` | The two case-study pages, linked from the project cards |
+| `projects/fergbentables-intro.html` | The FergBentables intro film (a copy of `docs/intro/` in that repo), loaded on its case study only when Play is pressed |
+| `downloads/ThesisFlow-Local-0.1.0.apk` | ThesisFlow's local build for visitors to try: `assembleLocalRelease`, then zipalign and apksigner with the Android debug key |
 | `llms.txt` | A plain-text copy of the page for AI agents and crawlers |
 | `favicon.svg` | The tab icon |
 | `og-image.png` | The picture shown when the link is shared (1200×630), captured from `og-image.html` |
 | `img/` | Screenshots, used by the page and the CV. Cable Manager's come from the test database, with the client's name and logo blurred; FergBentables' and ThesisFlow's come from their READMEs |
 | `404.html` | The page GitHub shows for a mistyped address |
-| `Jonathan-Cercenia-Ramirez-CV.pdf` | My one-page CV, linked from About and Contact |
+| `Jonathan-Cercenia-Ramirez-CV.pdf` | My two-page CV, linked from About and Contact |
 | `cv/cv.html` | The source the CV PDF is printed from |
 
-After changing a CSS or JS file, raise the `?v=5` number on its link in
-`index.html` (all four use the same number). Browsers otherwise keep
-showing the old copy.
+After changing a CSS or JS file, raise the `?v=N` number on its links in
+`index.html` and the two `projects/` pages (all use the same number).
+Browsers otherwise keep showing the old copy.
 
 ## Details on the page
 
