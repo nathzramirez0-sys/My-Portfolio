@@ -13,7 +13,7 @@ GitHub: https://github.com/nathzramirez0-sys and https://github.com/Nathan-28100
 
 ### Cable Manager (thesis project, 2026)
 
-Role: Full-stack developer. Source code is not public (built for a real client); walkthroughs on request.
+Role: Full-stack developer, in a thesis team of five. Source code is not public (built for a real client); walkthroughs on request.
 Status: in use at the provider's office since October 2026, with over 900 subscribers.
 
 Billing and subscriber management for a local cable and internet provider. One set of records, reached three ways:

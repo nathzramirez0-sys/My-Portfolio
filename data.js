@@ -172,7 +172,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["your role", "role in", "role on", "what was your role", "what did you do", "your part", "position"],
-      text: "My role on Cable Manager was full-stack developer. The case study below walks through what the system does and the problems it made me solve.",
+      text: "Cable Manager was my thesis with a team of five researchers, and my role was full-stack developer. The case study below walks through what the system does and the problems it made me solve.",
       nodes: ["office", "portal", "android-app", "remote"],
       sources: [["#work", "Case study"]],
     },
