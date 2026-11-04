@@ -168,13 +168,13 @@ window.PORTFOLIO = {
       keys: ["thesis", "cable manager", "what did you build", "main project", "biggest project", "project"],
       text: "Cable Manager: billing and subscriber management for a local cable and internet provider. It comes three ways that share one database: an office system that installs as a single Windows file, a subscriber portal that installs on a phone, and a native Android app. Tailscale Funnel lets the portal and app reach it from anywhere. It has been in use at the provider's office since October 2026, with over 900 subscribers.",
       nodes: ["office", "portal", "android-app", "remote"],
-      sources: [["#work", "Case study"]],
+      sources: [["projects/cable-manager.html", "Case study"]],
     },
     {
       keys: ["your role", "role in", "role on", "what was your role", "what did you do", "your part", "position"],
       text: "Cable Manager was my thesis with a team of five researchers, and my role was full-stack developer. The case study below walks through what the system does and the problems it made me solve.",
       nodes: ["office", "portal", "android-app", "remote"],
-      sources: [["#work", "Case study"]],
+      sources: [["projects/cable-manager.html", "Case study"]],
     },
     {
       keys: ["source code", "the code", "see the code", "see your code", "code public", "repo", "repository", "open source", "github"],
@@ -204,37 +204,37 @@ window.PORTFOLIO = {
       keys: ["secure", "security", "secured", "safe", "password", "passwords", "hack", "hacked", "csrf", "sql injection", "attack"],
       text: "Passwords are bcrypt-hashed, and any password someone else chose must be replaced on first sign-in. Every query is a prepared statement, every form carries a CSRF token, and access is checked on the server for every page. Repeated failed sign-ins lock an account for longer each time, and every lock lands in the audit trail.",
       nodes: ["throttle", "roles"],
-      sources: [["#work", "What was hard"]],
+      sources: [["projects/cable-manager.html#hard", "What was hard"]],
     },
     {
       keys: ["hard", "hardest", "difficult", "challenge", "challenging", "problem", "problems", "struggle", "learn", "learned", "proud"],
       text: "Two things. Making a restore that either finishes completely or changes nothing, and keeping the portal reachable from outside the office. For that one I learned the hard way that phones cache failed DNS lookups, and that a public address can lapse if the office computer is off for days.",
       nodes: ["restore", "remote"],
-      sources: [["#work", "What was hard"]],
+      sources: [["projects/cable-manager.html#hard", "What was hard"]],
     },
     {
       keys: ["backup", "backups", "restore", "data loss", "lose data", "recover"],
       text: "Every start takes an automatic backup and keeps the thirty most recent. A restore takes a safety copy first, then refills tables inside one transaction, so it either finishes or changes nothing. It refuses a file that isn't a Cable Manager backup, is cut short, or comes from a newer version.",
       nodes: ["restore", "installer", "mariadb"],
-      sources: [["#work", "What was hard"]],
+      sources: [["projects/cable-manager.html#hard", "What was hard"]],
     },
     {
       keys: ["test", "tests", "testing", "tested", "quality", "bugs", "reliable"],
       text: "605 tests in 10 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 104 unit tests and 118 on-device tests, and ThesisFlow has 142 unit tests, 59 tests for its security rules, 26 on-device tests for its local build, and GitHub Actions CI that runs them on every push.",
       nodes: ["tests", "php", "p-ferg", "p-thesisflow"],
-      sources: [["#work", "Case study"]],
+      sources: [["projects/cable-manager.html", "Case study"]],
     },
     {
       keys: ["offline", "internet goes down", "no internet", "outage", "connection", "goes down", "power"],
       text: "The office system runs on the office computer itself and needs no internet at all. Only the portal and the app need a connection to reach it, and the app keeps the last balance it saw, so subscribers aren't left with a blank screen.",
       nodes: ["office", "offline", "android-app"],
-      sources: [["#work", "The brief"]],
+      sources: [["projects/cable-manager.html#brief", "The brief"]],
     },
     {
       keys: ["customers use", "on their phones", "on their phone", "on a phone", "on phones", "phone", "phones", "mobile"],
       text: "Yes, two ways. The portal installs on a phone straight from the browser, like an app, and there's a native Android app with reminders, QR payment, payment history and PDF receipts.",
       nodes: ["portal", "android-app", "svc-portal", "svc-android"],
-      sources: [["#work", "Case study"], ["#services", "Services"]],
+      sources: [["projects/cable-manager.html", "Case study"], ["#services", "Services"]],
     },
     {
       keys: ["business", "for my", "for me", "services", "service", "build for", "can you build", "clients", "freelance", "website", "offer"],
@@ -258,7 +258,7 @@ window.PORTFOLIO = {
       keys: ["two staff", "same payment", "same bill", "same time", "paid twice", "double payment", "race", "race condition", "concurrency", "concurrent"],
       text: "The bill is locked first. Recording a payment opens a transaction, locks the bill's row (SELECT ... FOR UPDATE) and only then checks whether it's already paid, so when two staff press Record on the same bill at once, the second waits, sees it settled and is refused. A test reproduces exactly that race.",
       nodes: ["lock", "tests", "mariadb"],
-      sources: [["#work", "What was hard"]],
+      sources: [["projects/cable-manager.html#hard", "What was hard"]],
     },
     {
       keys: ["try", "try it", "try one", "download", "apk", "install", "demo", "test it", "play with"],
@@ -267,10 +267,16 @@ window.PORTFOLIO = {
       sources: [["projects/thesisflow.html#try", "Try ThesisFlow"]],
     },
     {
+      keys: ["notes", "blog", "articles", "article", "write-ups", "write up", "writing", "posts"],
+      text: "Three short write-ups so far: \"Two staff, one bill\", on a payment race in Cable Manager; \"The letter that stopped my database\", on an ñ in a Windows account name at go-live; and \"Testing my security rules found two holes\", on ThesisFlow's Firebase rules.",
+      nodes: ["lock", "golive", "p-thesisflow"],
+      sources: [["#notes", "Notes"]],
+    },
+    {
       keys: ["docs", "documentation", "document", "manual", "guide", "paper", "defense", "defence", "methodology"],
       text: "The system ships with a user guide, a server setup guide, a features document and a tech-stack document. The README covers installing, remote access, backup and restore, security, the data model, what each role can do, and troubleshooting.",
       nodes: ["office", "tests"],
-      sources: [["#work", "Case study"]],
+      sources: [["projects/cable-manager.html", "Case study"]],
     },
     {
       keys: ["who are you", "about you", "yourself", "your name", "background", "study", "school", "university", "student"],
@@ -289,7 +295,7 @@ window.PORTFOLIO = {
   lenses: {
     none: {
       lede: "Office systems that install on one computer and need nothing else. Portals subscribers actually use. An Android app that still shows the balance when the office is offline.",
-      cta: ["#work", "Read the case study"],
+      cta: ["projects/cable-manager.html", "Read the case study"],
       chips: ["What did you build for your thesis?", "What else have you built?", "What was the hardest part?", "How does this map work?"],
       rings: [],
     },
@@ -307,7 +313,7 @@ window.PORTFOLIO = {
     },
     faculty: {
       lede: "My thesis, Cable Manager, is billing and subscriber management for a local provider, delivered as an office system, a subscriber portal and an Android app over one database.",
-      cta: ["#work", "Read the case study"],
+      cta: ["projects/cable-manager.html", "Read the case study"],
       chips: ["What did you build for your thesis?", "What else have you built?", "How is it secured?", "How is it tested?"],
       rings: ["work", "projects", "solved"],
     },

@@ -20,7 +20,10 @@ Then open `http://localhost:5510/`.
 | `scene.js` | The 3D map (Three.js): rings, points, trails, packets, beams, the instrument readout, dragging, hovering, clicking |
 | `ui.js` | The ask box, the readout panel, the visitor lens, the build-log chart, and the "See it on the map" links |
 | `lightbox.js` | The screenshot viewer: any link with `data-lightbox="group"` opens its picture over the page, with arrows, arrow keys, swipe and Esc |
-| `projects/fergbentables.html`, `projects/thesisflow.html` | The two case-study pages, linked from the project cards |
+| `projects/cable-manager.html`, `projects/fergbentables.html`, `projects/thesisflow.html` | The case-study pages. The home page keeps a summary of Cable Manager with its intro video |
+| `buildlog.js` | Draws Cable Manager's build log (commits per week and milestones) from `data.js` on its case page |
+| `notes/*.html` | Short write-ups, listed in the Notes section of the home page and in `llms.txt` |
+| `img/cm-intro.mp4` | The team's thesis-defense intro, re-rendered with the client's name and logo blurred |
 | `projects/fergbentables-intro.html` | The FergBentables intro film (a copy of `docs/intro/` in that repo), loaded on its case study only when Play is pressed |
 | `downloads/ThesisFlow-Local-0.1.0.apk` | ThesisFlow's local build for visitors to try: `assembleLocalRelease`, then zipalign and apksigner with the Android debug key |
 | `llms.txt` | A plain-text copy of the page for AI agents and crawlers |

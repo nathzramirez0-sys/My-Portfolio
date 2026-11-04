@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Two staff, one bill · Jonathan Cercenia Ramirez</title>
+  <meta name="description" content="How two people pressing Record at the same moment could pay one bill twice, and why the fix was a lock rather than a better check.">
+  <meta name="theme-color" content="#111418">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://nathzramirez0-sys.github.io/My-Portfolio/notes/two-staff-one-bill.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jonathan Cercenia Ramirez">
+  <meta property="og:title" content="Two staff, one bill">
+  <meta property="og:description" content="How two people pressing Record at the same moment could pay one bill twice, and why the fix was a lock rather than a better check.">
+  <meta property="og:url" content="https://nathzramirez0-sys.github.io/My-Portfolio/notes/two-staff-one-bill.html">
+  <meta property="og:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/og-image.png">
+  <meta property="article:published_time" content="2026-11-03">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../styles.css?v=36">
+  <script>
+    // motion is on unless the visitor has switched it off on this site
+    (function () {
+      var root = document.documentElement, choice = null;
+      root.classList.add("js");
+      try { choice = localStorage.getItem("motion"); } catch (e) {}
+      if (choice !== "off") root.classList.add("motion");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="../index.html" aria-label="Home">
+        <span class="mark-glyph" aria-hidden="true"></span>
+        <span class="mark-name">Jonathan Cercenia Ramirez</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#notes">Notes</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Open to internships &amp; projects</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section wrap case-page" aria-labelledby="note-title">
+      <div class="section-label">
+        <span class="mono">Note</span>
+      </div>
+      <div class="section-body">
+        <a class="page-back" href="../index.html#notes">← All notes</a>
+        <article class="note">
+          <header class="note-head">
+            <p class="case-kicker mono">Cable Manager · <time datetime="2026-11-03">3 Nov 2026</time></p>
+            <h1 class="note-title" id="note-title">Two staff, one bill</h1>
+            <p class="case-sum">How two people pressing Record at the same moment could pay one bill twice, and why the fix was a lock rather than a better check.</p>
+          </header>
+          <div class="prose">
+            <p>In Cable Manager, staff record a payment by opening a bill and pressing Record. The code looked careful: it checked whether the bill was already paid, refused if it was, and only then wrote the payment inside a transaction.</p>
+            <h2>The bug</h2>
+            <p>The check happened before the transaction began, from a read that took no lock. If two staff pressed Record on the same bill at the same instant, both requests read the bill as unpaid, both passed the check, and both payments went in. The bill was paid twice, and the bookkeeping ledger with it.</p>
+            <p>Each request on its own was correct. Only the timing between two of them was wrong, which is why it never showed up when one person tried the feature, and why a quick fix to the check itself wouldn't have helped: any check made outside the lock can be out of date by the time the write happens.</p>
+            <h2>The fix</h2>
+            <p>The check moved inside the transaction, after locking the bill's row. In outline:</p>
+            <pre><code>START TRANSACTION;
+-- a second request waits here until the first one commits
+SELECT amount, status FROM invoices WHERE id = ? FOR UPDATE;
+-- already paid? roll back and refuse
+-- otherwise record the payment and settle the bill
+COMMIT;</code></pre>
+            <p>Now the second person's request waits until the first one commits, then reads a bill that is already settled, and is refused. Whether the bill is fully paid is judged against the amount read under that lock, not an earlier copy.</p>
+            <h2>Proving it</h2>
+            <p>A race is easy to "fix" and hard to show fixed, so I wrote a test that makes it happen on purpose. A second database connection settles the bill and holds its lock for a second while the payment is recorded. On the old code the test fails, because the payment is written. On the new code it passes, and it is now one of the suite's 605 tests.</p>
+            <h2>What I took from it</h2>
+            <p>If a check decides whether a write is allowed, it has to happen under the same lock as the write. Reading first and writing later is fine for one person, and wrong as soon as there are two.</p>
+          </div>
+          <nav class="next-case" aria-label="More">
+            <a href="../index.html#notes">← All notes</a>
+            <a href="../projects/cable-manager.html#hard">Cable Manager case study →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© <span id="year">2026</span> Jonathan Cercenia Ramirez</span>
+    <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

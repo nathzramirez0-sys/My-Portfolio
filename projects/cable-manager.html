@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cable Manager case study · Jonathan Cercenia Ramirez</title>
+  <meta name="description" content="Cable Manager: billing and subscriber management for a local cable and internet provider, in use since October 2026 with over 900 subscribers. My team thesis, where I was the full-stack developer.">
+  <meta name="theme-color" content="#111418">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://nathzramirez0-sys.github.io/My-Portfolio/projects/cable-manager.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jonathan Cercenia Ramirez">
+  <meta property="og:title" content="Cable Manager · case study">
+  <meta property="og:description" content="An office system, a subscriber portal and an Android app on one database, in use at a local provider since October 2026.">
+  <meta property="og:url" content="https://nathzramirez0-sys.github.io/My-Portfolio/projects/cable-manager.html">
+  <meta property="og:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/img/cm-office.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../styles.css?v=36">
+  <script>
+    // motion is on unless the visitor has switched it off on this site
+    (function () {
+      var root = document.documentElement, choice = null;
+      root.classList.add("js");
+      try { choice = localStorage.getItem("motion"); } catch (e) {}
+      if (choice !== "off") root.classList.add("motion");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="../index.html" aria-label="Home">
+        <span class="mark-glyph" aria-hidden="true"></span>
+        <span class="mark-name">Jonathan Cercenia Ramirez</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#notes">Notes</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Open to internships &amp; projects</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section wrap case-page" aria-labelledby="case-title">
+      <div class="section-label">
+        <span class="mono">Case study</span>
+      </div>
+      <div class="section-body">
+        <a class="page-back" href="../index.html#work">← Home</a>
+        <article class="case">
+          <header class="case-head">
+            <p class="case-kicker mono">Thesis project · In use since October 2026</p>
+            <h1 class="case-title" id="case-title">Cable Manager</h1>
+            <p class="case-sum">Billing and subscriber management for a local cable and internet provider. It keeps one record of who is connected, what plan they're on, what they owe, what has been collected and what the office has spent. Since October 2026 it runs the provider's office, with over 900 subscribers on it.</p>
+          </header>
+
+          <dl class="spec">
+            <div><dt>Role</dt><dd>Full-stack developer, team of 5</dd></div>
+            <div><dt>In use</dt><dd>900+ subscribers</dd></div>
+            <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
+            <div><dt>Tests</dt><dd>605, in 10 files</dd></div>
+          </dl>
+
+          <p class="case-note"><span class="mono">Source code</span><span>Not public: Cable Manager was built for a real client. I'm glad to walk you through the code on a call.</span></p>
+
+          <figure class="screens">
+            <video class="case-video" controls preload="none" playsinline poster="../img/cm-intro-poster.jpg" width="1920" height="1080">
+              <source src="../img/cm-intro.mp4" type="video/mp4">
+              <a href="../img/cm-intro.mp4">Watch the intro (MP4)</a>
+            </video>
+            <figcaption>The 50-second intro our team opened the thesis defense with. The client's name and logo are blurred.</figcaption>
+          </figure>
+
+          <div class="brief" id="brief">
+            <h2 class="h3">The brief</h2>
+            <p>It had to run on one office computer with no internet connection and nothing else installed. Subscribers still needed to see their bills and report payments from their phones, and the office had no IT staff to keep a server alive.</p>
+          </div>
+
+          <figure class="arch" aria-labelledby="arch-cap">
+            <div class="arch-row">
+              <div class="node">
+                <span class="node-tag mono">Windows installer</span>
+                <strong>Office system</strong>
+                <span class="node-meta">Apache 2.4 · MariaDB 10.4 · PHP 8.2, bundled</span>
+              </div>
+              <div class="node">
+                <span class="node-tag mono">Installable web app</span>
+                <strong>Subscriber portal</strong>
+                <span class="node-meta">Bills, payments, requests as a conversation</span>
+              </div>
+              <div class="node">
+                <span class="node-tag mono">Kotlin · Jetpack Compose</span>
+                <strong>Android app</strong>
+                <span class="node-meta">Reminders, QR payment, payment history</span>
+              </div>
+            </div>
+            <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="node node-core">
+              <span class="node-tag mono">One database</span>
+              <strong>Subscribers, plans, bills, payments, expenses</strong>
+              <span class="node-meta">Reached from outside over Tailscale Funnel: permanent HTTPS, no router setup</span>
+            </div>
+            <figcaption id="arch-cap">Three ways in, one set of records. The office computer is the server.</figcaption>
+          </figure>
+
+          <figure class="screens" aria-labelledby="screens-cap">
+            <div class="screens-row">
+              <a class="shot shot-wide" href="../img/cm-office.jpg" target="_blank" rel="noopener" data-lightbox="cable">
+                <img src="../img/cm-office.jpg" width="1600" height="1000" loading="lazy" alt="The office system's admin dashboard: subscribers, revenue, open tickets, stock alerts and quick actions">
+                <span class="shot-cap mono">Office system</span>
+              </a>
+              <a class="shot" href="../img/cm-portal.jpg" target="_blank" rel="noopener" data-lightbox="cable">
+                <img src="../img/cm-portal.jpg" width="585" height="1266" loading="lazy" alt="The subscriber portal on a phone: balance, plan speed and notices">
+                <span class="shot-cap mono">Portal</span>
+              </a>
+              <a class="shot" href="../img/cm-app-home.jpg" target="_blank" rel="noopener" data-lightbox="cable">
+                <img src="../img/cm-app-home.jpg" width="540" height="1200" loading="lazy" alt="The Android app's home screen: balance, plan, connection and monthly bills">
+                <span class="shot-cap mono">Android app</span>
+              </a>
+              <a class="shot" href="../img/cm-app-bills.jpg" target="_blank" rel="noopener" data-lightbox="cable">
+                <img src="../img/cm-app-bills.jpg" width="540" height="1200" loading="lazy" alt="The Android app's payment history, with a PDF statement to download">
+                <span class="shot-cap mono">Payments</span>
+              </a>
+            </div>
+            <figcaption id="screens-cap">Since October all three share one design. Captured from the test database with sample accounts; the client's name and logo are blurred. Choose a screen to see it full size.</figcaption>
+          </figure>
+
+          <div class="hard" id="hard">
+            <h2 class="h3">What was hard, and what I did about it</h2>
+            <ul class="hard-list">
+              <li>
+                <h3>A restore that can't half-happen</h3>
+                <p>Every restore takes a safety copy first, then empties and refills tables inside one transaction. It refuses a file that isn't a Cable Manager backup, is cut short, or comes from a newer version, before touching anything.</p>
+                <a class="map-link" href="../index.html?node=restore">See it on the map</a>
+              </li>
+              <li>
+                <h3>Sign-in throttling on all three doors</h3>
+                <p>Failed sign-ins are counted per account and per address across the office system, portal and app. Lockouts double up to 30 minutes, and every lock is written to the audit trail.</p>
+                <a class="map-link" href="../index.html?node=throttle">See it on the map</a>
+              </li>
+              <li>
+                <h3>An app that survives the office being off</h3>
+                <p>The Android app keeps the last answer it was given, so a subscriber still sees their balance when the office computer is shut down for the night.</p>
+                <a class="map-link" href="../index.html?node=offline">See it on the map</a>
+              </li>
+              <li>
+                <h3>Installing a whole server as one file</h3>
+                <p>A single installer ships its own web server, database and PHP. The launcher migrates the schema, takes a backup, keeps the thirty most recent, and shuts everything down cleanly on close.</p>
+                <a class="map-link" href="../index.html?node=installer">See it on the map</a>
+              </li>
+              <li>
+                <h3>Two staff, one bill</h3>
+                <p>Two people pressing Record on the same bill at the same moment could both get through, and the bill was paid twice. Now the bill is locked inside the payment's transaction, so the second person waits, sees it settled, and is refused. A test reproduces the race.</p>
+                <a class="map-link" href="../notes/two-staff-one-bill.html">Read the note</a>
+              </li>
+              <li>
+                <h3>Moving a real office onto it</h3>
+                <p>The provider's existing subscribers and their opening balances went in as one tested restore file, the same for both computers. Going live also turned up a database that wouldn't start under a Windows account whose name isn't plain English letters; the launcher handles it now.</p>
+                <a class="map-link" href="../notes/windows-account-name.html">Read the note</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="build" id="build">
+            <h2 class="h3">How it was built</h2>
+            <figure class="chart" id="build-chart">
+              <figcaption class="chart-head">
+                <span class="chart-title">Commits per week</span>
+                <span class="chart-sub" id="build-sub">Commits per week on the thesis repository</span>
+              </figcaption>
+              <div class="chart-plot" id="build-plot" data-home="../index.html"></div>
+            </figure>
+            <ol class="milestones" id="milestones"></ol>
+            <details class="table-view">
+              <summary>View the weekly numbers as a table</summary>
+              <div class="table-wrap"><table id="build-table"><thead><tr><th scope="col">Week of</th><th scope="col">Commits</th></tr></thead><tbody></tbody></table></div>
+            </details>
+          </div>
+
+          <div class="built">
+            <h2 class="h3">Built with</h2>
+            <dl class="rows tags">
+              <div><dt class="mono">Web</dt><dd><span class="tag">PHP 8</span><span class="tag">MariaDB</span><span class="tag">JavaScript</span><span class="tag">Progressive web app</span></dd></div>
+              <div><dt class="mono">Android</dt><dd><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span></dd></div>
+              <div><dt class="mono">Running it</dt><dd><span class="tag">Apache</span><span class="tag">PowerShell launcher</span><span class="tag">Inno Setup</span><span class="tag">Tailscale Funnel</span></dd></div>
+              <div><dt class="mono">Practice</dt><dd><span class="tag">Prepared statements</span><span class="tag">CSRF tokens</span><span class="tag">bcrypt</span><span class="tag">605 automated tests</span></dd></div>
+            </dl>
+          </div>
+
+          <nav class="next-case" aria-label="More case studies">
+            <a href="../index.html#work">← Home</a>
+            <a href="fergbentables.html">FergBentables case study →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© <span id="year">2026</span> Jonathan Cercenia Ramirez</span>
+    <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
+  </footer>
+
+  <script src="../data.js?v=36"></script>
+  <script src="../buildlog.js?v=36"></script>
+  <script src="../lightbox.js?v=36"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

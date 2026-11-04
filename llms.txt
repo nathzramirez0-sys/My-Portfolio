@@ -13,6 +13,7 @@ GitHub: https://github.com/nathzramirez0-sys and https://github.com/Nathan-28100
 
 ### Cable Manager (thesis project, 2026)
 
+Case study: https://nathzramirez0-sys.github.io/My-Portfolio/projects/cable-manager.html
 Role: Full-stack developer, in a thesis team of five. Source code is not public (built for a real client); walkthroughs on request.
 Status: in use at the provider's office since October 2026, with over 900 subscribers.
 
@@ -44,6 +45,12 @@ Solo: built alone, as full-stack developer. Team: a group project, as programmer
 - PUCU Event Calendar (team, web, 2025): school event calendar with organisation dashboards, user management, and upcoming/pending/finished events. PHP, MySQL, JavaScript.
 - ITE 393 Campus App (team, Android, 2025): sign-in, student profiles, floor-by-floor building map, events, courses and modules. Kotlin, Firebase. https://github.com/Nathan-281000/ITE_393
 - UCWD Leave Monitoring (team, Android, 2025): employees file leave applications; the office tracks and summarises them; web version too. Kotlin, Firebase. https://github.com/CodeDears2dot0/UCWD-Leave-Monitoring-System
+
+## Notes
+
+- Two staff, one bill (Cable Manager, 3 Nov 2026): a payment race, fixed by locking the bill inside the payment's transaction. https://nathzramirez0-sys.github.io/My-Portfolio/notes/two-staff-one-bill.html
+- The letter that stopped my database (Cable Manager, 30 Oct 2026): an ñ in a Windows account name broke the bundled database's config at go-live. https://nathzramirez0-sys.github.io/My-Portfolio/notes/windows-account-name.html
+- Testing my security rules found two holes (ThesisFlow, 7 Oct 2026): 59 Firebase rules tests against the emulators. https://nathzramirez0-sys.github.io/My-Portfolio/notes/testing-security-rules.html
 
 ## Certifications
 

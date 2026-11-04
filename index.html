@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=36">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -86,6 +86,7 @@
       <nav class="nav" aria-label="Sections">
         <a href="#work">Work</a>
         <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
         <a href="#services">Services</a>
         <a href="#stack">Stack</a>
         <a href="#about">About</a>
@@ -104,7 +105,7 @@
           <h1 class="display"><span class="dim">I build software that runs</span> <span class="em">where the work&nbsp;happens.</span></h1>
           <p class="lede" id="lede">Office systems that install on one computer and need nothing else. Portals subscribers actually use. An Android app that still shows the balance when the office is offline.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" id="cta" href="#work">Read the case study</a>
+            <a class="btn btn-primary" id="cta" href="projects/cable-manager.html">Read the case study</a>
             <a class="btn btn-ghost" href="#contact">Get in touch</a>
           </div>
           <div class="also">
@@ -214,6 +215,16 @@
       </div>
     </section>
 
+    <!-- ───────────── Latest ───────────── -->
+    <section class="latest wrap" aria-labelledby="latest-title">
+      <h2 class="latest-label mono" id="latest-title">Latest</h2>
+      <ol class="latest-list">
+        <li><time class="mono" datetime="2026-11-03">3 Nov</time><a href="notes/two-staff-one-bill.html">Cable Manager now locks a bill while a payment is recorded</a></li>
+        <li><time class="mono" datetime="2026-10-30">30 Oct</time><a href="projects/cable-manager.html">Cable Manager went live at the provider's office, with over 900 subscribers</a></li>
+        <li><time class="mono" datetime="2026-10-24">24 Oct</time><a href="projects/thesisflow.html#try">ThesisFlow got a build you can try on your phone</a></li>
+      </ol>
+    </section>
+
     <!-- ───────────── Work ───────────── -->
     <section class="section wrap" id="work" aria-labelledby="work-title">
       <div class="section-label" data-ring="work">
@@ -235,119 +246,16 @@
           </dl>
 
           <figure class="screens">
-            <video controls preload="none" playsinline poster="img/cm-intro-poster.jpg" width="1920" height="1080" style="display:block;width:100%;height:auto;border:1px solid var(--line-strong);border-radius:12px;background:#111418">
+            <video class="case-video" controls preload="none" playsinline poster="img/cm-intro-poster.jpg" width="1920" height="1080">
               <source src="img/cm-intro.mp4" type="video/mp4">
               <a href="img/cm-intro.mp4">Watch the intro (MP4)</a>
             </video>
             <figcaption>The 50-second intro our team opened the thesis defense with: the problem, the three ways in, how a payment is confirmed, and the checks behind it. The client's name and logo are blurred.</figcaption>
           </figure>
 
-          <p class="case-note"><span class="mono">Source code</span> Not public: Cable Manager was built for a real client. I'm glad to walk you through the code on a call.</p>
-
-          <div class="brief">
-            <h3 class="h3">The brief</h3>
-            <p>It had to run on one office computer with no internet connection and nothing else installed. Subscribers still needed to see their bills and report payments from their phones, and the office had no IT staff to keep a server alive.</p>
-          </div>
-
-          <figure class="arch" aria-labelledby="arch-cap">
-            <div class="arch-row">
-              <div class="node">
-                <span class="node-tag mono">Windows installer</span>
-                <strong>Office system</strong>
-                <span class="node-meta">Apache 2.4 · MariaDB 10.4 · PHP 8.2, bundled</span>
-              </div>
-              <div class="node">
-                <span class="node-tag mono">Installable web app</span>
-                <strong>Subscriber portal</strong>
-                <span class="node-meta">Bills, payments, requests as a conversation</span>
-              </div>
-              <div class="node">
-                <span class="node-tag mono">Kotlin · Jetpack Compose</span>
-                <strong>Android app</strong>
-                <span class="node-meta">Reminders, QR payment, payment history</span>
-              </div>
-            </div>
-            <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="node node-core">
-              <span class="node-tag mono">One database</span>
-              <strong>Subscribers, plans, bills, payments, expenses</strong>
-              <span class="node-meta">Reached from outside over Tailscale Funnel: permanent HTTPS, no router setup</span>
-            </div>
-            <figcaption id="arch-cap">Three ways in, one set of records. The office computer is the server.</figcaption>
-          </figure>
-
-          <figure class="screens reveal" aria-labelledby="screens-cap">
-            <div class="screens-row">
-              <a class="shot shot-wide" href="img/cm-office.jpg" target="_blank" rel="noopener" data-lightbox="cable">
-                <img src="img/cm-office.jpg" width="1600" height="1000" loading="lazy" alt="The office system's admin dashboard: subscribers, revenue, open tickets, stock alerts and quick actions">
-                <span class="shot-cap mono">Office system</span>
-              </a>
-              <a class="shot" href="img/cm-portal.jpg" target="_blank" rel="noopener" data-lightbox="cable">
-                <img src="img/cm-portal.jpg" width="585" height="1266" loading="lazy" alt="The subscriber portal on a phone: balance, plan speed and notices">
-                <span class="shot-cap mono">Portal</span>
-              </a>
-              <a class="shot" href="img/cm-app-home.jpg" target="_blank" rel="noopener" data-lightbox="cable">
-                <img src="img/cm-app-home.jpg" width="540" height="1200" loading="lazy" alt="The Android app's home screen: balance, plan, connection and monthly bills">
-                <span class="shot-cap mono">Android app</span>
-              </a>
-              <a class="shot" href="img/cm-app-bills.jpg" target="_blank" rel="noopener" data-lightbox="cable">
-                <img src="img/cm-app-bills.jpg" width="540" height="1200" loading="lazy" alt="The Android app's payment history, with a PDF statement to download">
-                <span class="shot-cap mono">Payments</span>
-              </a>
-            </div>
-            <figcaption id="screens-cap">Since October all three share one design. Captured from the test database with sample accounts; the client's name and logo are blurred. Choose a screen to see it full size.</figcaption>
-          </figure>
-
-          <div class="hard">
-            <h3 class="h3">What was hard, and what I did about it</h3>
-            <ul class="hard-list">
-              <li class="reveal">
-                <h4>A restore that can't half-happen</h4>
-                <p>Every restore takes a safety copy first, then empties and refills tables inside one transaction. It refuses a file that isn't a Cable Manager backup, is cut short, or comes from a newer version, before touching anything.</p>
-                <button type="button" class="map-link" data-node="restore">See it on the map</button>
-              </li>
-              <li class="reveal">
-                <h4>Sign-in throttling on all three doors</h4>
-                <p>Failed sign-ins are counted per account and per address across the office system, portal and app. Lockouts double up to 30 minutes, and every lock is written to the audit trail.</p>
-                <button type="button" class="map-link" data-node="throttle">See it on the map</button>
-              </li>
-              <li class="reveal">
-                <h4>An app that survives the office being off</h4>
-                <p>The Android app keeps the last answer it was given, so a subscriber still sees their balance when the office computer is shut down for the night.</p>
-                <button type="button" class="map-link" data-node="offline">See it on the map</button>
-              </li>
-              <li class="reveal">
-                <h4>Installing a whole server as one file</h4>
-                <p>A single installer ships its own web server, database and PHP. The launcher migrates the schema, takes a backup, keeps the thirty most recent, and shuts everything down cleanly on close.</p>
-                <button type="button" class="map-link" data-node="installer">See it on the map</button>
-              </li>
-              <li class="reveal">
-                <h4>Two staff, one bill</h4>
-                <p>Two people pressing Record on the same bill at the same moment could both get through, and the bill was paid twice. Now the bill is locked inside the payment's transaction, so the second person waits, sees it settled, and is refused. A test reproduces the race.</p>
-                <button type="button" class="map-link" data-node="lock">See it on the map</button>
-              </li>
-              <li class="reveal">
-                <h4>Moving a real office onto it</h4>
-                <p>The provider's existing subscribers and their opening balances went in as one tested restore file, the same for both computers. Going live also turned up a database that wouldn't start under a Windows account whose name isn't plain English letters; the launcher handles it now.</p>
-                <button type="button" class="map-link" data-node="golive">See it on the map</button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="build reveal">
-            <h3 class="h3">How it was built</h3>
-            <figure class="chart" id="build-chart">
-              <figcaption class="chart-head">
-                <span class="chart-title">Commits per week</span>
-                <span class="chart-sub" id="build-sub">121 commits, April to September 2026</span>
-              </figcaption>
-              <div class="chart-plot" id="build-plot"></div>
-            </figure>
-            <ol class="milestones" id="milestones"></ol>
-            <details class="table-view">
-              <summary>View the weekly numbers as a table</summary>
-              <div class="table-wrap"><table id="build-table"><thead><tr><th scope="col">Week of</th><th scope="col">Commits</th></tr></thead><tbody></tbody></table></div>
-            </details>
+          <div class="case-cta">
+            <a class="btn btn-primary" href="projects/cable-manager.html">Read the case study</a>
+            <p>The brief, the architecture, screens from the office system, portal and app, what was hard, and how it was built week by week.</p>
           </div>
         </article>
       </div>
@@ -452,6 +360,40 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Notes ───────────── -->
+    <section class="section wrap" id="notes" aria-labelledby="notes-title">
+      <div class="section-label" data-ring="solved">
+        <span class="mono">Notes</span>
+      </div>
+      <div class="section-body">
+        <h2 class="h2" id="notes-title">Problems I've written up</h2>
+        <p class="section-note">Short write-ups of things that went wrong in real use, and what I did about them.</p>
+        <ul class="notes-list">
+          <li class="reveal">
+            <a href="notes/two-staff-one-bill.html">
+              <span class="notes-meta mono">Cable Manager · 3 Nov 2026</span>
+              <span class="notes-title">Two staff, one bill</span>
+              <span class="notes-sum">How two people pressing Record at the same moment could pay one bill twice, and why the fix was a lock rather than a better check.</span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a href="notes/windows-account-name.html">
+              <span class="notes-meta mono">Cable Manager · 30 Oct 2026</span>
+              <span class="notes-title">The letter that stopped my database</span>
+              <span class="notes-sum">Going live on the office computer, the database refused to start. The cause was one letter in the Windows account's name.</span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a href="notes/testing-security-rules.html">
+              <span class="notes-meta mono">ThesisFlow · 7 Oct 2026</span>
+              <span class="notes-title">Testing my security rules found two holes</span>
+              <span class="notes-sum">Writing 59 tests for ThesisFlow's Firebase security rules turned up two mistakes I had missed.</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -616,11 +558,11 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=33"></script>
-  <script src="ui.js?v=33"></script>
-  <script src="lightbox.js?v=32"></script>
+  <script src="data.js?v=36"></script>
+  <script src="ui.js?v=36"></script>
+  <script src="lightbox.js?v=36"></script>
   <script type="module">
-    import("./scene.js?v=33").catch(() => {
+    import("./scene.js?v=36").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

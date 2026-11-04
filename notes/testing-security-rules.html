@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Testing my security rules found two holes · Jonathan Cercenia Ramirez</title>
+  <meta name="description" content="ThesisFlow's Firebase security rules decide who may read and change what. Writing 59 tests for them turned up two mistakes I had missed.">
+  <meta name="theme-color" content="#111418">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://nathzramirez0-sys.github.io/My-Portfolio/notes/testing-security-rules.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jonathan Cercenia Ramirez">
+  <meta property="og:title" content="Testing my security rules found two holes">
+  <meta property="og:description" content="ThesisFlow's Firebase security rules decide who may read and change what. Writing 59 tests for them turned up two mistakes I had missed.">
+  <meta property="og:url" content="https://nathzramirez0-sys.github.io/My-Portfolio/notes/testing-security-rules.html">
+  <meta property="og:image" content="https://nathzramirez0-sys.github.io/My-Portfolio/og-image.png">
+  <meta property="article:published_time" content="2026-10-07">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../styles.css?v=36">
+  <script>
+    // motion is on unless the visitor has switched it off on this site
+    (function () {
+      var root = document.documentElement, choice = null;
+      root.classList.add("js");
+      try { choice = localStorage.getItem("motion"); } catch (e) {}
+      if (choice !== "off") root.classList.add("motion");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="../index.html" aria-label="Home">
+        <span class="mark-glyph" aria-hidden="true"></span>
+        <span class="mark-name">Jonathan Cercenia Ramirez</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#notes">Notes</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Open to internships &amp; projects</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section wrap case-page" aria-labelledby="note-title">
+      <div class="section-label">
+        <span class="mono">Note</span>
+      </div>
+      <div class="section-body">
+        <a class="page-back" href="../index.html#notes">← All notes</a>
+        <article class="note">
+          <header class="note-head">
+            <p class="case-kicker mono">ThesisFlow · <time datetime="2026-10-07">7 Oct 2026</time></p>
+            <h1 class="note-title" id="note-title">Testing my security rules found two holes</h1>
+            <p class="case-sum">ThesisFlow's Firebase security rules decide who may read and change what. Writing 59 tests for them turned up two mistakes I had missed.</p>
+          </header>
+          <div class="prose">
+            <p>ThesisFlow keeps each thesis group's chapters, drafts, tasks and feedback in Firebase. The app hides buttons people can't use, but the real protection is the security rules on the server: only leaders and advisers approve chapters, members move only their own tasks, only advisers post feedback, and nobody outside a group sees anything in it.</p>
+            <h2>How I tested them</h2>
+            <p>Rules are code, so I tested them like code. The suite runs against the Firestore and Storage emulators with a seeded group of four people: a leader, a member, an adviser and an outsider. Each of the 59 tests writes the same fields, batches and server timestamps the app's repositories write, so a rule that passes a test passes the app, and a rule that refuses the app fails a test.</p>
+            <h2>Hole one: a draft that could vanish</h2>
+            <p>Drafts are kept as version history: every upload is a new version in Firestore, with its file in Storage. The Storage rules let whoever uploaded a draft delete their own file. Firestore would still list that version, now pointing at nothing. The rules no longer allow it; draft files are removed only by the server's clean-up functions.</p>
+            <h2>Hole two: a check that never ran</h2>
+            <p>The rule that stops anyone overwriting an existing file was written for updates. But the Storage emulator treats every upload as a create, even over a file that is already there, so in the tests the overwrite went straight through. The check now sits on create as well, guarded so it only applies when a file already exists.</p>
+            <h2>Keeping them honest</h2>
+            <p>The rule tests now run in GitHub Actions on every push, next to the 142 unit tests and the builds, so a change to the rules that opens a gap fails before it ships.</p>
+            <h2>What I took from it</h2>
+            <p>Reading rules carefully wasn't enough: both mistakes looked reasonable on the page. Running them against real data, as real users, is what showed what they actually allowed.</p>
+          </div>
+          <nav class="next-case" aria-label="More">
+            <a href="../index.html#notes">← All notes</a>
+            <a href="../projects/thesisflow.html">ThesisFlow case study →</a>
+          </nav>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© <span id="year">2026</span> Jonathan Cercenia Ramirez</span>
+    <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
