@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="../styles.css?v=37">
+  <link rel="stylesheet" href="../styles.css?v=38">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -82,32 +82,40 @@
 
           <figure class="screens">
             <div class="gallery">
+              <a class="shot" href="../img/fb-today.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-today.jpg" width="1280" height="800" loading="lazy" alt="The Today view: orders to prepare or deliver, money still to collect, and products running low">
+                <span class="shot-cap mono">Today</span>
+              </a>
               <a class="shot" href="../img/fb-dashboard.jpg" data-lightbox="fb" target="_blank" rel="noopener">
-                <img src="../img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="The dashboard: buyers on the left, the selected buyer's orders and their lifecycle on the right">
-                <span class="shot-cap mono">Buyers and orders</span>
+                <img src="../img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="The dashboard: buyers on the left; the selected buyer's partly paid order, its payments and the balance on the right">
+                <span class="shot-cap mono">Buyers and payments</span>
               </a>
               <a class="shot" href="../img/fb-order.jpg" data-lightbox="fb" target="_blank" rel="noopener">
-                <img src="../img/fb-order.jpg" width="1280" height="800" loading="lazy" alt="A new order with several products, totals worked out as you type">
+                <img src="../img/fb-order.jpg" width="1280" height="800" loading="lazy" alt="A new order with two products from the inventory and a downpayment, showing what is paid now and the balance">
                 <span class="shot-cap mono">New order</span>
+              </a>
+              <a class="shot" href="../img/fb-slip.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-slip.jpg" width="910" height="1288" loading="lazy" alt="An A4 order slip PDF for a partly paid order: the items, what has been paid and the balance due">
+                <span class="shot-cap mono">Order slip</span>
               </a>
               <a class="shot" href="../img/fb-inventory.jpg" data-lightbox="fb" target="_blank" rel="noopener">
                 <img src="../img/fb-inventory.jpg" width="1280" height="800" loading="lazy" alt="The Inventory System: stock counts, what needs restocking and recent stock movements">
                 <span class="shot-cap mono">Inventory</span>
               </a>
-              <a class="shot" href="../img/fb-product.jpg" data-lightbox="fb" target="_blank" rel="noopener">
-                <img src="../img/fb-product.jpg" width="1280" height="800" loading="lazy" alt="A product's profile: stock, minimum stock, prices, availability and its restock reminder">
-                <span class="shot-cap mono">A product</span>
+              <a class="shot" href="../img/fb-backup.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-backup.jpg" width="1280" height="800" loading="lazy" alt="Backup and restore: the last backup, where to save it, the backup password, a reminder and restoring from a file">
+                <span class="shot-cap mono">Backup</span>
+              </a>
+              <a class="shot" href="../img/fb-lock.jpg" data-lightbox="fb" target="_blank" rel="noopener">
+                <img src="../img/fb-lock.jpg" width="1280" height="800" loading="lazy" alt="The PIN lock screen with its keypad">
+                <span class="shot-cap mono">PIN lock</span>
               </a>
               <a class="shot" href="../img/fb-export.jpg" data-lightbox="fb" target="_blank" rel="noopener">
                 <img src="../img/fb-export.jpg" width="1280" height="800" loading="lazy" alt="The Excel export dialog, listing what the workbook contains">
                 <span class="shot-cap mono">Excel export</span>
               </a>
-              <a class="shot" href="../img/fb-receipt.jpg" data-lightbox="fb" target="_blank" rel="noopener">
-                <img src="../img/fb-receipt.jpg" width="910" height="1287" loading="lazy" alt="A paid order's A4 PDF receipt, with a PAID stamp">
-                <span class="shot-cap mono">PDF receipt</span>
-              </a>
             </div>
-            <figcaption>Screens from version 1.2.0 with sample data; 1.3.0 redrew the dashboard and added payments and backups. Choose one to see it full size.</figcaption>
+            <figcaption>Screens from version 1.3.0 with sample data. Choose one to see it full size.</figcaption>
           </figure>
 
           <div class="hard">
@@ -197,7 +205,7 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="../lightbox.js?v=37"></script>
+  <script src="../lightbox.js?v=38"></script>
   <script>
     // the intro loads only when asked for: it is a whole page of its own
     document.getElementById("film-play").addEventListener("click", function () {

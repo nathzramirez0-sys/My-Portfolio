@@ -106,10 +106,14 @@ window.PORTFOLIO = {
       text: "Solo project, as full-stack developer. An Android app for thesis groups: chapters with versioned drafts, adviser feedback, a task board, a group activity feed, push notifications, deadline reminders and team stats, all working offline, on Firebase. A second, local build keeps everything on one phone with no account or internet, so anyone can try it." },
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
       text: "Client project, built solo as full-stack developer. A gallery where visitors browse artworks and artist profiles, search, and send messages, with an admin area for managing artists and artworks." },
+    { id: "p-flower", ring: "projects", label: "Online Flower Shop", keys: ["flower", "flowers", "flower shop", "florist", "bouquet", "bouquets", "e-commerce", "ecommerce", "online shop", "online store", "cart", "checkout"], section: "#projects",
+      text: "Client project, built solo as full-stack developer. An online flower shop: shoppers browse and filter flowers by category and price, keep a cart, pick how to pay at checkout (GCash or Maya, cash on delivery, card or bank transfer) and find their orders in their account. The owner's admin area manages products, orders and their status, customers and a revenue report." },
     { id: "p-auction", ring: "projects", label: "Auction Market", keys: ["auction", "auctions", "bidding", "bid", "bids"], section: "#projects",
       text: "Solo project, as full-stack developer. An online auction: sellers list items, buyers bid, the current bid updates without reloading the page, and an admin sees the analytics." },
     { id: "p-court", ring: "projects", label: "St. Francis Court", keys: ["court", "courts", "booking", "bookings", "st francis", "reservation"], section: "#projects",
       text: "Solo project, as full-stack developer. Court booking: players book and edit their slots, and the admin sees court usage, monthly bookings and revenue trends." },
+    { id: "p-sari", ring: "projects", label: "Sari-Sari Store Dashboard", keys: ["sari-sari", "sari sari", "sari", "small store", "store dashboard", "sales dashboard", "chart.js", "chartjs"], section: "#projects",
+      text: "Solo project, as full-stack developer. Stock, customers and sales for a neighbourhood sari-sari store: a low-stock list, search on every list, and Chart.js charts of sales over time, the best sellers, stock levels and customers by address." },
     { id: "p-pucu", ring: "projects", label: "PUCU Event Calendar", keys: ["pucu", "event calendar", "calendar", "events", "pec"], section: "#projects",
       text: "Team project, where I was a programmer. A school event calendar: organisations get their own dashboard, admins manage users, and events show as upcoming, pending or recently finished." },
     { id: "p-campus", ring: "projects", label: "ITE 393 Campus App", keys: ["campus", "ite 393", "ite393", "floor", "floors"], section: "#projects",
@@ -119,7 +123,7 @@ window.PORTFOLIO = {
 
     // Tools
     { id: "php", ring: "tools", label: "PHP 8", keys: ["php"], section: "#stack",
-      text: "Every page of Cable Manager's office system and portal, the JSON endpoints its Android app talks to, the test runner, and all four of my PHP web projects." },
+      text: "Every page of Cable Manager's office system and portal, the JSON endpoints its Android app talks to, the test runner, and all six of my PHP web projects." },
     { id: "mariadb", ring: "tools", label: "MariaDB", keys: ["mariadb", "mysql", "sql", "database"], section: "#stack",
       text: "The one database behind Cable Manager's three surfaces, bundled into its installer, and the database for my PHP web projects." },
     { id: "js", ring: "tools", label: "JavaScript", keys: ["javascript", "js", "service worker"], section: "#stack",
@@ -158,12 +162,14 @@ window.PORTFOLIO = {
     ["p-arts", "php"], ["p-arts", "mariadb"], ["p-arts", "svc-portal"],
     ["p-auction", "php"], ["p-auction", "mariadb"], ["p-auction", "js"],
     ["p-court", "php"], ["p-court", "mariadb"], ["p-court", "svc-business"],
+    ["p-flower", "php"], ["p-flower", "mariadb"], ["p-flower", "js"], ["p-flower", "svc-portal"],
+    ["p-sari", "php"], ["p-sari", "mariadb"], ["p-sari", "js"], ["p-sari", "svc-business"],
     ["p-pucu", "php"], ["p-pucu", "mariadb"], ["p-pucu", "js"],
     ["p-campus", "kotlin"], ["p-campus", "firebase"], ["p-campus", "svc-android"],
     ["p-ucwd", "kotlin"], ["p-ucwd", "firebase"], ["p-ucwd", "svc-android"], ["p-ucwd", "svc-business"],
     ["p-ferg", "kotlin"], ["p-ferg", "compose"], ["p-ferg", "room"], ["p-ferg", "svc-android"], ["p-ferg", "svc-business"],
     ["p-thesisflow", "kotlin"], ["p-thesisflow", "compose"], ["p-thesisflow", "firebase"], ["p-thesisflow", "room"], ["p-thesisflow", "svc-android"],
-    ["core", "p-ferg"], ["core", "p-thesisflow"], ["core", "p-arts"], ["core", "p-auction"], ["core", "p-court"], ["core", "p-pucu"], ["core", "p-campus"], ["core", "p-ucwd"],
+    ["core", "p-ferg"], ["core", "p-thesisflow"], ["core", "p-arts"], ["core", "p-auction"], ["core", "p-court"], ["core", "p-flower"], ["core", "p-sari"], ["core", "p-pucu"], ["core", "p-campus"], ["core", "p-ucwd"],
   ],
 
   answers: [
@@ -187,8 +193,8 @@ window.PORTFOLIO = {
     },
     {
       keys: ["what else", "other projects", "projects", "portfolio", "built", "solo", "team", "teams", "group", "groupmates"],
-      text: "Besides Cable Manager: FergBentables, my team capstone, where I built the app, an offline tablet app with an inventory, now in use at a showroom. Four projects I built solo as a full-stack developer: ThesisFlow, an Android app for thesis groups that you can try on your phone, and three web projects, Arts & Design Showcase for a client, plus Auction Market and St. Francis Court. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
-      nodes: ["p-ferg", "p-thesisflow", "p-arts", "p-auction", "p-court", "p-pucu", "p-campus", "p-ucwd"],
+      text: "Besides Cable Manager: FergBentables, my team capstone, where I built the app, an offline tablet app with an inventory, now in use at a showroom. Six projects I built solo as a full-stack developer: ThesisFlow, an Android app for thesis groups that you can try on your phone, and five web projects: two for clients, Arts & Design Showcase and an Online Flower Shop, plus Auction Market, St. Francis Court and a Sari-Sari Store Dashboard. I was also a programmer on three team projects: PUCU Event Calendar on the web, and the ITE 393 Campus App and UCWD Leave Monitoring on Android.",
+      nodes: ["p-ferg", "p-thesisflow", "p-arts", "p-flower", "p-auction", "p-court", "p-sari", "p-pucu", "p-campus", "p-ucwd"],
       sources: [["#projects", "Projects"]],
     },
     {

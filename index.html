@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=37">
+  <link rel="stylesheet" href="styles.css?v=38">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -114,8 +114,10 @@
               <button type="button" data-node="p-ferg">FergBentables</button>
               <button type="button" data-node="p-thesisflow">ThesisFlow</button>
               <button type="button" data-node="p-arts">Arts &amp; Design Showcase</button>
+              <button type="button" data-node="p-flower">Online Flower Shop</button>
               <button type="button" data-node="p-auction">Auction Market</button>
               <button type="button" data-node="p-court">St. Francis Court</button>
+              <button type="button" data-node="p-sari">Sari-Sari Store</button>
               <button type="button" data-node="p-pucu">PUCU Event Calendar</button>
               <button type="button" data-node="p-campus">Campus App</button>
               <button type="button" data-node="p-ucwd">UCWD Leave Monitoring</button>
@@ -271,7 +273,7 @@
         <p class="section-note">My capstone, where I built the app for a team of four; solo projects where I built every part as a full-stack developer; and team projects where I was a programmer.</p>
         <div class="projects">
           <article class="project project-lead reveal">
-            <a class="project-shot" href="projects/fergbentables.html" aria-label="FergBentables case study"><img src="img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="FergBentables on a tablet: buyers on the left, the selected buyer's orders on the right"></a>
+            <a class="project-shot" href="projects/fergbentables.html" aria-label="FergBentables case study"><img src="img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="FergBentables on a tablet: buyers on the left, the selected buyer's order with its payments and balance on the right"></a>
             <p class="project-meta mono"><span>Capstone · Android tablet app</span><span>2026</span></p>
             <h3 class="project-title">FergBentables</h3>
             <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers, orders and stock: each order is followed to delivery and takes its items from the inventory, every payment is recorded (downpayments too), and it prints an order slip with the balance or a paid receipt. Records back up to an encrypted file, a PIN can lock it, and everything exports to Excel. I shipped changes from the client's feedback; it has 129 unit tests and 121 on-device tests.</p>
@@ -308,6 +310,16 @@
             </div>
           </article>
           <article class="project reveal">
+            <p class="project-meta mono"><span>Client web app</span><span>2026</span></p>
+            <h3 class="project-title">Online Flower Shop</h3>
+            <p class="project-text">Built for a client: shoppers browse and filter flowers by category and price, keep a cart, pick how to pay at checkout (GCash or Maya, cash on delivery, card or bank transfer) and find their orders in their account. The owner's admin area manages products, orders and their status, customers and a revenue report.</p>
+            <ul class="project-tags"><li>PHP</li><li>MySQL</li><li>JavaScript</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Full-stack developer</span>
+              <button type="button" class="map-link" data-node="p-flower">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
             <p class="project-meta mono"><span>Web app</span><span>2026</span></p>
             <h3 class="project-title">Auction Market</h3>
             <p class="project-text">Sellers list items and buyers bid, with the current bid updating without reloading the page. An admin sees the analytics.</p>
@@ -325,6 +337,16 @@
             <div class="project-foot">
               <span class="project-role"><b>Solo</b> · Full-stack developer</span>
               <button type="button" class="map-link" data-node="p-court">On the map</button>
+            </div>
+          </article>
+          <article class="project reveal">
+            <p class="project-meta mono"><span>Web app</span><span>2025</span></p>
+            <h3 class="project-title">Sari-Sari Store Dashboard</h3>
+            <p class="project-text">For a neighbourhood store: its items with their stock and a low-stock list, its customers, and every sale. Charts show sales over time, the best sellers, stock levels and customers by address, and every list can be searched.</p>
+            <ul class="project-tags"><li>PHP</li><li>MySQL</li><li>Chart.js</li></ul>
+            <div class="project-foot">
+              <span class="project-role"><b>Solo</b> · Full-stack developer</span>
+              <button type="button" class="map-link" data-node="p-sari">On the map</button>
             </div>
           </article>
           <article class="project reveal">
@@ -518,7 +540,7 @@
       <div class="section-body about">
         <h2 class="h2" id="about-title">Hello, I'm Jonathan Cercenia Ramirez.</h2>
         <p>I'm a full-stack developer and a Computer Science student at the University of Pangasinan – PHINMA. I like building software for the places it actually gets used: an office with no IT staff, a subscriber checking a bill on their phone, a showroom counter printing a receipt, a student finding a room on campus.</p>
-        <p>My thesis, Cable Manager, shows how I work; I was the full-stack developer in a team of five. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. It has been in use at the provider's office since October 2026. Alongside it, I built the app for my team capstone, FergBentables, which is now in use at a showroom. On my own I've built ThesisFlow, a manager for thesis groups and their adviser, and three web projects, and I've worked as a programmer on three team projects for web and Android.</p>
+        <p>My thesis, Cable Manager, shows how I work; I was the full-stack developer in a team of five. It's billing and subscriber management for a local cable and internet provider: an office system that installs from one file and runs without the internet, a subscriber portal, and an Android app, all on one database. It has been in use at the provider's office since October 2026. Alongside it, I built the app for my team capstone, FergBentables, which is now in use at a showroom. On my own I've built ThesisFlow, a manager for thesis groups and their adviser, and five web projects, two of them for clients, and I've worked as a programmer on three team projects for web and Android.</p>
         <p>On the web I work in PHP, MySQL and JavaScript; on Android, in Kotlin with Jetpack Compose, Room and Firebase. I care most about the parts that decide whether software survives real use: backups that restore completely or not at all, sign-ins that resist guessing, and tests that run with one command. Part-time work during my studies taught me to manage my time and see things through, and photo editing gives me an eye for how things look.</p>
         <dl class="rows">
           <div><dt class="mono">Studying</dt><dd>BS Computer Science, University of Pangasinan – PHINMA · graduating 2027</dd></div>
@@ -558,11 +580,11 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=37"></script>
-  <script src="ui.js?v=37"></script>
-  <script src="lightbox.js?v=37"></script>
+  <script src="data.js?v=38"></script>
+  <script src="ui.js?v=38"></script>
+  <script src="lightbox.js?v=38"></script>
   <script type="module">
-    import("./scene.js?v=37").catch(() => {
+    import("./scene.js?v=38").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

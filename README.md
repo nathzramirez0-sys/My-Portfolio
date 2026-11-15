@@ -29,7 +29,7 @@ Then open `http://localhost:5510/`.
 | `llms.txt` | A plain-text copy of the page for AI agents and crawlers |
 | `favicon.svg` | The tab icon |
 | `og-image.png` | The picture shown when the link is shared (1200×630), captured from `og-image.html` |
-| `img/` | Screenshots, used by the page and the CV. Cable Manager's come from the test database, with the client's name and logo blurred; FergBentables' and ThesisFlow's come from their READMEs |
+| `img/` | Screenshots, used by the page and the CV. Cable Manager's come from the test database, with the client's name and logo blurred; FergBentables' are 1.3.0 captures from the tablet emulator with sample data; ThesisFlow's come from its README |
 | `404.html` | The page GitHub shows for a mistyped address |
 | `Jonathan-Cercenia-Ramirez-CV.pdf` | My two-page CV, linked from About and Contact |
 | `cv/cv.html` | The source the CV PDF is printed from |
