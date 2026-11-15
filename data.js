@@ -21,10 +21,10 @@ window.PORTFOLIO = {
   // Milestones are dated commits, reworded.
   build: {
     start: "2026-04-13",
-    weeks: [2, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 22, 8, 15, 7, 3, 5, 22, 31, 0, 3, 0, 10, 3, 2],
+    weeks: [2, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 22, 8, 15, 7, 3, 5, 22, 31, 0, 3, 0, 10, 3, 11, 14],
     phases: [
       { label: "UI prototype", from: 0, to: 15 },
-      { label: "Working system", from: 16, to: 29 },
+      { label: "Working system", from: 16, to: 30 },
     ],
     milestones: [
       { week: 0, date: "19 Apr", text: "The UI prototype begins" },
@@ -40,6 +40,9 @@ window.PORTFOLIO = {
       { week: 27, date: "21 Oct", text: "The office system and portal redrawn in the app's design, and the app's contrast measured and fixed", node: "office" },
       { week: 28, date: "30 Oct", text: "In use at the provider's office, with over 900 subscribers moved in", node: "golive" },
       { week: 29, date: "3 Nov", text: "A bill is locked before a payment is recorded, so two staff can't pay it twice", node: "lock" },
+      { week: 29, date: "8 Nov", text: "Advance credit, OR numbers, receivables aging, job orders and text reminders", node: "office" },
+      { week: 30, date: "9 Nov", text: "Payment reversals that need approval, and outage notices by area", node: "office" },
+      { week: 30, date: "14 Nov", text: "Each subscriber texted their bill when the month's bills are made", node: "office" },
     ],
   },
 
@@ -84,7 +87,7 @@ window.PORTFOLIO = {
     { id: "golive", ring: "solved", label: "Going live", keys: ["go live", "went live", "live", "in use", "import", "imported", "real subscribers", "production", "real client"], section: "#work",
       text: "In use at the provider's office since October 2026. Over 900 existing subscribers and their opening balances went in as one tested restore file, and going live fixed a database that wouldn't start under a non-English Windows account name." },
     { id: "tests", ring: "solved", label: "Automated tests", keys: ["test", "tests", "testing", "tested", "quality"], section: "#work",
-      text: "605 tests in 10 files, one command, no dependencies. Every run rebuilds a throwaway database, so real records are never touched." },
+      text: "1,157 tests in 17 files, one command, no dependencies. Every run rebuilds a throwaway database, so real records are never touched." },
 
     // Services
     { id: "svc-business", ring: "services", label: "Business systems", keys: ["billing", "inventory", "records", "reports"], section: "#services",
@@ -97,8 +100,8 @@ window.PORTFOLIO = {
       text: "One-file installers, automatic backups and remote access, so the system runs without anyone babysitting it." },
 
     // Projects
-    { id: "p-ferg", ring: "projects", label: "FergBentables", keys: ["fergbentables", "ferg", "blushdesk", "showroom", "tablet", "receipt", "receipts", "excel", "orders", "buyers", "capstone", "capstone project", "stock", "restock"], section: "#projects",
-      text: "My capstone, with a team of four, where I designed and built the app. An offline Android tablet app for a showroom counter, now in use there: buyers, orders followed from processing to delivery, an inventory that moves with each order, restock and low-stock reminders, PDF receipts for paid orders, and Excel export." },
+    { id: "p-ferg", ring: "projects", label: "FergBentables", keys: ["fergbentables", "ferg", "blushdesk", "showroom", "tablet", "receipt", "receipts", "excel", "orders", "buyers", "capstone", "capstone project", "stock", "restock", "downpayment", "downpayments", "order slip", "pin lock"], section: "#projects",
+      text: "My capstone, with a team of four, where I designed and built the app. An offline Android tablet app for a showroom counter, now in use there: buyers, orders followed from processing to delivery, every payment towards an order (downpayments included) with a PDF order slip or paid receipt, an inventory that moves with each order, restock and low-stock reminders, encrypted backups, an optional PIN lock, and Excel export." },
     { id: "p-thesisflow", ring: "projects", label: "ThesisFlow", keys: ["thesisflow", "thesis flow", "kanban", "adviser", "advisor", "chapters", "chapter", "drafts", "local build", "no account"], section: "#projects",
       text: "Solo project, as full-stack developer. An Android app for thesis groups: chapters with versioned drafts, adviser feedback, a task board, a group activity feed, push notifications, deadline reminders and team stats, all working offline, on Firebase. A second, local build keeps everything on one phone with no account or internet, so anyone can try it." },
     { id: "p-arts", ring: "projects", label: "Arts & Design Showcase", keys: ["arts", "art", "artwork", "artists", "gallery", "showcase"], section: "#projects",
@@ -138,7 +141,7 @@ window.PORTFOLIO = {
     { id: "tailscale", ring: "tools", label: "Tailscale", keys: ["tailscale", "funnel", "vpn"], section: "#stack",
       text: "Funnel publishes the portal and app on public HTTPS without touching the router." },
     { id: "git", ring: "tools", label: "Git", keys: ["git", "github", "version control", "commits"], section: "#stack",
-      text: "Every change tracked: over 130 commits on the thesis." },
+      text: "Every change tracked: over 160 commits on the thesis." },
   ],
 
   edges: [
@@ -190,9 +193,9 @@ window.PORTFOLIO = {
     },
     {
       keys: ["latest", "newest", "recent", "recently", "currently", "working on", "right now", "in progress", "current project", "lately", "building now"],
-      text: "Most recently I gave ThesisFlow, my Android app for thesis groups, a second build that keeps everything on one phone, with no account or internet needed. Before that I added an Inventory System to FergBentables, my capstone: stock that moves with each order, restock and low-stock reminders, and inventory reports in Excel. I also redrew Cable Manager's office system and portal to match its Android app.",
-      nodes: ["p-thesisflow", "p-ferg"],
-      sources: [["#projects", "Projects"]],
+      text: "Most recently Cable Manager learned to text each subscriber their bill when the month's bills are made, queued and sent in the background. Since it went live it has also gained advance credit, OR numbers, receivables aging, job orders for technicians, payment reversals that need approval, and outage notices by area. FergBentables, my capstone, reached 1.3.0: payments and downpayments, order slips, encrypted backups and a PIN lock. And ThesisFlow, my Android app for thesis groups, got a second build that keeps everything on one phone, with no account or internet needed.",
+      nodes: ["office", "p-ferg", "p-thesisflow"],
+      sources: [["projects/cable-manager.html#new", "Cable Manager: added since it went live"], ["projects/fergbentables.html", "FergBentables case study"]],
     },
     {
       keys: ["stack", "tech", "technologies", "language", "languages", "framework", "frameworks", "tools"],
@@ -220,7 +223,7 @@ window.PORTFOLIO = {
     },
     {
       keys: ["test", "tests", "testing", "tested", "quality", "bugs", "reliable"],
-      text: "605 tests in 10 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 104 unit tests and 118 on-device tests, and ThesisFlow has 142 unit tests, 59 tests for its security rules, 26 on-device tests for its local build, and GitHub Actions CI that runs them on every push.",
+      text: "1,157 tests in 17 files, run with one command and no dependencies. Each run rebuilds a throwaway database from the schema, so tests never touch real records. They cover sign-in, access rules, billing, advance credit, payment reversals, bill texts, byte-for-byte backup round trips, and a check that every dashboard card's number matches the list it opens. My Android apps are tested too: FergBentables has 129 unit tests and 121 on-device tests, and ThesisFlow has 142 unit tests, 59 tests for its security rules, 26 on-device tests for its local build, and GitHub Actions CI that runs them on every push.",
       nodes: ["tests", "php", "p-ferg", "p-thesisflow"],
       sources: [["projects/cable-manager.html", "Case study"]],
     },

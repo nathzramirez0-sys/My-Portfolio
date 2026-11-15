@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="../styles.css?v=36">
+  <link rel="stylesheet" href="../styles.css?v=37">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -70,7 +70,7 @@
             <div><dt>Role</dt><dd>Full-stack developer, team of 5</dd></div>
             <div><dt>In use</dt><dd>900+ subscribers</dd></div>
             <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
-            <div><dt>Tests</dt><dd>605, in 10 files</dd></div>
+            <div><dt>Tests</dt><dd>1,157, in 17 files</dd></div>
           </dl>
 
           <p class="case-note"><span class="mono">Source code</span><span>Not public: Cable Manager was built for a real client. I'm glad to walk you through the code on a call.</span></p>
@@ -173,6 +173,28 @@
             </ul>
           </div>
 
+          <div class="hard" id="new">
+            <h2 class="h3">Added since it went live</h2>
+            <ul class="hard-list">
+              <li>
+                <h3>Billing the way the office bills</h3>
+                <p>A reconnection fee, prorated first bills, bills staff can correct, advance payments kept as credit that pays each new bill, a disconnection list, and the day's collections.</p>
+              </li>
+              <li>
+                <h3>Receipts, and what is still owed</h3>
+                <p>Every payment carries its official receipt (OR) number, and the receivables aging shows what is owed by area and for how long. Job orders send technicians out and take their materials from stock.</p>
+              </li>
+              <li>
+                <h3>Undoing a payment takes two people</h3>
+                <p>A reversal is asked for and changes nothing until it is approved. Once approved, the payment leaves the bill, revenue and collections, the ledger nets to zero, and its OR number is free again.</p>
+              </li>
+              <li>
+                <h3>Texts only to the people they concern</h3>
+                <p>Bill reminders, outage and maintenance notices for the areas affected, and each subscriber's bill when the month's bills are made, queued and sent in the background, only to those who agreed and have a number.</p>
+              </li>
+            </ul>
+          </div>
+
           <div class="build" id="build">
             <h2 class="h3">How it was built</h2>
             <figure class="chart" id="build-chart">
@@ -195,7 +217,7 @@
               <div><dt class="mono">Web</dt><dd><span class="tag">PHP 8</span><span class="tag">MariaDB</span><span class="tag">JavaScript</span><span class="tag">Progressive web app</span></dd></div>
               <div><dt class="mono">Android</dt><dd><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span></dd></div>
               <div><dt class="mono">Running it</dt><dd><span class="tag">Apache</span><span class="tag">PowerShell launcher</span><span class="tag">Inno Setup</span><span class="tag">Tailscale Funnel</span></dd></div>
-              <div><dt class="mono">Practice</dt><dd><span class="tag">Prepared statements</span><span class="tag">CSRF tokens</span><span class="tag">bcrypt</span><span class="tag">605 automated tests</span></dd></div>
+              <div><dt class="mono">Practice</dt><dd><span class="tag">Prepared statements</span><span class="tag">CSRF tokens</span><span class="tag">bcrypt</span><span class="tag">1,157 automated tests</span></dd></div>
             </dl>
           </div>
 
@@ -213,9 +235,9 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="../llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="../data.js?v=36"></script>
-  <script src="../buildlog.js?v=36"></script>
-  <script src="../lightbox.js?v=36"></script>
+  <script src="../data.js?v=37"></script>
+  <script src="../buildlog.js?v=37"></script>
+  <script src="../lightbox.js?v=37"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

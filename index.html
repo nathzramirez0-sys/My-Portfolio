@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=37">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -219,9 +219,9 @@
     <section class="latest wrap" aria-labelledby="latest-title">
       <h2 class="latest-label mono" id="latest-title">Latest</h2>
       <ol class="latest-list">
-        <li><time class="mono" datetime="2026-11-03">3 Nov</time><a href="notes/two-staff-one-bill.html">Cable Manager now locks a bill while a payment is recorded</a></li>
-        <li><time class="mono" datetime="2026-10-30">30 Oct</time><a href="projects/cable-manager.html">Cable Manager went live at the provider's office, with over 900 subscribers</a></li>
-        <li><time class="mono" datetime="2026-10-24">24 Oct</time><a href="projects/thesisflow.html#try">ThesisFlow got a build you can try on your phone</a></li>
+        <li><time class="mono" datetime="2026-11-14">14 Nov</time><a href="projects/cable-manager.html#new">Cable Manager can now text each subscriber their bill when bills are made</a></li>
+        <li><time class="mono" datetime="2026-11-09">9 Nov</time><a href="projects/fergbentables.html">FergBentables 1.3.0: payments, order slips, encrypted backups and a PIN lock</a></li>
+        <li><time class="mono" datetime="2026-11-08">8 Nov</time><a href="projects/cable-manager.html#new">Cable Manager adds advance credit, OR numbers, receivables aging and job orders</a></li>
       </ol>
     </section>
 
@@ -242,7 +242,7 @@
             <div><dt>Role</dt><dd>Full-stack developer, team of 5</dd></div>
             <div><dt>In use</dt><dd>900+ subscribers</dd></div>
             <div><dt>Surfaces</dt><dd>3, one set of records</dd></div>
-            <div><dt>Tests</dt><dd>605, in 10 files</dd></div>
+            <div><dt>Tests</dt><dd>1,157, in 17 files</dd></div>
           </dl>
 
           <figure class="screens">
@@ -274,7 +274,7 @@
             <a class="project-shot" href="projects/fergbentables.html" aria-label="FergBentables case study"><img src="img/fb-dashboard.jpg" width="1280" height="800" loading="lazy" alt="FergBentables on a tablet: buyers on the left, the selected buyer's orders on the right"></a>
             <p class="project-meta mono"><span>Capstone · Android tablet app</span><span>2026</span></p>
             <h3 class="project-title">FergBentables</h3>
-            <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers, orders and the showroom's stock: each order is followed from processing to delivery and takes its items from the inventory, paid orders get a PDF receipt, staff are reminded to restock, and everything exports to Excel. I shipped changes from the client's feedback, and it has 104 unit tests and 118 on-device tests.</p>
+            <p class="project-text">An offline app for a showroom counter, now in use there. It keeps buyers, orders and stock: each order is followed to delivery and takes its items from the inventory, every payment is recorded (downpayments too), and it prints an order slip with the balance or a paid receipt. Records back up to an encrypted file, a PIN can lock it, and everything exports to Excel. I shipped changes from the client's feedback; it has 129 unit tests and 121 on-device tests.</p>
             <ul class="project-tags"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Apache POI</li></ul>
             <div class="project-foot">
               <span class="project-role"><b>Team of 4</b> · I built the app</span>
@@ -558,11 +558,11 @@
     <span class="mono foot-agents">Are you an AI agent? Read <a href="llms.txt">/llms.txt</a></span>
   </footer>
 
-  <script src="data.js?v=36"></script>
-  <script src="ui.js?v=36"></script>
-  <script src="lightbox.js?v=36"></script>
+  <script src="data.js?v=37"></script>
+  <script src="ui.js?v=37"></script>
+  <script src="lightbox.js?v=37"></script>
   <script type="module">
-    import("./scene.js?v=36").catch(() => {
+    import("./scene.js?v=37").catch(() => {
       document.getElementById("stage").classList.add("no-gl");
       document.getElementById("stage-note").textContent =
         "The 3D map couldn't load here. Everything it shows is written out below.";

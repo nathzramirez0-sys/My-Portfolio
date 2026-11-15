@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="../styles.css?v=36">
+  <link rel="stylesheet" href="../styles.css?v=37">
   <script>
     // motion is on unless the visitor has switched it off on this site
     (function () {
@@ -81,7 +81,7 @@ SELECT amount, status FROM invoices WHERE id = ? FOR UPDATE;
 COMMIT;</code></pre>
             <p>Now the second person's request waits until the first one commits, then reads a bill that is already settled, and is refused. Whether the bill is fully paid is judged against the amount read under that lock, not an earlier copy.</p>
             <h2>Proving it</h2>
-            <p>A race is easy to "fix" and hard to show fixed, so I wrote a test that makes it happen on purpose. A second database connection settles the bill and holds its lock for a second while the payment is recorded. On the old code the test fails, because the payment is written. On the new code it passes, and it is now one of the suite's 605 tests.</p>
+            <p>A race is easy to "fix" and hard to show fixed, so I wrote a test that makes it happen on purpose. A second database connection settles the bill and holds its lock for a second while the payment is recorded. On the old code the test fails, because the payment is written. On the new code it passes, and it now runs with the rest of the suite.</p>
             <h2>What I took from it</h2>
             <p>If a check decides whether a write is allowed, it has to happen under the same lock as the write. Reading first and writing later is fine for one person, and wrong as soon as there are two.</p>
           </div>
